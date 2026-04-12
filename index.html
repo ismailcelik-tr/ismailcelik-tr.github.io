@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ismail | Mobile & Fullstack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Ismail - Mobile & Fullstack Developer, AI & Data Science Enthusiast."
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x26A1;</text></svg>">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="theme-auto">
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">Nam et ipsa scientia potestas est.</div>
+        <div class="nav-links">
+          <div class="lang-selector">
+            <button class="lang-btn" id="lang-btn">
+              <img
+                id="current-lang-flag"
+                src="https://flagcdn.com/w20/gb.png"
+                alt="flag"
+                width="20"
+              />
+              <span id="current-lang-text">EN</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown">
+              <button data-lang="en">
+                <img src="https://flagcdn.com/w20/gb.png" width="20" /> English
+              </button>
+              <button data-lang="tr">
+                <img src="https://flagcdn.com/w20/tr.png" width="20" /> Türkçe
+              </button>
+              <button data-lang="fr">
+                <img src="https://flagcdn.com/w20/fr.png" width="20" /> Français
+              </button>
+            </div>
+          </div>
+          <a href="#projects" data-i18n="nav-work">Work</a>
+          <a href="#tech" data-i18n="nav-skills">Skills</a>
+          <a href="#about" data-i18n="nav-about">About</a>
+          <a href="#contact" data-i18n="nav-contact">Contact</a>
+          <button id="theme-toggle" class="theme-btn">
+            <i data-lucide="moon" class="dark-icon"></i>
+            <i data-lucide="sun" class="light-icon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="profile-container">
+              <div class="lightning-wrapper">
+                <div class="lightning-strike"></div>
+                <img
+                  src="assets/ismail.jpg"
+                  alt="Ismail"
+                  id="profile-img"
+                  class="profile-img"
+                />
+              </div>
+            </div>
+            <div class="hero-text">
+              <h1 class="fade-in">
+                <span data-i18n="hero-hi">Hi</span>
+                <img
+                  src="https://user-images.githubusercontent.com/74038190/212744289-c46f1717-bfc9-4724-8ef3-4b08e3583110.gif"
+                  width="35"
+                  alt="Waving"
+                />, <span data-i18n="hero-name">I'm İsmail!</span>
+              </h1>
+              <h3 class="subtitle" data-i18n="hero-subtitle">
+                Mobile & Fullstack Developer | AI & Data Science Enthusiast
+              </h3>
+              <p class="hero-bio" data-i18n="hero-bio">
+                developing new apps is overly exciting. love problem solving in
+                systems and networks. also i make things... 🧑‍💻
+              </p>
+              <div class="expertise-tags">
+                <span data-i18n-with-icon="hero-exp1" data-icon="smartphone"
+                  ><i data-lucide="smartphone"></i> Mobile Expertise</span
+                >
+                <span data-i18n-with-icon="hero-exp2" data-icon="code-2"
+                  ><i data-lucide="code-2"></i> Clean Code</span
+                >
+                <span data-i18n-with-icon="hero-exp3" data-icon="brain"
+                  ><i data-lucide="brain"></i> AI Integration</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1. PROJECTS -->
+      <section id="projects" class="work">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="work-title">🚀 What I'm Working On</h2>
+          </div>
+          <div class="work-grid">
+            <div class="work-card glass">
+              <div class="work-icon"><i data-lucide="shield-check"></i></div>
+              <h3 data-i18n="work-card1-title">Advanced Architecture</h3>
+              <p data-i18n="work-card1-p">
+                Implementing Clean Architecture and modular design patterns
+                across mobile and backend.
+              </p>
+            </div>
+            <div class="work-card glass">
+              <div class="work-icon"><i data-lucide="globe"></i></div>
+              <h3 data-i18n="work-card2-title">Web & Mobile Sync</h3>
+              <p data-i18n="work-card2-p">
+                Developing unified experiences using React.js and
+                high-performance cross-platform tools.
+              </p>
+            </div>
+            <div class="work-card glass">
+              <div class="work-icon"><i data-lucide="bar-chart-3"></i></div>
+              <h3 data-i18n="work-card3-title">AI & Data</h3>
+              <p data-i18n="work-card3-p">
+                Integrating machine learning models into mobile environments for
+                intelligent user experiences.
+              </p>
+            </div>
+            <div class="work-card glass">
+              <div class="work-icon"><i data-lucide="cloud"></i></div>
+              <h3 data-i18n="work-card4-title">Cloud Systems</h3>
+              <p data-i18n="work-card4-p">
+                Architecting scalable and reliable cloud infrastructures using
+                AWS, Docker, and Kubernetes to ensure high availability and
+                performance.
+              </p>
+            </div>
+            <div class="work-card glass">
+              <div class="work-icon"><i data-lucide="terminal"></i></div>
+              <h3 data-i18n="work-card5-title">Automation & CI/CD</h3>
+              <p data-i18n="work-card5-p">
+                Optimizing development workflows through automated pipelines and
+                custom GitHub Actions.
+              </p>
+            </div>
+            <div class="work-card glass">
+              <div class="work-icon"><i data-lucide="activity"></i></div>
+              <h3 data-i18n="work-card6-title">System Performance</h3>
+              <p data-i18n="work-card6-p">
+                Monitoring and fine-tuning resource efficiency with
+                high-performance system metrics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. TECH STACK (PRIMARY) -->
+      <section id="tech" class="tech-stack">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="tech-title">🛠 Tech Stack & Skills</h2>
+          </div>
+          <div class="tech-grid glass">
+            <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212281763-e6ecd7ef-c4aa-45b6-a97c-f33f6bb592bd.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212281780-0afd9616-8310-46e9-a898-c4f5269f1387.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100" />
+            <img src="https://user-images.githubusercontent.com/74038190/212281775-b468df30-4edc-4bf8-a4ee-f52e1aaddc86.gif" width="100" />
+            <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/1a797f46-efe4-41e6-9e75-5303e1bbcbfa" width="100" />
+            <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/29fd6286-4e7b-4d6c-818f-c4765d5e39a9" width="100" />
+            <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/67f477ed-6624-42da-99f0-1a7b1a16eecb" width="100" />
+            <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/3c16d4f2-b757-4c70-8f42-43d5dddd2c36" width="100" />
+            <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/3fb2cdf6-8920-462e-87a4-95af376418aa" width="100" />
+            <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/398b19b1-9aae-4c1f-8bc0-d172a2c08d68" width="100" />
+            <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/e0d299f2-767c-4c21-bd49-90f2a19f1a78" width="100" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. EXPANDING HORIZON (SECONDARY) -->
+      <section id="tech-expanding" class="tech-stack expanding">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="tech-expanding-title">🌟 Expanding the Horizon</h2>
+          </div>
+          <div class="tech-grid glass">
+            <img src="https://skillicons.dev/icons?i=ts&theme=dark" width="100" alt="TypeScript">
+            <img src="https://skillicons.dev/icons?i=dart&theme=dark" width="100" alt="Dart">
+            <img src="https://skillicons.dev/icons?i=rust&theme=dark" width="100" alt="Rust">
+            <img src="https://skillicons.dev/icons?i=go&theme=dark" width="100" alt="Go">
+            <img src="https://skillicons.dev/icons?i=zig&theme=dark" width="100" alt="Zig">
+            <img src="https://skillicons.dev/icons?i=docker&theme=dark" width="100" alt="Docker">
+            <img src="https://skillicons.dev/icons?i=postgres&theme=dark" width="100" alt="PostgreSQL">
+            <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" width="100" alt="Kubernetes">
+            <img src="https://skillicons.dev/icons?i=gcp&theme=dark" width="100" alt="Google Cloud">
+            <img src="https://skillicons.dev/icons?i=prometheus&theme=dark" width="100" alt="Prometheus">
+            <img src="https://skillicons.dev/icons?i=grafana&theme=dark" width="100" alt="Grafana">
+            <img src="https://skillicons.dev/icons?i=pytorch&theme=dark" width="100" alt="PyTorch" class="pulse-glow">
+            <img src="https://skillicons.dev/icons?i=tensorflow&theme=dark" width="100" alt="TensorFlow" class="pulse-glow">
+            <img src="https://skillicons.dev/icons?i=aws&theme=dark" width="100" alt="AWS">
+            <img src="https://skillicons.dev/icons?i=bun&theme=dark" width="100" alt="Bun">
+            <img src="https://skillicons.dev/icons?i=cmake&theme=dark" width="100" alt="CMake">
+            <img src="https://skillicons.dev/icons?i=electron&theme=dark" width="100" alt="Electron">
+            <img src="https://skillicons.dev/icons?i=fastapi&theme=dark" width="100" alt="FastAPI">
+            <img src="https://skillicons.dev/icons?i=nestjs&theme=dark" width="100" alt="NestJS">
+            <img src="https://skillicons.dev/icons?i=nginx&theme=dark" width="100" alt="Nginx">
+            <img src="https://skillicons.dev/icons?i=redis&theme=dark" width="100" alt="Redis">
+            <img src="https://skillicons.dev/icons?i=ruby&theme=dark" width="100" alt="Ruby">
+            <img src="https://skillicons.dev/icons?i=spring&theme=dark" width="100" alt="Spring">
+            <img src="https://skillicons.dev/icons?i=google&theme=dark" width="100" alt="Antigravity" class="pulse-glow">
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. ABOUT ME -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="about-title">🔥 About Me</h2>
+          </div>
+          <div class="bio-grid">
+            <div class="bio-card glass">
+              <i data-lucide="cpu"></i>
+              <h3 data-i18n="about-card1-title">Architecture</h3>
+              <p data-i18n="about-card1-p">Strong focus on systems programming, backend engineering, and high-performance solutions.</p>
+            </div>
+            <div class="bio-card glass">
+              <i data-lucide="layers"></i>
+              <h3 data-i18n="about-card2-title">Foundations</h3>
+              <p data-i18n="about-card2-p">Enjoy building things from scratch: network servers, parsers, and CLIs.</p>
+            </div>
+            <div class="bio-card glass">
+              <i data-lucide="zap"></i>
+              <h3 data-i18n="about-card3-title">Low-Level</h3>
+              <p data-i18n="about-card3-p">Interested in memory management, concurrency, I/O protocols, and performance tuning.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. COLLABORATIVE STRATEGY -->
+      <section id="perspective" class="perspective">
+        <div class="container">
+          <div class="perspective-layout">
+            <div class="perspective-card glass">
+              <h2 data-i18n="perspective-title">🤝 Collaborative Strategy</h2>
+              <div class="perspective-content">
+                <p data-i18n="perspective-p1"></p>
+                <p data-i18n="perspective-p2"></p>
+              </div>
+            </div>
+            
+            <div class="terminal-card glass">
+              <div class="terminal-header">
+                <div class="terminal-buttons">
+                  <span class="btn close"></span>
+                  <span class="btn minimize"></span>
+                  <span class="btn maximize"></span>
+                </div>
+                <div class="terminal-title">strategy.sh</div>
+              </div>
+              <div class="terminal-body">
+                <div class="command-line">
+                  <span class="prompt">$</span>
+                  <span class="typing">./deploy --strategy perfect</span>
+                </div>
+                <div class="output line-1">initializing modules... [OK]</div>
+                <div class="output line-2">compiling neural_data... [OK]</div>
+                <div class="output line-3">rendering pixel perfection... [OK]</div>
+                <div class="command-line final">
+                  <span class="prompt">$</span>
+                  <span class="cursor"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CONTACT / FOOTER -->
+      <footer id="contact">
+        <div class="container">
+          <h2 data-i18n="footer-title">📫 Connect with Me</h2>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/ismailcelik/" target="_blank" class="social-btn linkedin">
+              <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
+              <span data-i18n="footer-linkedin">LinkedIn</span>
+            </a>
+            <a href="https://github.com/ismailcelik-tr" target="_blank" class="social-btn github">
+              <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub">
+              <span data-i18n="footer-website">GitHub</span>
+            </a>
+            <a href="mailto:ismailceliktr00@gmail.com" class="social-btn email">
+              <i data-lucide="mail"></i>
+              <span data-i18n="footer-email">Email</span>
+            </a>
+          </div>
+          <p class="footer-motto" data-i18n="footer-motto">&#x26A1; From Neural Data to Pixel Perfection.</p>
+          <p class="copyright">
+            <span data-i18n="footer-copy">© <span id="current-year"></span> Ismail Celik | All bits reserved.</span>
+            <img src="https://img.shields.io/badge/status-optimized-brightgreen.svg?style=flat" alt="status: optimized" class="footer-badge">
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      if (window.lucide) lucide.createIcons();
+    </script>
+  </body>
+</html>
