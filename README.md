@@ -1,4 +1,4 @@
-# Ismail | Mobile & Fullstack Developer ⚡
+# İsmail | Mobile & Fullstack Developer ⚡
 
 Welcome to my personal portfolio repository! This project serves as a comprehensive showcase of my expertise in mobile development, fullstack engineering, and my passion for AI and Data Science.
 
