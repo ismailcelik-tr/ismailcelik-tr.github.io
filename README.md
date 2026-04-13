@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository! This project serves as a comprehensive showcase of my expertise in mobile development, fullstack engineering, and my passion for AI and Data Science.
 
-![Ismail Portfolio](https://img.shields.io/badge/Status-Optimized-brightgreen)
+![Ismail Portfolio](https://img.shields.io/badge/status-optimized-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## 🚀 Overview
