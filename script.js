@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-title": "🤝 Collaborative Strategy",
             "perspective-p1": "With years of experience in web and mobile application develop I have mastered the skills of understanding client requirements according to the latest trends. I have worked with businesses from different niches so you can rely on me for yours.",
             "perspective-p2": "I have a solid foundation in designing innovative mobile solutions that significantly improve user experience and accelerate business growth. My business background gives me a unique perspective on aligning technology with strategic objectives, ensuring my contributions are both technically sound and commercially viable. Having worked on various projects that are already live, I can help you with the best possible suggestions and ideas that we can proceed with. With me, you aren’t forced to accept anything. I give you a variety of options we can work on together.",
-            "footer-copy": "© 2026 Ismail Celik | All bits reserved."
+            "footer-copy": "© 2026 Ismail Celik | Licensed under MIT"
         },
         tr: {
             "nav-about": "Hakkımda",
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-title": "🤝 İşbirlikçi Strateji",
             "perspective-p1": "Web ve mobil uygulama geliştirme konusundaki yılların deneyimiyle, en son trendlere göre müşteri gereksinimlerini anlama becerilerinde ustalaştım. Farklı nişlerden işletmelerle çalıştım, bu yüzden kendi işletmeniz için bana güvenebilirsiniz.",
             "perspective-p2": "Kullanıcı deneyimini önemli ölçüde iyileştiren ve iş büyümesini hızlandıran yenilikçi mobil çözümler tasarlama konusunda sağlam bir temele sahibim. İş geçmişim, teknolojiyi stratejik hedeflerle uyumlu hale getirme konusunda bana benzersiz bir bakış açısı sağlıyor; katkılarımın hem teknik olarak sağlam hem de ticari olarak uygulanabilir olmasını garanti ediyor. Hali hazırda yayında olan çeşitli projelerde çalışmış biri olarak, ilerleyebileceğimiz en iyi öneri ve fikirlerle size yardımcı olabilirim. Benimle çalışırken hiçbir şeyi kabul etmeye zorlanmazsınız; birlikte üzerinde çalışabileceğimiz çeşitli seçenekler sunarım.",
-            "footer-copy": "© 2026 Ismail Celik | Tüm bitler saklıdır."
+            "footer-copy": "© 2026 Ismail Celik | MIT Lisansı ile lisanslanmıştır"
         },
         fr: {
             "nav-about": "À propos",
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-title": "🤝 Stratégie Collaborative",
             "perspective-p1": "Avec des années d'expérience dans le développement d'applications web et mobiles, j'ai acquis la maîtrise de la compréhension des besoins des clients selon les dernières tendances. J'ai travaillé avec des entreprises de différents secteurs, vous pouvez donc compter sur moi pour le vôtre.",
             "perspective-p2": "J'ai une base solide dans la conception de solutions mobiles innovantes qui améliorent considérablement l'expérience utilisateur et accélèrent la croissance de l'entreprise. Mon parcours professionnel me donne une perspective unique sur l'alignement de la technologie avec les objectifs stratégiques, garantissant que mes contributions sont à la fois techniquement solides et commercialement viables. Ayant travaillé sur divers projets déjà en ligne, je peux vous aider avec les meilleures suggestions et idées possibles pour progresser. Avec moi, vous n'êtes forcé de rien accepter ; je vous propose une variété d'options sur lesquelles nous pouvons travailler ensemble.",
-            "footer-copy": "© 2026 Ismail Celik | Tous bits réservés."
+            "footer-copy": "© 2026 Ismail Celik | Sous licence MIT"
         }
     };
 
