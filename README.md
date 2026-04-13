@@ -4,7 +4,6 @@ Welcome to my personal portfolio repository! This project serves as a comprehens
 
 ![Ismail Portfolio](https://img.shields.io/badge/Status-Optimized-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Views](https://img.shields.io/github/watchers/ismailcelik-tr/ismailcelik-tr.github.io?style=social)
 
 ## 🚀 Overview
 
