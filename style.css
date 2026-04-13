@@ -103,6 +103,12 @@ body.theme-light .logo {
   -webkit-text-fill-color: transparent;
 }
 
+.nav-content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -114,6 +120,57 @@ body.theme-light .logo {
   color: var(--text);
   font-weight: 500;
   transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-utils {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  color: var(--text);
+  transition: var(--transition);
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-btn:hover {
+  background: var(--border);
+}
+
+.mobile-menu-btn .close-icon {
+  display: none;
+}
+
+.mobile-menu-btn.active .menu-icon {
+  display: none;
+}
+
+.mobile-menu-btn.active .close-icon {
+  display: block;
 }
 
 .nav-links a:hover {
@@ -823,9 +880,38 @@ footer {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
   }
+  .mobile-menu-btn {
+    display: flex;
+  }
+
   .nav-links {
-    display: none;
-  } /* Simplified for demo, usually would have hamburger */
+    position: fixed;
+    top: 73px; /* height of navbar */
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 73px);
+    background: rgba(var(--bg-rgb), 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2.5rem;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 998;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+  }
   
   .tech-grid {
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)) !important;
