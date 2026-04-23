@@ -261,6 +261,33 @@ body.theme-light .logo {
   transition: var(--transition);
 }
 
+.command-palette-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.command-palette-btn:hover {
+  background: var(--border);
+}
+
+.command-palette-btn kbd {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  font-family: inherit;
+}
+
 .theme-btn:hover {
   background: var(--border);
   transform: rotate(15deg);
@@ -963,6 +990,11 @@ footer {
     width: 100%;
     text-align: center;
   }
+
+  .command-palette-btn span,
+  .command-palette-btn kbd {
+    display: none;
+  }
   
   .tech-grid {
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)) !important;
@@ -1287,6 +1319,109 @@ footer {
   position: relative;
 }
 
+.command-palette-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8rem 1.5rem 2rem;
+  z-index: 1200;
+}
+
+.command-palette-overlay.active {
+  display: flex;
+}
+
+.command-palette {
+  width: min(720px, 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.command-palette-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.command-palette-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  outline: none;
+  font-size: 1rem;
+}
+
+.command-palette-input::placeholder {
+  color: var(--text);
+  opacity: 0.5;
+}
+
+.command-palette-close-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.command-palette-body {
+  padding: 0.75rem;
+}
+
+.command-palette-label {
+  padding: 0.5rem 0.75rem 0.75rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+.command-palette-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.command-item,
+.command-empty {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font-size: 0.98rem;
+}
+
+.command-item {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.command-item:hover,
+.command-item.active {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border);
+}
+
+.command-empty {
+  opacity: 0.65;
+}
+
 /* Enhancing existing card for clickability */
 .update-card {
   cursor: pointer;
@@ -1317,6 +1452,10 @@ footer {
   
   .carousel-controls {
     align-self: center;
+  }
+
+  .command-palette-overlay {
+    padding-top: 6rem;
   }
 }
 

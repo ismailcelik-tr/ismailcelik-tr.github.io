@@ -8,6 +8,7 @@
       name="description"
       content="Portfolio of Ismail - Mobile & Fullstack Developer, AI & Data Science Enthusiast."
     />
+    <meta name="theme-color" content="#0a0a0c" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x26A1;</text></svg>"
@@ -64,6 +65,11 @@
             <button id="theme-toggle" class="theme-btn">
               <i data-lucide="moon" class="dark-icon"></i>
               <i data-lucide="sun" class="light-icon"></i>
+            </button>
+            <button id="command-palette-trigger" class="command-palette-btn" aria-label="Open quick navigation">
+              <i data-lucide="search"></i>
+              <span>Quick Nav</span>
+              <kbd>Ctrl+K</kbd>
             </button>
             <button id="mobile-menu-toggle" class="mobile-menu-btn">
               <i data-lucide="menu" class="menu-icon"></i>
@@ -576,6 +582,28 @@
         </div>
       </footer>
     </main>
+
+    <div id="command-palette-overlay" class="command-palette-overlay" aria-hidden="true">
+      <div class="command-palette glass" role="dialog" aria-modal="true" aria-labelledby="command-palette-title">
+        <div class="command-palette-header">
+          <i data-lucide="search"></i>
+          <input
+            id="command-palette-input"
+            class="command-palette-input"
+            type="text"
+            placeholder="Search sections or commands..."
+            autocomplete="off"
+          />
+          <button id="command-palette-close" class="command-palette-close-btn" aria-label="Close quick navigation">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="command-palette-body">
+          <div id="command-palette-title" class="command-palette-label">Quick Navigation</div>
+          <div id="command-palette-results" class="command-palette-results"></div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
     <script>

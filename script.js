@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    const commandPaletteTrigger = document.getElementById('command-palette-trigger');
+    const commandPaletteOverlay = document.getElementById('command-palette-overlay');
+    const commandPaletteInput = document.getElementById('command-palette-input');
+    const commandPaletteResults = document.getElementById('command-palette-results');
+    const commandPaletteClose = document.getElementById('command-palette-close');
 
     // --- Dynamic Year ---
     const yearElement = document.getElementById('current-year');
@@ -346,6 +352,9 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.remove('theme-dark', 'theme-light', 'theme-auto');
         body.classList.add(`theme-${theme}`);
         localStorage.setItem('theme', theme);
+        if (themeColorMeta) {
+            themeColorMeta.setAttribute('content', theme === 'dark' ? '#0a0a0c' : '#f8f9fa');
+        }
     };
 
     const currentLang = localStorage.getItem('selectedLang') || 'en';
@@ -358,6 +367,118 @@ document.addEventListener('DOMContentLoaded', () => {
             const isDark = body.classList.contains('theme-dark');
             const newTheme = isDark ? 'light' : 'dark';
             setTheme(newTheme);
+        });
+    }
+
+    const commandItems = [
+        { label: 'Go to Latest Updates', keywords: ['updates', 'latest', 'news'], action: () => document.getElementById('updates')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Go to Projects', keywords: ['projects', 'work'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Go to Skills', keywords: ['skills', 'tech', 'stack'], action: () => document.getElementById('tech')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Go to About', keywords: ['about', 'bio'], action: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Go to Strategy', keywords: ['strategy', 'perspective'], action: () => document.getElementById('perspective')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Go to Contact', keywords: ['contact', 'footer', 'mail'], action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: 'Toggle Theme', keywords: ['theme', 'dark', 'light'], action: () => themeToggle?.click() },
+        { label: 'Open LinkedIn', keywords: ['linkedin', 'social'], action: () => window.open('https://www.linkedin.com/in/ismailcelik', '_blank', 'noopener,noreferrer') }
+    ];
+
+    const closeCommandPalette = () => {
+        if (!commandPaletteOverlay) return;
+        commandPaletteOverlay.classList.remove('active');
+        commandPaletteOverlay.setAttribute('aria-hidden', 'true');
+        if (commandPaletteInput) commandPaletteInput.value = '';
+        document.body.style.overflow = '';
+    };
+
+    const runCommand = (item) => {
+        closeCommandPalette();
+        item.action();
+    };
+
+    const renderCommandPalette = (query = '') => {
+        if (!commandPaletteResults) return;
+        const normalizedQuery = query.trim().toLowerCase();
+        const filtered = commandItems.filter((item) => {
+            if (!normalizedQuery) return true;
+            return item.label.toLowerCase().includes(normalizedQuery) ||
+                item.keywords.some((keyword) => keyword.includes(normalizedQuery));
+        });
+
+        commandPaletteResults.innerHTML = filtered.length
+            ? filtered.map((item, index) => `
+                <button class="command-item${index === 0 ? ' active' : ''}" data-command-index="${commandItems.indexOf(item)}">
+                    <span>${item.label}</span>
+                </button>
+            `).join('')
+            : '<div class="command-empty">No matching command.</div>';
+    };
+
+    const openCommandPalette = () => {
+        if (!commandPaletteOverlay) return;
+        commandPaletteOverlay.classList.add('active');
+        commandPaletteOverlay.setAttribute('aria-hidden', 'false');
+        renderCommandPalette();
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => commandPaletteInput?.focus(), 0);
+    };
+
+    if (commandPaletteTrigger) {
+        commandPaletteTrigger.addEventListener('click', openCommandPalette);
+    }
+
+    if (commandPaletteClose) {
+        commandPaletteClose.addEventListener('click', closeCommandPalette);
+    }
+
+    if (commandPaletteOverlay) {
+        commandPaletteOverlay.addEventListener('click', (event) => {
+            if (event.target === commandPaletteOverlay) {
+                closeCommandPalette();
+            }
+        });
+    }
+
+    if (commandPaletteInput) {
+        commandPaletteInput.addEventListener('input', (event) => {
+            renderCommandPalette(event.target.value);
+        });
+
+        commandPaletteInput.addEventListener('keydown', (event) => {
+            const items = Array.from(document.querySelectorAll('.command-item'));
+            const currentIndex = items.findIndex((item) => item.classList.contains('active'));
+
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                const nextIndex = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
+                items.forEach((item) => item.classList.remove('active'));
+                items[nextIndex]?.classList.add('active');
+            }
+
+            if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                const nextIndex = currentIndex > 0 ? currentIndex - 1 : items.length - 1;
+                items.forEach((item) => item.classList.remove('active'));
+                items[nextIndex]?.classList.add('active');
+            }
+
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                const activeItem = document.querySelector('.command-item.active');
+                const commandIndex = activeItem?.getAttribute('data-command-index');
+                if (commandIndex !== null && commandIndex !== undefined) {
+                    runCommand(commandItems[Number(commandIndex)]);
+                }
+            }
+        });
+    }
+
+    if (commandPaletteResults) {
+        commandPaletteResults.addEventListener('click', (event) => {
+            const button = event.target.closest('.command-item');
+            if (!button) return;
+            const commandIndex = button.getAttribute('data-command-index');
+            if (commandIndex !== null) {
+                runCommand(commandItems[Number(commandIndex)]);
+            }
         });
     }
 
@@ -475,8 +596,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('keydown', (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+            event.preventDefault();
+            if (commandPaletteOverlay && commandPaletteOverlay.classList.contains('active')) {
+                closeCommandPalette();
+            } else {
+                openCommandPalette();
+            }
+            return;
+        }
+
         if (event.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
             closeUpdateModal();
+        }
+
+        if (event.key === 'Escape' && commandPaletteOverlay && commandPaletteOverlay.classList.contains('active')) {
+            closeCommandPalette();
         }
     });
 });
