@@ -1,0 +1,156 @@
+[
+  {
+    "id": 1,
+    "date": "2026-04-23",
+    "content": "Here\u0027s the news with my words \"Ignore Claude Opus 4.7, check out Mythos Preview. 🫠\" from 5 days ago. And here\u0027s the news from 5 days later; 271 zero-day vulnerabilities. Mozilla \u0026 Anthropic.",
+    "link": "https://arstechnica.com/ai/2026/04/mozilla-anthropics-mythos-found-271-zero-day-vulnerabilities-in-firefox-150/",
+    "linkPreview": {
+      "title": "Ignore \"Introducing Claude Opus 4.7\". Check out \"Mythos Preview\". 🫠",
+      "description": "A comparative look at the latest AI model benchmarks between Claude Opus 4.7 and Mythos Preview."
+    },
+    "tags": ["Software", "AI Systems", "Security"]
+  },
+  {
+    "id": 2,
+    "date": "2026-04-22",
+    "content": "No matter how flawless a project is, it will fail if it focuses on the wrong target. The F-35 program, while a technological \"masterpiece,\" continues to lose ground in the face of changing dynamics of modern warfare. Scalability, Speed, and Sustainability are the real keys to success.",
+    "link": "https://warontherocks.com/cogs-of-war/the-f-35-is-a-masterpiece-built-for-the-wrong-war/",
+    "linkPreview": {
+      "title": "The F-35 Is a Masterpiece Built for the Wrong War",
+      "description": "An analysis of why technological perfection doesn\u0027t always equal success in modern warfare."
+    },
+    "tags": ["Hardware", "Aerospace Systems", "Engineering"]
+  },
+  {
+    "id": 3,
+    "date": "2026-04-21",
+    "content": "Cook to the board of directors, and Ternus, the architect of the hardware, to the captain\u0027s cabin. Hopefully, the new era will be full of innovation. Please clarify the Siri, Gemini integration and AI issues!",
+    "link": "https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/",
+    "linkPreview": {
+      "title": "Apple Leadership Transition: Ternus as CEO",
+      "description": "Apple announces a major leadership transition with John Ternus stepping into the CEO role."
+    },
+    "tags": ["Hardware", "Consumer Electronics", "AI Integration"]
+  },
+  {
+    "id": 4,
+    "date": "2026-04-20",
+    "content": "Node.js: \"npm install done!\" Terraform: \"Really? I already provisioned the Docker container, mapped the ports, and configured nginx before you could even type npm start.\" 😅",
+    "link": "https://developer.hashicorp.com/terraform",
+    "linkPreview": {
+      "title": "Terraform by HashiCorp",
+      "description": "Infrastructure as Code: Provision and manage any cloud, infrastructure, or service with Terraform."
+    },
+    "tags": ["Software", "DevOps", "Cloud Infrastructure"]
+  },
+  {
+    "id": 5,
+    "date": "2026-04-20",
+    "content": "I really enjoy reading the artwork of Nikolay Vasilyevich Gogol, Magda Szabó, and Erlend Loe, as well as documents like this one on API design. 😊",
+    "link": "https://stripe.com/docs/api",
+    "linkPreview": {
+      "title": "Design of the Stripe API",
+      "description": "Insights into how Stripe designs developer-centric APIs that scale."
+    },
+    "tags": ["Software", "API Design", "Backend Systems"]
+  },
+  {
+    "id": 6,
+    "date": "2026-04-19",
+    "content": "Back in the day, you needed a supercomputer to run models; now you\u0027ll be doing RAG on a toaster! 😂 Google DeepMind GG WP! Local mode is the future.",
+    "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+    "linkPreview": {
+      "title": "Gemma 4: Our most capable open models",
+      "description": "Gemma 4 is built for advanced reasoning and agentic workflows."
+    },
+    "tags": ["Software", "AI Models", "Local Inference"]
+  },
+  {
+    "id": 7,
+    "date": "2026-04-18",
+    "content": "Ignore \"Introducing Claude Opus 4.7\". Check out \"Mythos Preview\". 🫠",
+    "link": "https://www.anthropic.com/news/claude-opus-4-7",
+    "linkPreview": {
+      "title": "Agent Loop and Multi-Agent Orchestration",
+      "description": "A deep dive into the agent loop and multi-agent orchestration."
+    },
+    "tags": ["Software", "LLM Systems", "Agent Frameworks"]
+  },
+  {
+    "id": 8,
+    "date": "2026-04-17",
+    "content": "If things continue at this pace, it seems like we won\u0027t (really) need to write tests anymore. From OpenAI, Qwen \u0026 Anthropic. 🧪",
+    "link": "https://qwen.ai/blog?id=qwen3.6-35b-a3b",
+    "linkPreview": {
+      "title": "The End of Manual Testing?",
+      "description": "Exploring how modern AI models are changing the way we write and run tests."
+    },
+    "tags": ["Software", "Testing Automation", "AI QA"]
+  },
+  {
+    "id": 9,
+    "date": "2026-04-16",
+    "content": "Hi bro! 😊 Any way to run this on \"Gemma 4\"? It would be amazing if you could also add a \"local\" mode. Google DeepMind.",
+    "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-mac-os/",
+    "linkPreview": {
+      "title": "Local Execution in AI",
+      "description": "Experimental local mode for AI assistants, optimized for hardware like Gemma 4."
+    },
+    "tags": ["Software", "Edge AI", "Local Deployment"]
+  },
+  {
+    "id": 10,
+    "date": "2026-04-15",
+    "content": "Unfortunately, security is no longer just about being \"smart,\" but about \"paying more.\" 💸",
+    "link": "https://www.dbreunig.com/2026/04/14/cybersecurity-is-proof-of-work-now.html",
+    "linkPreview": {
+      "title": "Security \u0026 Costs in AI",
+      "description": "Discussion on the evolving cost of security in AI-driven development."
+    },
+    "tags": ["Software", "Cybersecurity", "Cost Optimization"]
+  },
+  {
+    "id": 11,
+    "date": "2026-04-10",
+    "content": "2000-2010: Waterfall | 2010-2020: Agile \u0026 Scrum | 2020-2025: Process integration with DevOps and AI | 2026: Check this out. Technological singularity? 🚀",
+    "link": "https://code.claude.com/docs/en/routines",
+    "linkPreview": {
+      "title": "Evolution of Tech Processes",
+      "description": "Reflecting on the pace of technological change and the shift to AI-integrated processes."
+    },
+    "tags": ["Software", "Development Processes", "DevOps"]
+  },
+  {
+    "id": 12,
+    "date": "2026-04-09",
+    "content": "Let\u0027s see what\u0027s here... 😎 CC Unpacked exploring the agent loop.",
+    "link": "https://ccunpacked.dev/",
+    "linkPreview": {
+      "title": "Claude Code Unpacked",
+      "description": "What happens when you type a message into Claude Code? 50+ tools mapped."
+    },
+    "tags": ["Software", "AI Tooling", "Developer Tools"]
+  },
+  {
+    "id": 13,
+    "date": "2026-04-08",
+    "content": "That\u0027s why Google holds a special place in my heart. Gemma 4 and Antigravity 1.22.2 are being tested... 🫠",
+    "link": "https://antigravity.google",
+    "linkPreview": {
+      "title": "Antigravity - Agentic AI Coding Assistant",
+      "description": "Testing Antigravity 1.22.2 alongside Gemma 4 for enhanced workflows."
+    },
+    "tags": ["Software", "AI Assistants", "Developer Productivity"]
+  },
+  {
+    "id": 14,
+    "date": "2026-04-07",
+    "content": "A game in which one builds GPUs from scratch. I love it! 😊 Simulation from transistors to teraflops.",
+    "link": "https://jaso1024.com/mvidia/",
+    "linkPreview": {
+      "title": "MVIDIA - Build GPUs from Scratch",
+      "description": "A fascinating game and simulation where you build GPUs."
+    },
+    "tags": ["Hardware", "GPU Architecture", "Simulation"]
+  }
+]

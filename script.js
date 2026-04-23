@@ -52,7 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-title": "🤝 Collaborative Strategy",
             "perspective-p1": "With years of experience in web and mobile application develop I have mastered the skills of understanding client requirements according to the latest trends. I have worked with businesses from different niches so you can rely on me for yours.",
             "perspective-p2": "I have a solid foundation in designing innovative mobile solutions that significantly improve user experience and accelerate business growth. My business background gives me a unique perspective on aligning technology with strategic objectives, ensuring my contributions are both technically sound and commercially viable. Having worked on various projects that are already live, I can help you with the best possible suggestions and ideas that we can proceed with. With me, you aren’t forced to accept anything. I give you a variety of options we can work on together.",
-            "footer-copy": "© 2026 Ismail Celik | Licensed under MIT"
+            "footer-copy": "© 2026 Ismail Celik | Licensed under MIT",
+            "updates-title": "📢 Latest Updates",
+            "follow-linkedin": "Follow on LinkedIn"
         },
         tr: {
             "nav-about": "Hakkımda",
@@ -96,7 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-title": "🤝 İşbirlikçi Strateji",
             "perspective-p1": "Web ve mobil uygulama geliştirme konusundaki yılların deneyimiyle, en son trendlere göre müşteri gereksinimlerini anlama becerilerinde ustalaştım. Farklı nişlerden işletmelerle çalıştım, bu yüzden kendi işletmeniz için bana güvenebilirsiniz.",
             "perspective-p2": "Kullanıcı deneyimini önemli ölçüde iyileştiren ve iş büyümesini hızlandıran yenilikçi mobil çözümler tasarlama konusunda sağlam bir temele sahibim. İş geçmişim, teknolojiyi stratejik hedeflerle uyumlu hale getirme konusunda bana benzersiz bir bakış açısı sağlıyor; katkılarımın hem teknik olarak sağlam hem de ticari olarak uygulanabilir olmasını garanti ediyor. Hali hazırda yayında olan çeşitli projelerde çalışmış biri olarak, ilerleyebileceğimiz en iyi öneri ve fikirlerle size yardımcı olabilirim. Benimle çalışırken hiçbir şeyi kabul etmeye zorlanmazsınız; birlikte üzerinde çalışabileceğimiz çeşitli seçenekler sunarım.",
-            "footer-copy": "© 2026 Ismail Celik | MIT Lisansı ile lisanslanmıştır"
+            "footer-copy": "© 2026 Ismail Celik | MIT Lisansı ile lisanslanmıştır",
+            "updates-title": "📢 Son Paylaşımlar",
+            "follow-linkedin": "LinkedIn'de Takip Et"
         },
         fr: {
             "nav-about": "À propos",
@@ -140,8 +144,124 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-title": "🤝 Stratégie Collaborative",
             "perspective-p1": "Avec des années d'expérience dans le développement d'applications web et mobiles, j'ai acquis la maîtrise de la compréhension des besoins des clients selon les dernières tendances. J'ai travaillé avec des entreprises de différents secteurs, vous pouvez donc compter sur moi pour le vôtre.",
             "perspective-p2": "J'ai une base solide dans la conception de solutions mobiles innovantes qui améliorent considérablement l'expérience utilisateur et accélèrent la croissance de l'entreprise. Mon parcours professionnel me donne une perspective unique sur l'alignement de la technologie avec les objectifs stratégiques, garantissant que mes contributions sont à la fois techniquement solides et commercialement viables. Ayant travaillé sur divers projets déjà en ligne, je peux vous aider avec les meilleures suggestions et idées possibles pour progresser. Avec moi, vous n'êtes forcé de rien accepter ; je vous propose une variété d'options sur lesquelles nous pouvons travailler ensemble.",
-            "footer-copy": "© 2026 Ismail Celik | Sous licence MIT"
+            "footer-copy": "© 2026 Ismail Celik | Sous licence MIT",
+            "updates-title": "📢 Dernières Mises à Jour",
+            "follow-linkedin": "Suivre sur LinkedIn"
         }
+    };
+
+    const getRelativeTime = (dateString, lang) => {
+        const date = new Date(dateString);
+        const now = new Date();
+        const diffInSeconds = Math.floor((now - date) / 1000);
+        const diffInDays = Math.floor(diffInSeconds / 86400);
+
+        if (lang === 'tr') {
+            if (diffInDays === 0) return 'Bugün';
+            if (diffInDays === 1) return 'Dün';
+            if (diffInDays < 7) return `${diffInDays} gün önce`;
+            if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} hafta önce`;
+            if (diffInDays < 365) return `${Math.floor(diffInDays / 30)} ay önce`;
+            return `${Math.floor(diffInDays / 365)} yıl önce`;
+        } else if (lang === 'fr') {
+            if (diffInDays === 0) return "Aujourd'hui";
+            if (diffInDays === 1) return 'Hier';
+            if (diffInDays < 7) return `Il y a ${diffInDays} jours`;
+            if (diffInDays < 30) return `Il y a ${Math.floor(diffInDays / 7)} semaines`;
+            if (diffInDays < 365) return `Il y a ${Math.floor(diffInDays / 30)} mois`;
+            return `Il y a ${Math.floor(diffInDays / 365)} ans`;
+        } else {
+            if (diffInDays === 0) return 'Today';
+            if (diffInDays === 1) return 'Yesterday';
+            if (diffInDays < 7) return `${diffInDays} days ago`;
+            if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
+            if (diffInDays < 365) return `${Math.floor(diffInDays / 30)} months ago`;
+            return `${Math.floor(diffInDays / 365)} years ago`;
+        }
+    };
+
+    const closeUpdateModal = () => {
+        const modalOverlay = document.getElementById('update-modal-overlay');
+        if (!modalOverlay) return;
+
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    const renderUpdates = (lang) => {
+        const updatesContainer = document.getElementById('updates-container');
+        if (!updatesContainer) return;
+
+        fetch('posts.json')
+            .then(res => res.json())
+            .then(posts => {
+                updatesContainer.innerHTML = '';
+                posts.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'update-card glass';
+                    
+                    const relativeTime = getRelativeTime(post.date, lang);
+
+                    card.innerHTML = `
+                        <div class="update-date">${relativeTime}</div>
+                        <div class="update-content">${post.content}</div>
+                        ${post.tags ? `
+                            <div class="update-tags">
+                                ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                        ${post.linkPreview ? `
+                            <a href="${post.link}" target="_blank" class="link-preview" onclick="event.stopPropagation()">
+                                <div class="preview-title">${post.linkPreview.title}</div>
+                                <div class="preview-desc">${post.linkPreview.description}</div>
+                            </a>
+                        ` : ''}
+                    `;
+                    
+                    // Modal Open Event
+                    card.addEventListener('click', () => {
+                        const modalOverlay = document.getElementById('update-modal-overlay');
+                        const modalBody = document.getElementById('modal-body');
+                        
+                        modalBody.innerHTML = `
+                            <div class="modal-date">${relativeTime}</div>
+                            <div class="modal-full-content">${post.content}</div>
+                            ${post.tags ? `
+                                <div class="modal-tags">
+                                    ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                            ${post.linkPreview ? `
+                                <div class="modal-link-preview">
+                                    <a href="${post.link}" target="_blank" class="link-preview">
+                                        <div class="preview-title">${post.linkPreview.title}</div>
+                                        <div class="preview-desc">${post.linkPreview.description}</div>
+                                    </a>
+                                </div>
+                            ` : ''}
+                        `;
+                        
+                        modalOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        if (window.lucide) lucide.createIcons();
+                    });
+
+                    updatesContainer.appendChild(card);
+                });
+
+                // Update Progress Bar
+                const progressBar = document.getElementById('carousel-progress-bar');
+                const updateProgress = () => {
+                    const scrollLeft = updatesContainer.scrollLeft;
+                    const scrollWidth = updatesContainer.scrollWidth - updatesContainer.clientWidth;
+                    const progress = (scrollLeft / (scrollWidth || 1)) * 100;
+                    if (progressBar) progressBar.style.width = `${progress}%`;
+                };
+
+                updatesContainer.addEventListener('scroll', updateProgress);
+                updateProgress();
+            })
+            .catch(err => console.error('Error fetching posts:', err));
     };
 
     const updateLanguage = (lang) => {
@@ -154,18 +274,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Translations with icon preservation
         const iconElements = document.querySelectorAll('[data-i18n-with-icon]');
         iconElements.forEach(el => {
             const key = el.getAttribute('data-i18n-with-icon');
             const iconName = el.getAttribute('data-icon');
+            const existingImg = el.querySelector('img');
+            
             if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = `<i data-lucide="${iconName}"></i> ${translations[lang][key]}`;
-                if (window.lucide) lucide.createIcons();
+                if (existingImg) {
+                    // Preserve the image icon
+                    el.innerHTML = `${existingImg.outerHTML} ${translations[lang][key]}`;
+                } else {
+                    el.innerHTML = `<i data-lucide="${iconName}"></i> ${translations[lang][key]}`;
+                }
             }
         });
 
-        // Update selector UI (Flag Images)
+        // Re-render updates with new language
+        renderUpdates(lang);
+
+        // Update selector UI
         const flagUrls = {
             en: "https://flagcdn.com/w20/gb.png",
             tr: "https://flagcdn.com/w20/tr.png",
@@ -178,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (flagText) flagText.textContent = lang.toUpperCase();
 
         localStorage.setItem('selectedLang', lang);
+        if (window.lucide) lucide.createIcons();
     };
 
     // Language Dropdown Logic
@@ -280,4 +409,74 @@ document.addEventListener('DOMContentLoaded', () => {
             profileImg.style.animationDuration = '3s';
         });
     }
+    // 6. Latest Updates Carousel Logic
+    const updatesContainer = document.getElementById('updates-container');
+    const prevBtn = document.getElementById('update-prev');
+    const nextBtn = document.getElementById('update-next');
+    const modalOverlay = document.getElementById('update-modal-overlay');
+    const modalCloseBtn = document.getElementById('modal-close');
+
+    // Carousel Controls
+    if (prevBtn && nextBtn && updatesContainer) {
+        const cardWidth = 360; // card + gap
+        
+        nextBtn.addEventListener('click', () => {
+            const isAtEnd = updatesContainer.scrollLeft + updatesContainer.clientWidth >= updatesContainer.scrollWidth - 10;
+            if (isAtEnd) {
+                updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                updatesContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const isAtStart = updatesContainer.scrollLeft <= 10;
+            if (isAtStart) {
+                updatesContainer.scrollTo({ left: updatesContainer.scrollWidth, behavior: 'smooth' });
+            } else {
+                updatesContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            }
+        });
+        
+        // Auto-play (paused on hover)
+        let autoPlayInterval = setInterval(() => {
+            if (updatesContainer.scrollLeft + updatesContainer.clientWidth >= updatesContainer.scrollWidth - 10) {
+                updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                updatesContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            }
+        }, 5000);
+
+        updatesContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        updatesContainer.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(() => {
+                if (updatesContainer.scrollLeft + updatesContainer.clientWidth >= updatesContainer.scrollWidth - 10) {
+                    updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    updatesContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                }
+            }, 5000);
+        });
+    }
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            closeUpdateModal();
+        });
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) {
+                closeUpdateModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+            closeUpdateModal();
+        }
+    });
 });
