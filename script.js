@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const commandPaletteInput = document.getElementById('command-palette-input');
     const commandPaletteResults = document.getElementById('command-palette-results');
     const commandPaletteClose = document.getElementById('command-palette-close');
+    const commandPaletteTitle = document.getElementById('command-palette-title');
+    const commandPaletteTriggerText = document.getElementById('command-palette-trigger-text');
 
     // --- Dynamic Year ---
     const yearElement = document.getElementById('current-year');
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Translation Engine ---
     const translations = {
         en: {
+            "nav-updates": "Updates",
             "nav-about": "About",
             "nav-skills": "Skills",
             "nav-work": "Work",
@@ -56,13 +59,26 @@ document.addEventListener('DOMContentLoaded', () => {
             "footer-email": "Email",
             "footer-motto": "⚡ From Neural Data to Pixel Perfection.",
             "perspective-title": "🤝 Collaborative Strategy",
-            "perspective-p1": "With years of experience in web and mobile application develop I have mastered the skills of understanding client requirements according to the latest trends. I have worked with businesses from different niches so you can rely on me for yours.",
-            "perspective-p2": "I have a solid foundation in designing innovative mobile solutions that significantly improve user experience and accelerate business growth. My business background gives me a unique perspective on aligning technology with strategic objectives, ensuring my contributions are both technically sound and commercially viable. Having worked on various projects that are already live, I can help you with the best possible suggestions and ideas that we can proceed with. With me, you aren’t forced to accept anything. I give you a variety of options we can work on together.",
+            "perspective-p1": "With years of experience in web and mobile application development, I have mastered the skill of understanding client requirements according to the latest trends. I have worked with businesses from different niches, so you can rely on me for yours.",
+            "perspective-p2": "I have a solid foundation in designing innovative mobile solutions that significantly improve user experience and accelerate business growth. My business background gives me a unique perspective on aligning technology with strategic objectives, ensuring my contributions are both technically sound and commercially viable. Having worked on various live projects, I can help you with the best possible suggestions and ideas we can proceed with. With me, you aren’t forced to accept anything. I give you a variety of options we can work on together.",
             "footer-copy": "© 2026 Ismail Celik | Licensed under MIT",
             "updates-title": "📢 Latest Updates",
-            "follow-linkedin": "Follow on LinkedIn"
+            "follow-linkedin": "Follow on LinkedIn",
+            "command-trigger": "Quick Nav",
+            "command-title": "Quick Navigation",
+            "command-placeholder": "Search sections or commands...",
+            "command-empty": "No matching command.",
+            "command-go-updates": "Go to Latest Updates",
+            "command-go-projects": "Go to Projects",
+            "command-go-skills": "Go to Skills",
+            "command-go-about": "Go to About",
+            "command-go-strategy": "Go to Strategy",
+            "command-go-contact": "Go to Contact",
+            "command-toggle-theme": "Toggle Theme",
+            "command-open-linkedin": "Open LinkedIn"
         },
         tr: {
+            "nav-updates": "Güncel",
             "nav-about": "Hakkımda",
             "nav-skills": "Yetenekler",
             "nav-work": "Çalışmalar",
@@ -105,10 +121,23 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-p1": "Web ve mobil uygulama geliştirme konusundaki yılların deneyimiyle, en son trendlere göre müşteri gereksinimlerini anlama becerilerinde ustalaştım. Farklı nişlerden işletmelerle çalıştım, bu yüzden kendi işletmeniz için bana güvenebilirsiniz.",
             "perspective-p2": "Kullanıcı deneyimini önemli ölçüde iyileştiren ve iş büyümesini hızlandıran yenilikçi mobil çözümler tasarlama konusunda sağlam bir temele sahibim. İş geçmişim, teknolojiyi stratejik hedeflerle uyumlu hale getirme konusunda bana benzersiz bir bakış açısı sağlıyor; katkılarımın hem teknik olarak sağlam hem de ticari olarak uygulanabilir olmasını garanti ediyor. Hali hazırda yayında olan çeşitli projelerde çalışmış biri olarak, ilerleyebileceğimiz en iyi öneri ve fikirlerle size yardımcı olabilirim. Benimle çalışırken hiçbir şeyi kabul etmeye zorlanmazsınız; birlikte üzerinde çalışabileceğimiz çeşitli seçenekler sunarım.",
             "footer-copy": "© 2026 Ismail Celik | MIT Lisansı ile lisanslanmıştır",
-            "updates-title": "📢 Son Paylaşımlar",
-            "follow-linkedin": "LinkedIn'de Takip Et"
+            "updates-title": "📢 Güncel",
+            "follow-linkedin": "LinkedIn'de Takip Et",
+            "command-trigger": "Hızlı Geçiş",
+            "command-title": "Hızlı Geçiş",
+            "command-placeholder": "Bölüm veya komut ara...",
+            "command-empty": "Eşleşen komut yok.",
+            "command-go-updates": "Güncel bölümüne git",
+            "command-go-projects": "Çalışmalara git",
+            "command-go-skills": "Yeteneklere git",
+            "command-go-about": "Hakkımda bölümüne git",
+            "command-go-strategy": "Strateji bölümüne git",
+            "command-go-contact": "İletişime git",
+            "command-toggle-theme": "Temayı değiştir",
+            "command-open-linkedin": "LinkedIn aç"
         },
         fr: {
+            "nav-updates": "Actualités",
             "nav-about": "À propos",
             "nav-skills": "Compétences",
             "nav-work": "Travaux",
@@ -151,8 +180,20 @@ document.addEventListener('DOMContentLoaded', () => {
             "perspective-p1": "Avec des années d'expérience dans le développement d'applications web et mobiles, j'ai acquis la maîtrise de la compréhension des besoins des clients selon les dernières tendances. J'ai travaillé avec des entreprises de différents secteurs, vous pouvez donc compter sur moi pour le vôtre.",
             "perspective-p2": "J'ai une base solide dans la conception de solutions mobiles innovantes qui améliorent considérablement l'expérience utilisateur et accélèrent la croissance de l'entreprise. Mon parcours professionnel me donne une perspective unique sur l'alignement de la technologie avec les objectifs stratégiques, garantissant que mes contributions sont à la fois techniquement solides et commercialement viables. Ayant travaillé sur divers projets déjà en ligne, je peux vous aider avec les meilleures suggestions et idées possibles pour progresser. Avec moi, vous n'êtes forcé de rien accepter ; je vous propose une variété d'options sur lesquelles nous pouvons travailler ensemble.",
             "footer-copy": "© 2026 Ismail Celik | Sous licence MIT",
-            "updates-title": "📢 Dernières Mises à Jour",
-            "follow-linkedin": "Suivre sur LinkedIn"
+            "updates-title": "📢 Actualités",
+            "follow-linkedin": "Suivre sur LinkedIn",
+            "command-trigger": "Accès Rapide",
+            "command-title": "Accès Rapide",
+            "command-placeholder": "Rechercher une section ou une commande...",
+            "command-empty": "Aucune commande correspondante.",
+            "command-go-updates": "Aller aux actualités",
+            "command-go-projects": "Aller aux projets",
+            "command-go-skills": "Aller aux compétences",
+            "command-go-about": "Aller à propos",
+            "command-go-strategy": "Aller à la stratégie",
+            "command-go-contact": "Aller au contact",
+            "command-toggle-theme": "Changer le thème",
+            "command-open-linkedin": "Ouvrir LinkedIn"
         }
     };
 
@@ -271,6 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateLanguage = (lang) => {
+        currentLang = lang;
+
         // Standard translations
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(el => {
@@ -310,6 +353,22 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (flagImg) flagImg.src = flagUrls[lang];
         if (flagText) flagText.textContent = lang.toUpperCase();
+
+        if (commandPaletteInput) {
+            commandPaletteInput.placeholder = translations[lang]["command-placeholder"];
+        }
+
+        if (commandPaletteTitle) {
+            commandPaletteTitle.textContent = translations[lang]["command-title"];
+        }
+
+        if (commandPaletteTriggerText) {
+            commandPaletteTriggerText.textContent = translations[lang]["command-trigger"];
+        }
+
+        if (commandPaletteOverlay && commandPaletteOverlay.classList.contains('active')) {
+            renderCommandPalette(commandPaletteInput?.value || '');
+        }
 
         localStorage.setItem('selectedLang', lang);
         if (window.lucide) lucide.createIcons();
@@ -357,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const currentLang = localStorage.getItem('selectedLang') || 'en';
+    let currentLang = localStorage.getItem('selectedLang') || 'en';
     setTheme(getPreferredTheme());
     updateLanguage(currentLang);
 
@@ -370,15 +429,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const commandItems = [
-        { label: 'Go to Latest Updates', keywords: ['updates', 'latest', 'news'], action: () => document.getElementById('updates')?.scrollIntoView({ behavior: 'smooth' }) },
-        { label: 'Go to Projects', keywords: ['projects', 'work'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) },
-        { label: 'Go to Skills', keywords: ['skills', 'tech', 'stack'], action: () => document.getElementById('tech')?.scrollIntoView({ behavior: 'smooth' }) },
-        { label: 'Go to About', keywords: ['about', 'bio'], action: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }) },
-        { label: 'Go to Strategy', keywords: ['strategy', 'perspective'], action: () => document.getElementById('perspective')?.scrollIntoView({ behavior: 'smooth' }) },
-        { label: 'Go to Contact', keywords: ['contact', 'footer', 'mail'], action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
-        { label: 'Toggle Theme', keywords: ['theme', 'dark', 'light'], action: () => themeToggle?.click() },
-        { label: 'Open LinkedIn', keywords: ['linkedin', 'social'], action: () => window.open('https://www.linkedin.com/in/ismailcelik', '_blank', 'noopener,noreferrer') }
+    const getCommandItems = (lang) => [
+        { label: translations[lang]["command-go-updates"], keywords: ['updates', 'latest', 'news', 'güncel', 'actualités'], action: () => document.getElementById('updates')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: translations[lang]["command-go-projects"], keywords: ['projects', 'work', 'çalışmalar', 'projets'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: translations[lang]["command-go-skills"], keywords: ['skills', 'tech', 'stack', 'yetenekler', 'compétences'], action: () => document.getElementById('tech')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: translations[lang]["command-go-about"], keywords: ['about', 'bio', 'hakkımda', 'propos'], action: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: translations[lang]["command-go-strategy"], keywords: ['strategy', 'perspective', 'strateji'], action: () => document.getElementById('perspective')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: translations[lang]["command-go-contact"], keywords: ['contact', 'footer', 'mail', 'iletişim'], action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
+        { label: translations[lang]["command-toggle-theme"], keywords: ['theme', 'dark', 'light', 'tema'], action: () => themeToggle?.click() },
+        { label: translations[lang]["command-open-linkedin"], keywords: ['linkedin', 'social'], action: () => window.open('https://www.linkedin.com/in/ismailcelik', '_blank', 'noopener,noreferrer') }
     ];
 
     const closeCommandPalette = () => {
@@ -396,6 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderCommandPalette = (query = '') => {
         if (!commandPaletteResults) return;
+        const commandItems = getCommandItems(currentLang);
         const normalizedQuery = query.trim().toLowerCase();
         const filtered = commandItems.filter((item) => {
             if (!normalizedQuery) return true;
@@ -409,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span>${item.label}</span>
                 </button>
             `).join('')
-            : '<div class="command-empty">No matching command.</div>';
+            : `<div class="command-empty">${translations[currentLang]["command-empty"]}</div>`;
     };
 
     const openCommandPalette = () => {
@@ -465,6 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const activeItem = document.querySelector('.command-item.active');
                 const commandIndex = activeItem?.getAttribute('data-command-index');
                 if (commandIndex !== null && commandIndex !== undefined) {
+                    const commandItems = getCommandItems(currentLang);
                     runCommand(commandItems[Number(commandIndex)]);
                 }
             }
@@ -477,6 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!button) return;
             const commandIndex = button.getAttribute('data-command-index');
             if (commandIndex !== null) {
+                const commandItems = getCommandItems(currentLang);
                 runCommand(commandItems[Number(commandIndex)]);
             }
         });
@@ -615,3 +677,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
