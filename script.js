@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(posts => {
                 updatesContainer.innerHTML = '';
-                posts.forEach(post => {
+                posts.slice().reverse().forEach(post => {
                     const card = document.createElement('div');
                     card.className = 'update-card glass';
                     
@@ -553,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
         prevBtn.addEventListener('click', () => {
             const isAtStart = updatesContainer.scrollLeft <= 10;
             if (isAtStart) {
-                updatesContainer.scrollTo({ left: updatesContainer.scrollWidth, behavior: 'smooth' });
+                updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
                 updatesContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
             }
