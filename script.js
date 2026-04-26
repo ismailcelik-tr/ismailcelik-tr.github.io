@@ -9,6 +9,15 @@
     const commandPaletteClose = document.getElementById('command-palette-close');
     const commandPaletteTitle = document.getElementById('command-palette-title');
     const commandPaletteTriggerText = document.getElementById('command-palette-trigger-text');
+    const updateModalOverlay = document.getElementById('update-modal-overlay');
+    const updateModalCloseBtn = document.getElementById('modal-close');
+    const certificationsList = document.getElementById('certifications-list');
+    const certificationsOpenBtn = document.getElementById('certifications-open-modal');
+    const certificationsModalOverlay = document.getElementById('certifications-modal-overlay');
+    const certificationsModalBody = document.getElementById('certifications-modal-body');
+    const certificationsModalCloseBtn = document.getElementById('certifications-modal-close');
+    const certificationsModalTitle = document.getElementById('certifications-modal-title');
+    let certificationsLastFocusedElement = null;
 
     // --- Dynamic Year ---
     const yearElement = document.getElementById('current-year');
@@ -32,6 +41,8 @@
             "hero-exp1": "Mobile Expertise",
             "hero-exp2": "Clean Code",
             "hero-exp3": "AI Integration",
+            "hero-exp4": "Cloud & DevOps",
+            "hero-exp5": "AI & LLM Engineering",
             "about-title": "🔥 About Me",
             "about-card1-title": "Architecture",
             "about-card1-p": "Strong focus on systems programming, backend engineering, and high-performance solutions.",
@@ -55,12 +66,19 @@
             "work-card6-title": "System Performance",
             "work-card6-p": "Monitoring and fine-tuning resource efficiency with high-performance system metrics.",
             "certifications-title": "🏅 Certifications",
-            "certifications-provider": "Amazon Web Services",
-            "certifications-card-title": "AWS Cloud Quest: Cloud Practitioner - Training Badge",
-            "certifications-issued": "Issued Apr 2026",
             "certifications-id-label": "Credential ID",
             "certifications-cta": "View Credential",
-            "certifications-skills": "Amazon Web Services (AWS), EC2 and 4 more skills",
+            "certifications-open-modal": "Browse all certifications",
+            "certifications-modal-eyebrow": "Verified credentials",
+            "certifications-modal-title": "All Certifications",
+            "certifications-close-modal": "Close certifications modal",
+            "certifications-verified-badge": "Verified certificate",
+            "certifications-group-aws": "AWS",
+            "certifications-group-google": "Google",
+            "certifications-group-anthropic": "Anthropic",
+            "certifications-group-linkedin": "LinkedIn",
+            "certifications-group-ibm": "IBM",
+            "certifications-group-other": "Other",
             "footer-title": "📫 Connect with Me",
             "footer-linkedin": "LinkedIn",
             "footer-website": "GitHub",
@@ -100,6 +118,8 @@
             "hero-exp1": "Mobil Uzmanlık",
             "hero-exp2": "Temiz Kod",
             "hero-exp3": "AI Entegrasyonu",
+            "hero-exp4": "Cloud & DevOps",
+            "hero-exp5": "AI & LLM Engineering",
             "about-title": "🔥 Hakkımda",
             "about-card1-title": "Mimari",
             "about-card1-p": "Sistem programlama, backend mühendisliği ve yüksek performanslı çözümlere güçlü odak.",
@@ -123,12 +143,19 @@
             "work-card6-title": "Sistem Performansı",
             "work-card6-p": "Yüksek performanslı sistem metrikleri ile kaynak verimliliğini izliyor ve ince ayarlar yapıyorum.",
             "certifications-title": "🏅 Sertifikalar",
-            "certifications-provider": "Amazon Web Services",
-            "certifications-card-title": "AWS Cloud Quest: Cloud Practitioner - Training Badge",
-            "certifications-issued": "Nis 2026 tarihinde verildi",
             "certifications-id-label": "Yeterlilik Kimliği",
             "certifications-cta": "Yeterlilik belgesini göster",
-            "certifications-skills": "Amazon Web Hizmetleri (AWS), EC2 ve +4 yetenek",
+            "certifications-open-modal": "Tüm sertifikaları görüntüle",
+            "certifications-modal-eyebrow": "Doğrulanmış yetkinlikler",
+            "certifications-modal-title": "Tüm Sertifikalar",
+            "certifications-close-modal": "Sertifika modalını kapat",
+            "certifications-verified-badge": "Doğrulanmış sertifika",
+            "certifications-group-aws": "AWS",
+            "certifications-group-google": "Google",
+            "certifications-group-anthropic": "Anthropic",
+            "certifications-group-linkedin": "LinkedIn",
+            "certifications-group-ibm": "IBM",
+            "certifications-group-other": "Diğer",
             "footer-title": "📫 Benimle Bağlantı Kur",
             "footer-linkedin": "LinkedIn",
             "footer-website": "GitHub",
@@ -168,6 +195,8 @@
             "hero-exp1": "Expertise Mobile",
             "hero-exp2": "Code Propre",
             "hero-exp3": "Intégration d'IA",
+            "hero-exp4": "Cloud & DevOps",
+            "hero-exp5": "Ingénierie IA & LLM",
             "about-title": "🔥 À propos de moi",
             "about-card1-title": "Architecture",
             "about-card1-p": "Accent mis sur la programmation système, l'ingénierie backend et les solutions haute performance.",
@@ -191,12 +220,19 @@
             "work-card6-title": "Performance Système",
             "work-card6-p": "Surveillance et optimisation de l'efficacité des ressources avec des métriques système haute performance.",
             "certifications-title": "🏅 Certifications",
-            "certifications-provider": "Amazon Web Services",
-            "certifications-card-title": "AWS Cloud Quest: Cloud Practitioner - Training Badge",
-            "certifications-issued": "Délivré en avr. 2026",
             "certifications-id-label": "ID du certificat",
             "certifications-cta": "Afficher le certificat",
-            "certifications-skills": "Amazon Web Services (AWS), EC2 et 4 autres compétences",
+            "certifications-open-modal": "Voir toutes les certifications",
+            "certifications-modal-eyebrow": "Titres vérifiés",
+            "certifications-modal-title": "Toutes les certifications",
+            "certifications-close-modal": "Fermer la fenêtre des certifications",
+            "certifications-verified-badge": "Certificat vérifié",
+            "certifications-group-aws": "AWS",
+            "certifications-group-google": "Google",
+            "certifications-group-anthropic": "Anthropic",
+            "certifications-group-linkedin": "LinkedIn",
+            "certifications-group-ibm": "IBM",
+            "certifications-group-other": "Autres",
             "footer-title": "📫 Me Contacter",
             "footer-linkedin": "LinkedIn",
             "footer-website": "GitHub",
@@ -208,7 +244,7 @@
             "footer-copy": "© 2026 Ismail Celik | Sous licence MIT",
             "updates-title": "📢 Actualités",
             "follow-linkedin": "Suivre sur LinkedIn",
-            "command-trigger": "Accès Rapide",
+            "command-trigger": "Accès",
             "command-title": "Accès Rapide",
             "command-placeholder": "Rechercher une section ou une commande...",
             "command-empty": "Aucune commande correspondante.",
@@ -222,6 +258,484 @@
             "command-toggle-theme": "Changer le thème",
             "command-open-linkedin": "Ouvrir LinkedIn"
         }
+    };
+
+    let currentLang = localStorage.getItem('selectedLang') || 'en';
+
+    const certificationGroupOrder = ['AWS', 'Google', 'Anthropic', 'LinkedIn', 'IBM', 'Other'];
+    const featuredCertificationIds = [
+        'aws-cloud-quest',
+        'anthropic-building-with-claude-api',
+        'linkedin-career-essentials-genai',
+        'google-gen-ai-agents',
+        'ibm-python-101-data-science'
+    ];
+
+    const certifications = [
+        {
+            id: 'aws-cloud-quest',
+            title: 'AWS Cloud Quest: Cloud Practitioner - Training Badge',
+            provider: 'Amazon Web Services',
+            group: 'AWS',
+            verifyUrl: 'https://www.credly.com/badges/d6a23e7f-e791-45dc-af4c-2c153100f8ab/linked_in_profile',
+            credentialId: 'd6a23e7f-e791-45dc-af4c-2c153100f8ab',
+            issued: {
+                en: 'Issued Apr 2026',
+                tr: 'Nis 2026 tarihinde verildi',
+                fr: 'Délivré en avr. 2026'
+            },
+            skills: {
+                en: 'Amazon Web Services (AWS), EC2 and 4 more skills',
+                tr: 'Amazon Web Hizmetleri (AWS), EC2 ve +4 yetenek',
+                fr: 'Amazon Web Services (AWS), EC2 et 4 autres compétences'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/aws-logo.png',
+                alt: 'Amazon Web Services'
+            },
+            badgeImage: 'https://images.credly.com/size/340x340/images/30816e43-2550-4e1c-be22-3f03c5573bb9/blob',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--aws',
+            badgeBackground: '#ffffff'
+        },
+        {
+            id: 'anthropic-building-with-claude-api',
+            title: 'Building with the Claude API',
+            provider: 'Anthropic',
+            group: 'Anthropic',
+            verifyUrl: 'https://verify.skilljar.com/c/tpmqa4yquc64',
+            credentialId: 'tpmqa4yquc64',
+            logo: {
+                type: 'image',
+                src: 'assets/anthropic-logo.png',
+                alt: 'Anthropic'
+            },
+            badgeImage: 'assets/ant-cert-1.png',
+            skills: {
+                en: 'Claude API, Tool Use and 3 more skills',
+                tr: 'Claude API, Tool Use ve +3 yetenek',
+                fr: 'API Claude, Tool Use et 3 autres compétences'
+            },
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--anthropic',
+            badgeBackground: '#6f9ed1',
+            badgePadding: '0',
+            badgeImageClass: 'cert-badge-image--anthropic'
+        },
+        {
+            id: 'linkedin-career-essentials-genai',
+            title: 'Career Essentials in Generative AI by Microsoft and LinkedIn',
+            provider: 'Microsoft',
+            group: 'LinkedIn',
+            verifyUrl: 'https://www.linkedin.com/learning/certificates/c9bf2e317293a00fa8dfb3a745801ad1d736f4dee5a058e2ae28c3f668928f31',
+            credentialId: 'c9bf2e317293a00fa8dfb3a745801ad1d736f4dee5a058e2ae28c3f668928f31',
+            skills: {
+                en: 'Generative AI, Microsoft Copilot and 3 more skills',
+                tr: 'Üretken Yapay Zekâ, Microsoft Copilot ve +3 yetenek',
+                fr: 'IA générative, Microsoft Copilot et 3 autres compétences'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/microsoft-logo.png',
+                alt: 'Microsoft'
+            },
+            badgeImage: 'assets/microsoft-cert.png',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--microsoft',
+            badgeBackground: '#c7d7dc',
+            badgePadding: '0',
+            badgeImageClass: 'cert-badge-image--microsoft'
+        },
+        {
+            id: 'google-gen-ai-agents',
+            title: 'Gen AI Agents: Transform Your Organization',
+            provider: 'Google',
+            group: 'Google',
+            verifyUrl: 'https://www.skills.google/public_profiles/f12d1071-06da-4184-ae4c-ec9a43295466/badges/23802425',
+            credentialId: '23802425',
+            skills: {
+                en: 'Gen AI Agents, Gemini, GCP and 3 more skills',
+                tr: 'Gen AI Agents, Gemini, GCP ve +3 yetenek',
+                fr: 'Gen AI Agents, Gemini, GCP et 3 autres compétences'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/google-logo.png',
+                alt: 'Google'
+            },
+            badgeImage: 'https://cdn.qwiklabs.com/6NReGq4hSLm8QJHw6Xz1w6UjnCjOcqZX0pyDcRmEQX8%3D',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--google',
+            badgeBackground: '#ffffff',
+            badgePadding: '0.45rem',
+            badgeImageClass: 'cert-badge-image--google'
+        },
+        {
+            id: 'ibm-python-101-data-science',
+            title: 'Python 101 for Data Science',
+            provider: 'IBM',
+            group: 'IBM',
+            verifyUrl: 'https://courses.cognitiveclass.ai/certificates/5ac6eabe1e3e448f97490ae85e3c12f7',
+            credentialId: '5ac6eabe1e3e448f97490ae85e3c12f7',
+            skills: {
+                en: 'Python, Data Science and 3 more skills',
+                tr: 'Python, Veri Bilimi ve +3 yetenek',
+                fr: 'Python, Data Science et 3 autres compétences'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/IBM-logo.png',
+                alt: 'IBM'
+            },
+            badgeImage: 'assets/IBM-cert.png',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--ibm',
+            badgeBackground: '#d9dfe5',
+            badgePadding: '0',
+            badgeImageClass: 'cert-badge-image--ibm'
+        },
+        {
+            id: 'google-certificate-23802106',
+            title: 'Gen AI Apps: Transform Your Work',
+            provider: 'Google',
+            group: 'Google',
+            verifyUrl: 'https://www.skills.google/public_profiles/f12d1071-06da-4184-ae4c-ec9a43295466/badges/23802106',
+            credentialId: '23802106',
+            skills: {
+                en: 'NotebookLM, GCP, Google Gemini and 2 more skills',
+                tr: 'NotebookLM, GCP, Google Gemini ve +2 yetenek',
+                fr: 'NotebookLM, GCP, Google Gemini et 2 autres compétences'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/google-logo.png',
+                alt: 'Google'
+            },
+            badgeImage: 'https://cdn.qwiklabs.com/9O2IRFwesEmalG0DGGZ2cjVVE7GzSClBz5xBIMzH%2BZ4%3D',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--google',
+            badgeBackground: '#ffffff',
+            badgePadding: '0.45rem',
+            badgeImageClass: 'cert-badge-image--google'
+        },
+        {
+            id: 'google-certificate-23799197',
+            title: 'Gen AI: Beyond the Chatbot',
+            provider: 'Google',
+            group: 'Google',
+            verifyUrl: 'https://www.skills.google/public_profiles/f12d1071-06da-4184-ae4c-ec9a43295466/badges/23799197',
+            credentialId: '23799197',
+            skills: {
+                en: 'Machine Learning, AI and LLM',
+                tr: 'Machine Learning, AI ve LLM',
+                fr: 'Machine Learning, IA et LLM'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/google-logo.png',
+                alt: 'Google'
+            },
+            badgeImage: 'https://cdn.qwiklabs.com/ZLTKgDPBgi5GOfU5%2Fr3IPnPCd4W%2Bv5F8AeuvASVCK0Q%3D',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--google',
+            badgeBackground: '#ffffff',
+            badgePadding: '0.45rem',
+            badgeImageClass: 'cert-badge-image--google'
+        },
+        {
+            id: 'google-certificate-23798362',
+            title: 'Introduction to Generative AI',
+            provider: 'Google',
+            group: 'Google',
+            verifyUrl: 'https://www.skills.google/public_profiles/f12d1071-06da-4184-ae4c-ec9a43295466/badges/23798362',
+            credentialId: '23798362',
+            skills: {
+                en: 'NotebookLM, GCP, Google Gemini, Prompt Engineering and Prompt Chaining',
+                tr: 'NotebookLM, GCP, Google Gemini, Prompt Engineering ve Prompt Chaining',
+                fr: 'NotebookLM, GCP, Google Gemini, Prompt Engineering et Prompt Chaining'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/google-logo.png',
+                alt: 'Google'
+            },
+            badgeImage: 'https://cdn.qwiklabs.com/KL76j4TVMguwIkrbJ%2FL3LOpCTYHAGjRiEv2dUHLbeFY%3D',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--google',
+            badgeBackground: '#ffffff',
+            badgePadding: '0.45rem',
+            badgeImageClass: 'cert-badge-image--google'
+        },
+        {
+            id: 'anthropic-certificate-7nhwwpoo5xew',
+            title: 'Introduction to Model Context Protocol',
+            provider: 'Anthropic',
+            group: 'Anthropic',
+            verifyUrl: 'https://verify.skilljar.com/c/7nhwwpoo5xew',
+            credentialId: '7nhwwpoo5xew',
+            skills: {
+                en: 'Anthropic Claude, AI and MCP',
+                tr: 'Anthropic Claude, AI ve MCP',
+                fr: 'Anthropic Claude, IA et MCP'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/anthropic-logo.png',
+                alt: 'Anthropic'
+            },
+            badgeImage: 'assets/ant-cert-5.png',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--anthropic',
+            badgeBackground: '#bfd3cf',
+            badgePadding: '0',
+            badgeImageClass: 'cert-badge-image--anthropic'
+        },
+        {
+            id: 'anthropic-certificate-yezrj5jd63pg',
+            title: 'Introduction to Agent Skills',
+            provider: 'Anthropic',
+            group: 'Anthropic',
+            verifyUrl: 'https://verify.skilljar.com/c/yezrj5jd63pg',
+            credentialId: 'yezrj5jd63pg',
+            skills: {
+                en: 'Anthropic Claude, Agents and AI',
+                tr: 'Anthropic Claude, Agents ve AI',
+                fr: 'Anthropic Claude, Agents et IA'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/anthropic-logo.png',
+                alt: 'Anthropic'
+            },
+            badgeImage: 'assets/ant-cert-4.png',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--anthropic',
+            badgeBackground: '#78a6d5',
+            badgePadding: '0',
+            badgeImageClass: 'cert-badge-image--anthropic'
+        },
+        {
+            id: 'anthropic-certificate-szkh29v76syv',
+            title: 'AI Fluency: Framework & Foundations',
+            provider: 'Anthropic',
+            group: 'Anthropic',
+            verifyUrl: 'https://verify.skilljar.com/c/szkh29v76syv',
+            credentialId: 'szkh29v76syv',
+            skills: {
+                en: 'Prompt Engineering and AI',
+                tr: 'Prompt Engineering ve AI',
+                fr: 'Prompt Engineering et IA'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/anthropic-logo.png',
+                alt: 'Anthropic'
+            },
+            badgeImage: 'assets/ant-cert-2.png',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--anthropic',
+            badgeBackground: '#6f9ed1',
+            badgePadding: '0',
+            badgeImageClass: 'cert-badge-image--anthropic'
+        },
+        {
+            id: 'anthropic-certificate-xiast5enj4xw',
+            title: 'Claude 101',
+            provider: 'Anthropic',
+            group: 'Anthropic',
+            verifyUrl: 'https://verify.skilljar.com/c/xiast5enj4xw',
+            credentialId: 'xiast5enj4xw',
+            skills: {
+                en: 'Claude Code Agents, MCP and AI',
+                tr: 'Claude Code Agents, MCP ve AI',
+                fr: 'Claude Code Agents, MCP et IA'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/anthropic-logo.png',
+                alt: 'Anthropic'
+            },
+            badgeImage: 'assets/ant-cert-3.png',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--anthropic',
+            badgeBackground: '#879a63',
+            badgePadding: '0',
+            badgeImageClass: 'cert-badge-image--anthropic'
+        }
+    ];
+
+    const certificationGroupTranslationKeys = {
+        AWS: 'certifications-group-aws',
+        Google: 'certifications-group-google',
+        Anthropic: 'certifications-group-anthropic',
+        LinkedIn: 'certifications-group-linkedin',
+        IBM: 'certifications-group-ibm',
+        Other: 'certifications-group-other'
+    };
+
+    const syncBodyScrollLock = () => {
+        const shouldLock = Boolean(
+            updateModalOverlay?.classList.contains('active') ||
+            commandPaletteOverlay?.classList.contains('active') ||
+            certificationsModalOverlay?.classList.contains('active')
+        );
+        document.body.style.overflow = shouldLock ? 'hidden' : '';
+    };
+
+    const getLocalizedValue = (value, lang = currentLang) => {
+        if (!value) return '';
+        if (typeof value === 'string') return value;
+        return value[lang] || value.en || '';
+    };
+
+    const getCertificationLogoMarkup = (cert) => {
+        const logoTextClass = cert.group.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        if (cert.logo?.type === 'image') {
+            return `
+                <div class="cert-logo">
+                    <img
+                        src="${cert.logo.src}"
+                        alt="${cert.logo.alt || cert.provider}"
+                        class="${[
+                            cert.logoFit === 'contain' ? 'cert-logo-image--contain' : '',
+                            cert.logoClass || ''
+                        ].filter(Boolean).join(' ')}"
+                    />
+                </div>
+            `;
+        }
+
+        return `
+            <div class="cert-logo cert-logo--text cert-logo--${logoTextClass}" aria-hidden="true">
+                <span>${cert.logo?.text || cert.group.slice(0, 2)}</span>
+            </div>
+        `;
+    };
+
+    const getCertificationVisualMarkup = (cert) => {
+        if (cert.badgeImage) {
+            return `
+                <div
+                    class="cert-badge-visual"
+                    style="${cert.badgeBackground ? `background:${cert.badgeBackground};` : ''}${cert.badgePadding ? `padding:${cert.badgePadding};` : ''}"
+                >
+                    <img
+                        src="${cert.badgeImage}"
+                        alt="${cert.title}"
+                        class="${cert.badgeImageClass || ''}"
+                    />
+                </div>
+            `;
+        }
+
+        return `
+            <div class="cert-badge-visual cert-badge-visual--placeholder">
+                <span class="cert-badge-provider">${cert.provider}</span>
+                <strong>${translations[currentLang]["certifications-verified-badge"]}</strong>
+                <span class="cert-badge-title">${cert.title}</span>
+            </div>
+        `;
+    };
+
+    const renderCertificationCard = (cert, options = {}) => {
+        const isCompact = options.compact ? ' cert-shell--compact' : '';
+        const credentialMarkup = cert.credentialId
+            ? `
+                <p class="cert-id">
+                    <span class="cert-id-label">${translations[currentLang]["certifications-id-label"]}:</span>
+                    <span class="cert-id-value" title="${cert.credentialId}">${cert.credentialId}</span>
+                </p>
+            `
+            : '';
+        const skillsMarkup = cert.skills
+            ? `
+                <div class="cert-skill-row">
+                    <i data-lucide="badge-check"></i>
+                    <span>${getLocalizedValue(cert.skills)}</span>
+                </div>
+            `
+            : '';
+
+        return `
+            <article class="cert-shell glass certification-card${isCompact}">
+                <div class="cert-row">
+                    <div class="cert-main">
+                        ${getCertificationLogoMarkup(cert)}
+                        <div class="cert-content">
+                            <h3>${cert.title}</h3>
+                            <p class="cert-org">${cert.provider}</p>
+                            ${credentialMarkup}
+                            <a
+                                href="${cert.verifyUrl}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="cert-action"
+                            >
+                                <i data-lucide="external-link"></i> ${translations[currentLang]["certifications-cta"]}
+                            </a>
+                            ${skillsMarkup}
+                        </div>
+                    </div>
+                    ${getCertificationVisualMarkup(cert)}
+                </div>
+            </article>
+        `;
+    };
+
+    const renderFeaturedCertifications = () => {
+        if (!certificationsList) return;
+        const featuredCertifications = featuredCertificationIds
+            .map((id) => certifications.find((cert) => cert.id === id))
+            .filter(Boolean);
+
+        certificationsList.innerHTML = featuredCertifications
+            .map((cert) => renderCertificationCard(cert))
+            .join('');
+        observeRevealElements(certificationsList);
+    };
+
+    const renderCertificationsModal = () => {
+        if (!certificationsModalBody) return;
+
+        const orderedCertifications = certificationGroupOrder.flatMap((group) =>
+            certifications.filter((cert) => cert.group === group)
+        );
+
+        certificationsModalBody.innerHTML = `
+            <div class="certifications-group-list certifications-group-list--flat">
+                ${orderedCertifications.map((cert) => renderCertificationCard(cert, { compact: true })).join('')}
+            </div>
+        `;
+        observeRevealElements(certificationsModalBody);
+    };
+
+    const getCertificationModalFocusableItems = () => {
+        if (!certificationsModalOverlay) return [];
+        return Array.from(
+            certificationsModalOverlay.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            )
+        ).filter((element) => !element.hasAttribute('disabled'));
+    };
+
+    const closeCertificationsModal = () => {
+        if (!certificationsModalOverlay) return;
+        certificationsModalOverlay.classList.remove('active');
+        certificationsModalOverlay.setAttribute('aria-hidden', 'true');
+        syncBodyScrollLock();
+        certificationsLastFocusedElement?.focus?.();
+    };
+
+    const openCertificationsModal = () => {
+        if (!certificationsModalOverlay) return;
+        certificationsLastFocusedElement = document.activeElement;
+        renderCertificationsModal();
+        certificationsModalOverlay.classList.add('active');
+        certificationsModalOverlay.setAttribute('aria-hidden', 'false');
+        syncBodyScrollLock();
+        if (window.lucide) lucide.createIcons();
+        setTimeout(() => certificationsModalCloseBtn?.focus(), 0);
     };
 
     const getRelativeTime = (dateString, lang) => {
@@ -255,11 +769,9 @@
     };
 
     const closeUpdateModal = () => {
-        const modalOverlay = document.getElementById('update-modal-overlay');
-        if (!modalOverlay) return;
-
-        modalOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+        if (!updateModalOverlay) return;
+        updateModalOverlay.classList.remove('active');
+        syncBodyScrollLock();
     };
 
     const renderUpdates = (lang) => {
@@ -284,21 +796,21 @@
                                 ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
                             </div>
                         ` : ''}
-                        ${post.linkPreview ? `
-                            <a href="${post.link}" target="_blank" class="link-preview" onclick="event.stopPropagation()">
-                                <div class="preview-title">${post.linkPreview.title}</div>
-                                <div class="preview-desc">${post.linkPreview.description}</div>
-                            </a>
-                        ` : ''}
+                          ${post.linkPreview ? `
+                              <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
+                                  <div class="preview-title">${post.linkPreview.title}</div>
+                                  <div class="preview-desc">${post.linkPreview.description}</div>
+                              </a>
+                          ` : ''}
                     `;
                     
                     // Modal Open Event
                     card.addEventListener('click', () => {
-                        const modalOverlay = document.getElementById('update-modal-overlay');
-                        const modalBody = document.getElementById('modal-body');
-                        
-                        modalBody.innerHTML = `
-                            <div class="modal-date">${relativeTime}</div>
+                          const modalBody = document.getElementById('modal-body');
+                          if (!updateModalOverlay || !modalBody) return;
+                          
+                          modalBody.innerHTML = `
+                              <div class="modal-date">${relativeTime}</div>
                             <div class="modal-full-content">${post.content}</div>
                             ${post.tags ? `
                                 <div class="modal-tags">
@@ -307,18 +819,18 @@
                             ` : ''}
                             ${post.linkPreview ? `
                                 <div class="modal-link-preview">
-                                    <a href="${post.link}" target="_blank" class="link-preview">
-                                        <div class="preview-title">${post.linkPreview.title}</div>
-                                        <div class="preview-desc">${post.linkPreview.description}</div>
-                                    </a>
-                                </div>
-                            ` : ''}
-                        `;
-                        
-                        modalOverlay.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                        if (window.lucide) lucide.createIcons();
-                    });
+                                      <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="link-preview">
+                                          <div class="preview-title">${post.linkPreview.title}</div>
+                                          <div class="preview-desc">${post.linkPreview.description}</div>
+                                      </a>
+                                  </div>
+                              ` : ''}
+                          `;
+                          
+                          updateModalOverlay.classList.add('active');
+                          syncBodyScrollLock();
+                          if (window.lucide) lucide.createIcons();
+                      });
 
                     updatesContainer.appendChild(card);
                 });
@@ -340,6 +852,7 @@
 
     const updateLanguage = (lang) => {
         currentLang = lang;
+        body.setAttribute('data-lang', lang);
 
         // Standard translations
         const elements = document.querySelectorAll('[data-i18n]');
@@ -366,6 +879,9 @@
             }
         });
 
+        renderFeaturedCertifications();
+        renderCertificationsModal();
+
         // Re-render updates with new language
         renderUpdates(lang);
 
@@ -391,6 +907,14 @@
 
         if (commandPaletteTriggerText) {
             commandPaletteTriggerText.textContent = translations[lang]["command-trigger"];
+        }
+
+        if (certificationsModalTitle) {
+            certificationsModalTitle.textContent = translations[lang]["certifications-modal-title"];
+        }
+
+        if (certificationsModalCloseBtn) {
+            certificationsModalCloseBtn.setAttribute('aria-label', translations[lang]["certifications-close-modal"]);
         }
 
         if (commandPaletteOverlay && commandPaletteOverlay.classList.contains('active')) {
@@ -443,10 +967,6 @@
         }
     };
 
-    let currentLang = localStorage.getItem('selectedLang') || 'en';
-    setTheme(getPreferredTheme());
-    updateLanguage(currentLang);
-
     // 2. Theme Toggle Event
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
@@ -473,7 +993,7 @@
         commandPaletteOverlay.classList.remove('active');
         commandPaletteOverlay.setAttribute('aria-hidden', 'true');
         if (commandPaletteInput) commandPaletteInput.value = '';
-        document.body.style.overflow = '';
+        syncBodyScrollLock();
     };
 
     const runCommand = (item) => {
@@ -505,7 +1025,7 @@
         commandPaletteOverlay.classList.add('active');
         commandPaletteOverlay.setAttribute('aria-hidden', 'false');
         renderCommandPalette();
-        document.body.style.overflow = 'hidden';
+        syncBodyScrollLock();
         setTimeout(() => commandPaletteInput?.focus(), 0);
     };
 
@@ -603,12 +1123,21 @@
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.glass, .section-header').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.8s ease-out';
-        observer.observe(el);
-    });
+    const observeRevealElements = (root = document) => {
+        root.querySelectorAll('.glass, .section-header').forEach(el => {
+            if (el.dataset.revealBound === 'true') return;
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+            el.dataset.revealBound = 'true';
+        });
+    };
+
+    observeRevealElements();
+
+    setTheme(getPreferredTheme());
+    updateLanguage(currentLang);
 
     // 5. Special Lightning Trigger
     const profileImg = document.getElementById('profile-img');
@@ -624,8 +1153,6 @@
     const updatesContainer = document.getElementById('updates-container');
     const prevBtn = document.getElementById('update-prev');
     const nextBtn = document.getElementById('update-next');
-    const modalOverlay = document.getElementById('update-modal-overlay');
-    const modalCloseBtn = document.getElementById('modal-close');
 
     // Carousel Controls
     if (prevBtn && nextBtn && updatesContainer) {
@@ -670,17 +1197,36 @@
         });
     }
 
-    if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', (event) => {
+    if (updateModalCloseBtn) {
+        updateModalCloseBtn.addEventListener('click', (event) => {
             event.stopPropagation();
             closeUpdateModal();
         });
     }
 
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', (event) => {
-            if (event.target === modalOverlay) {
+    if (updateModalOverlay) {
+        updateModalOverlay.addEventListener('click', (event) => {
+            if (event.target === updateModalOverlay) {
                 closeUpdateModal();
+            }
+        });
+    }
+
+    if (certificationsOpenBtn) {
+        certificationsOpenBtn.addEventListener('click', openCertificationsModal);
+    }
+
+    if (certificationsModalCloseBtn) {
+        certificationsModalCloseBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            closeCertificationsModal();
+        });
+    }
+
+    if (certificationsModalOverlay) {
+        certificationsModalOverlay.addEventListener('click', (event) => {
+            if (event.target === certificationsModalOverlay) {
+                closeCertificationsModal();
             }
         });
     }
@@ -696,12 +1242,32 @@
             return;
         }
 
-        if (event.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+        if (event.key === 'Escape' && updateModalOverlay && updateModalOverlay.classList.contains('active')) {
             closeUpdateModal();
         }
 
         if (event.key === 'Escape' && commandPaletteOverlay && commandPaletteOverlay.classList.contains('active')) {
             closeCommandPalette();
+        }
+
+        if (event.key === 'Escape' && certificationsModalOverlay && certificationsModalOverlay.classList.contains('active')) {
+            closeCertificationsModal();
+        }
+
+        if (event.key === 'Tab' && certificationsModalOverlay && certificationsModalOverlay.classList.contains('active')) {
+            const focusable = getCertificationModalFocusableItems();
+            if (!focusable.length) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         }
     });
 });

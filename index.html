@@ -120,6 +120,12 @@
                 <span data-i18n-with-icon="hero-exp2" data-icon="code-2"
                   ><i data-lucide="code-2"></i> Clean Code</span
                 >
+                <span data-i18n-with-icon="hero-exp4" data-icon="cloud"
+                  ><i data-lucide="cloud"></i> Cloud & DevOps</span
+                >
+                <span data-i18n-with-icon="hero-exp5" data-icon="bot"
+                  ><i data-lucide="bot"></i> AI & LLM Engineering</span
+                >
                 <span data-i18n-with-icon="hero-exp3" data-icon="brain"
                   ><i data-lucide="brain"></i> AI Integration</span
                 >
@@ -252,56 +258,24 @@
 
       <!-- 2. TECH STACK (PRIMARY) -->
       <section id="certifications" class="certifications">
-  <div class="container">
-    <div class="section-header">
-      <h2 data-i18n="certifications-title">?? Certifications</h2>
-    </div>
-    <div class="cert-shell glass">
-      <article class="cert-row">
-        <div class="cert-main">
-          <div class="cert-logo">
-            <img
-              src="assets/aws-logo.png"
-              alt="Amazon Web Services"
-            />
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="certifications-title">🏅 Certifications</h2>
           </div>
-
-          <div class="cert-content">
-            <h3 data-i18n="certifications-card-title">AWS Cloud Quest: Cloud Practitioner - Training Badge</h3>
-            <p class="cert-org" data-i18n="certifications-provider">Amazon Web Services</p>
-            <p class="cert-issued" data-i18n="certifications-issued">Issued Apr 2026</p>
-            <p class="cert-id">
-              <span data-i18n="certifications-id-label">Credential ID</span>
-              <span>d6a23e7f-e791-45dc-af4c-2c153100f8ab</span>
-            </p>
-
-            <a
-              href="https://www.credly.com/badges/d6a23e7f-e791-45dc-af4c-2c153100f8ab"
-              target="_blank"
-              class="cert-action"
-              data-i18n-with-icon="certifications-cta"
-              data-icon="external-link"
+          <div id="certifications-list" class="certifications-list"></div>
+          <div class="certifications-footer">
+            <button
+              id="certifications-open-modal"
+              class="certifications-open-btn"
+              type="button"
+              data-i18n-with-icon="certifications-open-modal"
+              data-icon="layout-grid"
             >
-              <i data-lucide="external-link"></i> View Credential
-            </a>
-
-            <div class="cert-skill-row">
-              <i data-lucide="badge-check"></i>
-              <span data-i18n="certifications-skills">Amazon Web Services (AWS), EC2 and 4 more skills</span>
-            </div>
+              <i data-lucide="layout-grid"></i> View All Certifications
+            </button>
           </div>
         </div>
-
-        <div class="cert-badge-visual">
-          <img
-            src="https://images.credly.com/size/340x340/images/30816e43-2550-4e1c-be22-3f03c5573bb9/blob"
-            alt="AWS Cloud Quest badge"
-          />
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </section>
 
       <!-- 2. TECH STACK (PRIMARY) -->
       <section id="tech" class="tech-stack">
@@ -637,6 +611,32 @@
         </div>
       </footer>
     </main>
+
+    <div id="certifications-modal-overlay" class="certifications-modal-overlay" aria-hidden="true">
+      <div
+        id="certifications-modal"
+        class="certifications-modal glass"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="certifications-modal-title"
+      >
+        <div class="certifications-modal-header">
+          <div>
+            <div class="certifications-modal-eyebrow" data-i18n="certifications-modal-eyebrow">Verified credentials</div>
+            <h3 id="certifications-modal-title" data-i18n="certifications-modal-title">All Certifications</h3>
+          </div>
+          <button
+            id="certifications-modal-close"
+            class="certifications-modal-close"
+            type="button"
+            aria-label="Close certifications modal"
+          >
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div id="certifications-modal-body" class="certifications-modal-body"></div>
+      </div>
+    </div>
 
     <div id="command-palette-overlay" class="command-palette-overlay" aria-hidden="true">
       <div class="command-palette glass" role="dialog" aria-modal="true" aria-labelledby="command-palette-title">

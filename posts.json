@@ -301,5 +301,36 @@
       "Benchmarking",
       "Software Engineering"
     ]
+  },
+  {
+    "id": 21,
+    "date": "2026-04-26",
+    "content": "See you there! 😎",
+    "link": "https://build.microsoft.com/en-US/home",
+    "linkPreview": {
+      "title": "Microsoft Build",
+      "description": "Microsoft Build is an annual developer conference focused on cloud, AI, and software development."
+    },
+    "tags": [
+      "Event",
+      "Microsoft",
+      "Developer"
+    ]
+  },
+  {
+    "id": 22,
+    "date": "2026-04-26",
+    "content": "\"Career Essentials in Generative AI by Microsoft and LinkedIn\" certification completed. Microsoft & LinkedIn. It was a bit tiring, but the content was enjoyable. #microsoftcopilot #generativeai",
+    "link": "https://www.linkedin.com/learning/paths/career-essentials-in-generative-ai-by-microsoft-and-linkedin",
+    "linkPreview": {
+      "title": "Career Essentials in Generative AI by Microsoft and LinkedIn",
+      "description": "\"Career Essentials in Generative AI by Microsoft and LinkedIn\" certification completed. Microsoft & LinkedIn. It was a bit tiring, but the content was enjoyable. #microsoftcopilot #generativeai"
+    },
+    "tags": [
+      "AI",
+      "Generative AI",
+      "Microsoft",
+      "Certification"
+    ]
   }
 ]

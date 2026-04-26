@@ -125,6 +125,7 @@ body.theme-light .logo {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -293,6 +294,22 @@ body.theme-light .logo {
   font-size: 0.75rem;
   opacity: 0.8;
   font-family: inherit;
+}
+
+body[data-lang="fr"] .nav-content {
+  gap: 1.5rem;
+}
+
+body[data-lang="fr"] .nav-links {
+  gap: 1.2rem;
+}
+
+body[data-lang="fr"] .nav-links a {
+  font-size: 0.96rem;
+}
+
+body[data-lang="fr"] .command-palette-btn {
+  padding-inline: 0.7rem;
 }
 
 .theme-btn:hover {
@@ -468,6 +485,7 @@ body.theme-light .hero-text h1 {
   align-items: center;
   gap: 0.5rem;
   backdrop-filter: blur(5px);
+  white-space: nowrap;
 }
 
 /* Sections */
@@ -624,6 +642,51 @@ section {
   padding: 2rem 0 5rem;
 }
 
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.certifications-footer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.certifications-open-btn {
+  border: 1px solid rgba(10, 102, 194, 0.5);
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.14), rgba(var(--primary-rgb), 0.22));
+  color: #0a66c2;
+  border-radius: 999px;
+  padding: 0.95rem 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.certifications-open-btn:hover {
+  transform: translateY(-2px);
+  border-color: #0a66c2;
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.2), rgba(var(--primary-rgb), 0.3));
+  box-shadow: 0 10px 24px rgba(10, 102, 194, 0.18);
+}
+
+body.theme-dark .certifications-open-btn {
+  color: #dff2ff;
+  border-color: rgba(124, 196, 255, 0.55);
+  background: linear-gradient(135deg, rgba(64, 150, 255, 0.2), rgba(124, 196, 255, 0.12));
+}
+
+body.theme-dark .certifications-open-btn:hover {
+  border-color: #7cc4ff;
+  background: linear-gradient(135deg, rgba(64, 150, 255, 0.28), rgba(124, 196, 255, 0.18));
+  box-shadow: 0 10px 24px rgba(124, 196, 255, 0.16);
+}
+
 .cert-shell {
   padding: 1.8rem;
   border-radius: 14px;
@@ -635,6 +698,14 @@ section {
 body.theme-dark .cert-shell {
   background: rgba(22, 25, 32, 0.96);
   color: #eef2f7;
+}
+
+.certification-card {
+  border: 1px solid rgba(100, 116, 139, 0.12);
+}
+
+.cert-shell--compact {
+  padding: 1.45rem;
 }
 
 .cert-row {
@@ -672,6 +743,56 @@ body.theme-dark .cert-shell {
   display: block;
 }
 
+.cert-logo-image--contain {
+  object-fit: contain;
+  padding: 0.2rem;
+  background: #fff;
+}
+
+.cert-logo-image--microsoft {
+  padding: 0.02rem;
+  object-position: center;
+  transform: none;
+}
+
+.cert-logo-image--ibm {
+  padding: 0.02rem;
+  object-position: center;
+  transform: none;
+}
+
+.cert-logo-image--google,
+.cert-logo-image--anthropic,
+.cert-logo-image--aws {
+  object-position: center;
+}
+
+.cert-logo--text {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.cert-logo--aws {
+  background: #232f3e;
+}
+
+.cert-logo--google {
+  background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.cert-logo--anthropic {
+  background: linear-gradient(135deg, #151515, #444);
+}
+
+.cert-logo--linkedin {
+  background: #0a66c2;
+}
+
+.cert-logo--ibm {
+  background: #0f62fe;
+}
+
 .cert-content {
   display: flex;
   flex-direction: column;
@@ -682,17 +803,75 @@ body.theme-dark .cert-shell {
 .cert-badge-visual {
   width: 180px;
   min-width: 180px;
+  min-height: 180px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(100, 116, 139, 0.18);
   background: rgba(255, 255, 255, 0.9);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-badge-visual--placeholder {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 180px;
+  background: linear-gradient(145deg, rgba(var(--primary-rgb), 0.08), rgba(255, 255, 255, 0.92));
+  color: #1f2328;
+}
+
+body.theme-dark .cert-badge-visual--placeholder {
+  background: linear-gradient(145deg, rgba(124, 196, 255, 0.14), rgba(18, 21, 28, 0.96));
+  color: #eef2f7;
+}
+
+.cert-badge-provider {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.72;
+}
+
+.cert-badge-title {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  opacity: 0.9;
 }
 
 .cert-badge-visual img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   display: block;
+  background: transparent;
+}
+
+.cert-badge-image--anthropic {
+  object-fit: cover;
+  object-position: center;
+}
+
+.cert-badge-image--microsoft {
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.06);
+}
+
+.cert-badge-image--google {
+  object-fit: contain;
+  object-position: center;
+  transform: scale(0.94);
+}
+
+.cert-badge-image--ibm {
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.06);
 }
 
 .cert-content h3 {
@@ -721,10 +900,24 @@ body.theme-dark .cert-shell {
 
 .cert-id {
   margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
 }
 
-.cert-id span:first-child {
-  margin-right: 0.35rem;
+.cert-id-label {
+  flex-shrink: 0;
+}
+
+.cert-id-value {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: bottom;
+  max-width: 100%;
 }
 
 .cert-action {
@@ -759,6 +952,108 @@ body.theme-dark .cert-action:hover {
   gap: 0.5rem;
   font-size: 0.98rem;
   font-weight: 500;
+}
+
+.certifications-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 11000;
+}
+
+.certifications-modal-overlay.active {
+  display: flex;
+}
+
+.certifications-modal {
+  width: min(1100px, 100%);
+  max-height: min(88vh, 980px);
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(100, 116, 139, 0.18);
+  background: rgba(255, 255, 255, 0.97);
+  color: #1f2328;
+}
+
+body.theme-dark .certifications-modal {
+  background: rgba(15, 17, 23, 0.98);
+  color: #eef2f7;
+}
+
+.certifications-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.14);
+}
+
+.certifications-modal-eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.certifications-modal-header h3 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.certifications-modal-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  background: transparent;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.certifications-modal-close:hover {
+  background: rgba(var(--primary-rgb), 0.1);
+  border-color: var(--primary);
+}
+
+.certifications-modal-body {
+  overflow-y: auto;
+  max-height: calc(88vh - 96px);
+  padding: 1.5rem;
+}
+
+.certifications-group-list--flat {
+  padding-bottom: 1.5rem;
+}
+
+.certifications-group + .certifications-group {
+  margin-top: 2rem;
+}
+
+.certifications-group-header {
+  margin-bottom: 1rem;
+}
+
+.certifications-group-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.certifications-group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .work-card {
@@ -1189,6 +1484,9 @@ footer {
   .expertise-tags span {
     padding: 0.6rem 1rem;
     font-size: 0.85rem;
+    white-space: normal;
+    justify-content: center;
+    text-align: center;
   }
   .mobile-menu-btn {
     display: none;
@@ -1211,6 +1509,7 @@ footer {
 
   .cert-row {
     flex-direction: column;
+    gap: 1.25rem;
   }
 
   .cert-main {
@@ -1225,6 +1524,35 @@ footer {
 
   .cert-content h3 {
     font-size: 1.2rem;
+  }
+
+  .certifications-footer {
+    justify-content: stretch;
+  }
+
+  .certifications-open-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .certifications-modal-overlay {
+    padding: 0.75rem;
+  }
+
+  .certifications-modal {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 20px;
+  }
+
+  .certifications-modal-header,
+  .certifications-modal-body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .certifications-modal-header h3 {
+    font-size: 1.45rem;
   }
   
   .tech-grid img {
