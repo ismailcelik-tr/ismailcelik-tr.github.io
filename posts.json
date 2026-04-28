@@ -251,7 +251,7 @@
     },
     "tags": [
       "Software",
-      "Operating Systems",
+      "OperatingSystems",
       "HPC",
       "AI Infrastructure"
     ]
@@ -299,7 +299,7 @@
       "AI",
       "LLM",
       "Benchmarking",
-      "Software Engineering"
+      "SoftwareEngineering"
     ]
   },
   {
@@ -328,7 +328,7 @@
     },
     "tags": [
       "AI",
-      "Generative AI",
+      "GenerativeAI",
       "Microsoft",
       "Certification"
     ]
@@ -344,8 +344,8 @@
   },
   "tags": [
     "Software",
-    "AI Assistants",
-    "Developer Tools"
+    "AIAssistants",
+    "DeveloperTools"
   ]
 },
 {
@@ -359,7 +359,7 @@
   },
   "tags": [
     "AI",
-    "Tech Industry",
+    "TechIndustry",
     "Market Trends"
   ]
 }
