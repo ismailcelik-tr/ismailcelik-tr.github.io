@@ -332,5 +332,35 @@
       "Microsoft",
       "Certification"
     ]
-  }
+  },
+  {
+  "id": 23,
+  "date": "2026-04-27",
+  "content": "Let’s be honest: in this day, do you really need to use \"GitHub Copilot\"? Especially when there are better alternatives available.",
+  "link": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+  "linkPreview": {
+    "title": "Rethinking GitHub Copilot",
+    "description": "Let’s be honest: in this day, do you really need to use \"GitHub Copilot\"? Especially when there are better alternatives available."
+  },
+  "tags": [
+    "Software",
+    "AI Assistants",
+    "Developer Tools"
+  ]
+},
+{
+  "id": 24,
+  "date": "2026-04-28",
+  "content": "The “close ties” between Microsoft and OpenAI are loosening. We’ll soon start seeing OpenAI everywhere (AWS, Google). Could this be the most critical step taken toward OpenAI’s anticipated initial public offering (IPO)? By the way, ask ChatGPT or Gemini (or whichever one you use) to summarize the content of the link below. Great! You no longer need to pay to read Bloomberg news.",
+  "link": "https://www.bloomberg.com/news/articles/2026-04-27/microsoft-to-stop-sharing-revenue-with-main-ai-partner-openai",
+  "linkPreview": {
+    "title": "Microsoft & OpenAI Relationship Shift",
+    "description": "The “close ties” between Microsoft and OpenAI are loosening. We’ll soon start seeing OpenAI everywhere (AWS, Google). Could this be the most critical step taken toward OpenAI’s anticipated initial public offering (IPO)? By the way, ask ChatGPT or Gemini (or whichever one you use) to summarize the content of the link below. Great! You no longer need to pay to read Bloomberg news."
+  },
+  "tags": [
+    "AI",
+    "Tech Industry",
+    "Market Trends"
+  ]
+}
 ]
