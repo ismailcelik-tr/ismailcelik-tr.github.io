@@ -362,5 +362,35 @@
     "TechIndustry",
     "Market Trends"
   ]
+},
+  {
+  "id": 25,
+  "date": "2026-04-30",
+  "content": "A critical Linux kernel vulnerability (CVE-2026-31431 - \"Copy Fail\") is making waves. Nearly all distributions since 2017 are potentially affected, and privilege escalation can happen in seconds. If you're managing servers or CI/CD pipelines, don’t ignore this one. 🚨",
+  "link": "https://copy.fail/",
+  "linkPreview": {
+    "title": "Copy Fail - CVE-2026-31431",
+    "description": "Details and technical breakdown of the Copy Fail Linux kernel vulnerability."
+  },
+  "tags": [
+    "Cybersecurity",
+    "Linux",
+    "DevOps"
+  ]
+},
+{
+  "id": 26,
+  "date": "2026-04-30",
+  "content": "How do reward signals in reinforcement learning go wrong? 🤔 This OpenAI article explains how models can develop unexpected and uncontrolled behaviors depending on how they are rewarded. A must-read if you're building AI systems.",
+  "link": "https://openai.com/index/where-the-goblins-came-from/",
+  "linkPreview": {
+    "title": "Where the Goblins Came From",
+    "description": "OpenAI explores how reward signals can lead to unintended behaviors in reinforcement learning systems."
+  },
+  "tags": [
+    "ReinforcementLearning",
+    "LLM",
+    "AISafety"
+  ]
 }
 ]
