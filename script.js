@@ -19,7 +19,7 @@
     const certificationsModalCloseBtn = document.getElementById('certifications-modal-close');
     const certificationsModalTitle = document.getElementById('certifications-modal-title');
     let certificationsLastFocusedElement = null;
-    let visibleUpdateCount = 4;
+    let visibleUpdateCount = 5;
     const updatesPageSize = 2;
 
     // --- Dynamic Year ---
@@ -39,8 +39,11 @@
             "nav-contact": "Contact",
             "hero-hi": "Hi",
             "hero-name": "I'm İsmail!",
-            "hero-subtitle": "Specialist in Full-Stack & Mobile Development | AI, Data Science & Systems Architecture Enthusiast | Network & System Solutions",
-            "hero-bio": "developing new apps is overly exciting. love problem solving in systems and networks. also i make things... 🧑‍💻",
+            "hero-eyebrow": "Product-Minded Engineering",
+            "hero-subtitle": "Full-stack, mobile and AI systems built with practical architecture.",
+            "hero-bio": "I build reliable web and mobile experiences, connect AI into real workflows, and care about the systems work that keeps products fast, maintainable, and useful.",
+            "hero-primary-action": "View Projects",
+            "hero-secondary-action": "Start a Conversation",
             "hero-exp1": "Mobile Expertise",
             "hero-exp2": "Clean Code",
             "hero-exp3": "AI Integration",
@@ -68,7 +71,7 @@
             "work-card5-p": "Optimizing development workflows through automated pipelines and custom GitHub Actions.",
             "work-card6-title": "System Performance",
             "work-card6-p": "Monitoring and fine-tuning resource efficiency with high-performance system metrics.",
-            "certifications-title": "🏅 Certifications",
+            "certifications-title": "Certifications",
             "certifications-id-label": "Credential ID",
             "certifications-cta": "View Credential",
             "certifications-open-modal": "Browse all certifications",
@@ -119,8 +122,11 @@
             "nav-contact": "İletişim",
             "hero-hi": "Selam",
             "hero-name": "Ben İsmail!",
-            "hero-subtitle": "Full-Stack ve Mobil Geliştirici | AI, Veri Bilimi ve Sistem Mimarisi Meraklısı | Ağ ve Sistem Çözümleri",
-            "hero-bio": "yeni uygulamalar geliştirmek fazlasıyla heyecan verici. sistemlerde ve ağlarda problem çözmeyi seviyorum. ayrıca bir şeyler üretiyorum... 🧑‍💻",
+            "hero-eyebrow": "Ürün Odaklı Mühendislik",
+            "hero-subtitle": "Pratik mimariyle geliştirilen full-stack, mobil ve AI sistemleri.",
+            "hero-bio": "Güvenilir web ve mobil deneyimler geliştiriyorum, AI'ı gerçek iş akışlarına bağlıyorum ve ürünleri hızlı, sürdürülebilir ve kullanışlı tutan sistem tarafını önemsiyorum.",
+            "hero-primary-action": "Projeleri Gör",
+            "hero-secondary-action": "İletişime Geç",
             "hero-exp1": "Mobil Uzmanlık",
             "hero-exp2": "Temiz Kod",
             "hero-exp3": "AI Entegrasyonu",
@@ -148,7 +154,7 @@
             "work-card5-p": "Otomatik iş akışları ve özel GitHub Action'lar ile geliştirme süreçlerini optimize ediyorum.",
             "work-card6-title": "Sistem Performansı",
             "work-card6-p": "Yüksek performanslı sistem metrikleri ile kaynak verimliliğini izliyor ve ince ayarlar yapıyorum.",
-            "certifications-title": "🏅 Sertifikalar",
+            "certifications-title": "Sertifikalar",
             "certifications-id-label": "Yeterlilik Kimliği",
             "certifications-cta": "Yeterlilik belgesini göster",
             "certifications-open-modal": "Tüm sertifikaları görüntüle",
@@ -199,8 +205,11 @@
             "nav-contact": "Contact",
             "hero-hi": "Salut",
             "hero-name": "Je suis İsmail !",
-            "hero-subtitle": "Développeur Full-Stack & Mobile | Passionné d'IA, Science des Données & Architecture Système | Solutions Réseau & Système",
-            "hero-bio": "développer de nouvelles applications est passionnant. j'adore résoudre des problèmes dans les systèmes et les réseaux. je crée aussi des choses... 🧑‍💻",
+            "hero-eyebrow": "Ingénierie Orientée Produit",
+            "hero-subtitle": "Systèmes full-stack, mobiles et IA avec une architecture pratique.",
+            "hero-bio": "Je construis des expériences web et mobiles fiables, j'intègre l'IA dans des flux de travail réels et je soigne les systèmes qui rendent les produits rapides, maintenables et utiles.",
+            "hero-primary-action": "Voir les projets",
+            "hero-secondary-action": "Discuter",
             "hero-exp1": "Expertise Mobile",
             "hero-exp2": "Code Propre",
             "hero-exp3": "Intégration d'IA",
@@ -228,7 +237,7 @@
             "work-card5-p": "Optimisation des flux de travail de développement via des pipelines automatisés et des Actions GitHub personnalisées.",
             "work-card6-title": "Performance Système",
             "work-card6-p": "Surveillance et optimisation de l'efficacité des ressources avec des métriques système haute performance.",
-            "certifications-title": "🏅 Certifications",
+            "certifications-title": "Certifications",
             "certifications-id-label": "ID du certificat",
             "certifications-cta": "Afficher le certificat",
             "certifications-open-modal": "Voir toutes les certifications",
@@ -277,10 +286,11 @@
     const certificationGroupOrder = ['AWS', 'Google', 'Anthropic', 'LinkedIn', 'IBM', 'Other'];
     const featuredCertificationIds = [
         'aws-cloud-quest',
-        'anthropic-building-with-claude-api',
-        'linkedin-career-essentials-genai',
         'google-gen-ai-agents',
-        'ibm-python-101-data-science'
+        'linkedin-career-essentials-genai',
+        'anthropic-building-with-claude-api',
+        'ibm-python-101-data-science',
+        'google-certificate-23802106'
     ];
 
     const certifications = [
@@ -802,14 +812,18 @@
                 const readUpdateLabel = translations[lang]?.["update-read"] || translations.en["update-read"];
                 const visiblePosts = posts.slice().reverse().slice(0, visibleUpdateCount);
 
-                visiblePosts.forEach(post => {
+                visiblePosts.forEach((post, index) => {
                     const card = document.createElement('div');
-                    card.className = 'update-card glass';
+                    card.className = `update-card glass${index === 0 ? ' update-card--featured' : ''}`;
                     
                     const relativeTime = getRelativeTime(post.date, lang);
+                    const primaryTag = post.tags?.[0] || 'Update';
 
                     card.innerHTML = `
-                        <div class="update-date">${relativeTime}</div>
+                        <div class="update-meta">
+                            <div class="update-date">${relativeTime}</div>
+                            <span class="update-category">${primaryTag}</span>
+                        </div>
                         <div class="update-content">${post.content}</div>
                         ${post.tags ? `
                             <div class="update-tags">

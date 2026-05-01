@@ -28,7 +28,7 @@
   <body class="theme-auto">
     <nav class="navbar">
       <div class="container">
-        <div class="logo">./ismail</div>
+        <a class="logo" href="#hero" aria-label="Go to top">./ismail</a>
         <div class="nav-content">
           <div class="nav-links" id="nav-links">
             <a href="#updates" data-i18n="nav-updates">Updates</a>
@@ -98,6 +98,10 @@
               </div>
             </div>
             <div class="hero-text">
+              <p class="hero-eyebrow" data-i18n-with-icon="hero-eyebrow" data-icon="sparkles">
+                <i data-lucide="sparkles"></i>
+                Product-Minded Engineering
+              </p>
               <h1 class="fade-in">
                 <span data-i18n="hero-hi">Hi</span>
                 <img
@@ -113,6 +117,16 @@
                 developing new apps is overly exciting. love problem solving in
                 systems and networks. also i make things... 🧑‍💻
               </p>
+              <div class="hero-actions">
+                <a href="#projects" class="hero-primary-action" data-i18n-with-icon="hero-primary-action" data-icon="folder-kanban">
+                  <i data-lucide="folder-kanban"></i>
+                  View Projects
+                </a>
+                <a href="#contact" class="hero-secondary-action" data-i18n-with-icon="hero-secondary-action" data-icon="send">
+                  <i data-lucide="send"></i>
+                  Start a Conversation
+                </a>
+              </div>
               <div class="expertise-tags">
                 <span data-i18n-with-icon="hero-exp1" data-icon="smartphone"
                   ><i data-lucide="smartphone"></i> Mobile Expertise</span
@@ -258,7 +272,10 @@
       <section id="certifications" class="certifications">
         <div class="container">
           <div class="section-header">
-            <h2 data-i18n="certifications-title">🏅 Certifications</h2>
+            <h2 data-i18n-with-icon="certifications-title" data-icon="badge-check">
+              <i data-lucide="badge-check"></i>
+              Certifications
+            </h2>
           </div>
           <div id="certifications-list" class="certifications-list"></div>
           <div class="certifications-footer">
