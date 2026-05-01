@@ -286,11 +286,11 @@
     const certificationGroupOrder = ['AWS', 'Google', 'Anthropic', 'LinkedIn', 'IBM', 'Other'];
     const featuredCertificationIds = [
         'aws-cloud-quest',
+        'aws-cloud-quest-generative-ai',
         'google-gen-ai-agents',
         'linkedin-career-essentials-genai',
         'anthropic-building-with-claude-api',
-        'ibm-python-101-data-science',
-        'google-certificate-23802106'
+        'ibm-python-101-data-science'
     ];
 
     const certifications = [
@@ -317,6 +317,33 @@
                 alt: 'Amazon Web Services'
             },
             badgeImage: 'https://images.credly.com/size/340x340/images/30816e43-2550-4e1c-be22-3f03c5573bb9/blob',
+            logoFit: 'contain',
+            logoClass: 'cert-logo-image--aws',
+            badgeBackground: '#ffffff'
+        },
+        {
+            id: 'aws-cloud-quest-generative-ai',
+            title: 'AWS Cloud Quest: Generative AI Practitioner - Training Badge',
+            provider: 'Amazon Web Services',
+            group: 'AWS',
+            verifyUrl: 'https://www.credly.com/badges/b5cf2640-d25d-415d-88e2-551df8e29618/linked_in_profile',
+            credentialId: 'b5cf2640-d25d-415d-88e2-551df8e29618',
+            issued: {
+                en: 'Issued May 2026',
+                tr: 'May 2026 tarihinde verildi',
+                fr: 'Délivré en mai 2026'
+            },
+            skills: {
+                en: 'Amazon Web Services (AWS), Generative AI and 4 more skills',
+                tr: 'Amazon Web Hizmetleri (AWS), Generative AI ve +4 yetenek',
+                fr: 'Amazon Web Services (AWS), IA générative et 4 autres compétences'
+            },
+            logo: {
+                type: 'image',
+                src: 'assets/aws-logo.png',
+                alt: 'Amazon Web Services'
+            },
+            badgeImage: 'https://images.credly.com/size/340x340/images/15fa08e6-ca73-4fa3-94ed-c36f7f157313/blob',
             logoFit: 'contain',
             logoClass: 'cert-logo-image--aws',
             badgeBackground: '#ffffff'
@@ -662,6 +689,9 @@
 
     const renderCertificationCard = (cert, options = {}) => {
         const isCompact = options.compact ? ' cert-shell--compact' : '';
+        const issuedMarkup = cert.issued
+            ? `<p class="cert-issued">${getLocalizedValue(cert.issued)}</p>`
+            : '';
         const credentialMarkup = cert.credentialId
             ? `
                 <p class="cert-id">
@@ -687,6 +717,7 @@
                         <div class="cert-content">
                             <h3>${cert.title}</h3>
                             <p class="cert-org">${cert.provider}</p>
+                            ${issuedMarkup}
                             ${credentialMarkup}
                             <a
                                 href="${cert.verifyUrl}"
