@@ -11,6 +11,7 @@
     const commandPaletteTriggerText = document.getElementById('command-palette-trigger-text');
     const updateModalOverlay = document.getElementById('update-modal-overlay');
     const updateModalCloseBtn = document.getElementById('modal-close');
+    const updatesLoadMoreBtn = document.getElementById('updates-load-more');
     const certificationsList = document.getElementById('certifications-list');
     const certificationsOpenBtn = document.getElementById('certifications-open-modal');
     const certificationsModalOverlay = document.getElementById('certifications-modal-overlay');
@@ -18,6 +19,8 @@
     const certificationsModalCloseBtn = document.getElementById('certifications-modal-close');
     const certificationsModalTitle = document.getElementById('certifications-modal-title');
     let certificationsLastFocusedElement = null;
+    let visibleUpdateCount = 4;
+    const updatesPageSize = 2;
 
     // --- Dynamic Year ---
     const yearElement = document.getElementById('current-year');
@@ -88,8 +91,11 @@
             "perspective-p1": "With years of experience in web and mobile application development, I have mastered the skill of understanding client requirements according to the latest trends. I have worked with businesses from different niches, so you can rely on me for yours.",
             "perspective-p2": "I have a solid foundation in designing innovative mobile solutions that significantly improve user experience and accelerate business growth. My business background gives me a unique perspective on aligning technology with strategic objectives, ensuring my contributions are both technically sound and commercially viable. Having worked on various live projects, I can help you with the best possible suggestions and ideas we can proceed with. With me, you aren’t forced to accept anything. I give you a variety of options we can work on together.",
             "footer-copy": "© 2026 Ismail Celik | Licensed under MIT",
-            "updates-title": "📢 Latest Updates",
+            "updates-title": "Latest Updates",
             "follow-linkedin": "Follow on LinkedIn",
+            "update-read": "Read update",
+            "updates-load-more": "Read More",
+            "updates-load-error": "Updates could not be loaded. Open the site through a local server instead of the file directly.",
             "command-trigger": "Quick Nav",
             "command-title": "Quick Navigation",
             "command-placeholder": "Search sections or commands...",
@@ -165,8 +171,11 @@
             "perspective-p1": "Web ve mobil uygulama geliştirme konusundaki yılların deneyimiyle, en son trendlere göre müşteri gereksinimlerini anlama becerilerinde ustalaştım. Farklı nişlerden işletmelerle çalıştım, bu yüzden kendi işletmeniz için bana güvenebilirsiniz.",
             "perspective-p2": "Kullanıcı deneyimini önemli ölçüde iyileştiren ve iş büyümesini hızlandıran yenilikçi mobil çözümler tasarlama konusunda sağlam bir temele sahibim. İş geçmişim, teknolojiyi stratejik hedeflerle uyumlu hale getirme konusunda bana benzersiz bir bakış açısı sağlıyor; katkılarımın hem teknik olarak sağlam hem de ticari olarak uygulanabilir olmasını garanti ediyor. Hali hazırda yayında olan çeşitli projelerde çalışmış biri olarak, ilerleyebileceğimiz en iyi öneri ve fikirlerle size yardımcı olabilirim. Benimle çalışırken hiçbir şeyi kabul etmeye zorlanmazsınız; birlikte üzerinde çalışabileceğimiz çeşitli seçenekler sunarım.",
             "footer-copy": "© 2026 Ismail Celik | MIT Lisansı ile lisanslanmıştır",
-            "updates-title": "📢 Güncel",
+            "updates-title": "Güncel",
             "follow-linkedin": "LinkedIn'de Takip Et",
+            "update-read": "Güncellemeyi oku",
+            "updates-load-more": "Daha Fazlasını Oku",
+            "updates-load-error": "Güncellemeler yüklenemedi. Dosyayı doğrudan açmak yerine siteyi yerel sunucu üzerinden aç.",
             "command-trigger": "Hızlı Geçiş",
             "command-title": "Hızlı Geçiş",
             "command-placeholder": "Bölüm veya komut ara...",
@@ -242,8 +251,11 @@
             "perspective-p1": "Avec des années d'expérience dans le développement d'applications web et mobiles, j'ai acquis la maîtrise de la compréhension des besoins des clients selon les dernières tendances. J'ai travaillé avec des entreprises de différents secteurs, vous pouvez donc compter sur moi pour le vôtre.",
             "perspective-p2": "J'ai une base solide dans la conception de solutions mobiles innovantes qui améliorent considérablement l'expérience utilisateur et accélèrent la croissance de l'entreprise. Mon parcours professionnel me donne une perspective unique sur l'alignement de la technologie avec les objectifs stratégiques, garantissant que mes contributions sont à la fois techniquement solides et commercialement viables. Ayant travaillé sur divers projets déjà en ligne, je peux vous aider avec les meilleures suggestions et idées possibles pour progresser. Avec moi, vous n'êtes forcé de rien accepter ; je vous propose une variété d'options sur lesquelles nous pouvons travailler ensemble.",
             "footer-copy": "© 2026 Ismail Celik | Sous licence MIT",
-            "updates-title": "📢 Actualités",
+            "updates-title": "Actualités",
             "follow-linkedin": "Suivre sur LinkedIn",
+            "update-read": "Lire l'actualité",
+            "updates-load-more": "Lire plus",
+            "updates-load-error": "Les actualités n'ont pas pu être chargées. Ouvrez le site via un serveur local plutôt que le fichier directement.",
             "command-trigger": "Accès",
             "command-title": "Accès Rapide",
             "command-placeholder": "Rechercher une section ou une commande...",
@@ -779,10 +791,18 @@
         if (!updatesContainer) return;
 
         fetch('posts.json')
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Failed to load posts.json: ${res.status}`);
+                }
+                return res.json();
+            })
             .then(posts => {
                 updatesContainer.innerHTML = '';
-                posts.slice().reverse().forEach(post => {
+                const readUpdateLabel = translations[lang]?.["update-read"] || translations.en["update-read"];
+                const visiblePosts = posts.slice().reverse().slice(0, visibleUpdateCount);
+
+                visiblePosts.forEach(post => {
                     const card = document.createElement('div');
                     card.className = 'update-card glass';
                     
@@ -802,6 +822,10 @@
                                   <div class="preview-desc">${post.linkPreview.description}</div>
                               </a>
                           ` : ''}
+                        <div class="update-card-footer">
+                            <span>${readUpdateLabel}</span>
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
                     `;
                     
                     // Modal Open Event
@@ -835,19 +859,18 @@
                     updatesContainer.appendChild(card);
                 });
 
-                // Update Progress Bar
-                const progressBar = document.getElementById('carousel-progress-bar');
-                const updateProgress = () => {
-                    const scrollLeft = updatesContainer.scrollLeft;
-                    const scrollWidth = updatesContainer.scrollWidth - updatesContainer.clientWidth;
-                    const progress = (scrollLeft / (scrollWidth || 1)) * 100;
-                    if (progressBar) progressBar.style.width = `${progress}%`;
-                };
+                if (updatesLoadMoreBtn) {
+                    updatesLoadMoreBtn.hidden = visibleUpdateCount >= posts.length;
+                    updatesLoadMoreBtn.disabled = visibleUpdateCount >= posts.length;
+                }
 
-                updatesContainer.addEventListener('scroll', updateProgress);
-                updateProgress();
+                if (window.lucide) lucide.createIcons();
             })
-            .catch(err => console.error('Error fetching posts:', err));
+            .catch(err => {
+                console.error('Error fetching posts:', err);
+                updatesContainer.innerHTML = `<div class="updates-load-error">${translations[lang]?.["updates-load-error"] || translations.en["updates-load-error"]}</div>`;
+                if (updatesLoadMoreBtn) updatesLoadMoreBtn.hidden = true;
+            });
     };
 
     const updateLanguage = (lang) => {
@@ -1149,58 +1172,17 @@
             profileImg.style.animationDuration = '3s';
         });
     }
-    // 6. Latest Updates Carousel Logic
-    const updatesContainer = document.getElementById('updates-container');
-    const prevBtn = document.getElementById('update-prev');
-    const nextBtn = document.getElementById('update-next');
-
-    // Carousel Controls
-    if (prevBtn && nextBtn && updatesContainer) {
-        const cardWidth = 360; // card + gap
-        
-        nextBtn.addEventListener('click', () => {
-            const isAtEnd = updatesContainer.scrollLeft + updatesContainer.clientWidth >= updatesContainer.scrollWidth - 10;
-            if (isAtEnd) {
-                updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                updatesContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
-            }
-        });
-
-        prevBtn.addEventListener('click', () => {
-            const isAtStart = updatesContainer.scrollLeft <= 10;
-            if (isAtStart) {
-                updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                updatesContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-            }
-        });
-        
-        // Auto-play (paused on hover)
-        let autoPlayInterval = setInterval(() => {
-            if (updatesContainer.scrollLeft + updatesContainer.clientWidth >= updatesContainer.scrollWidth - 10) {
-                updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                updatesContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
-            }
-        }, 5000);
-
-        updatesContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-        updatesContainer.addEventListener('mouseleave', () => {
-            autoPlayInterval = setInterval(() => {
-                if (updatesContainer.scrollLeft + updatesContainer.clientWidth >= updatesContainer.scrollWidth - 10) {
-                    updatesContainer.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    updatesContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
-                }
-            }, 5000);
-        });
-    }
-
     if (updateModalCloseBtn) {
         updateModalCloseBtn.addEventListener('click', (event) => {
             event.stopPropagation();
             closeUpdateModal();
+        });
+    }
+
+    if (updatesLoadMoreBtn) {
+        updatesLoadMoreBtn.addEventListener('click', () => {
+            visibleUpdateCount += updatesPageSize;
+            renderUpdates(currentLang);
         });
     }
 

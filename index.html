@@ -135,11 +135,14 @@
         </div>
       </section>
 
-      <!-- 0. LATEST UPDATES (LinkedIn Style) -->
+      <!-- 0. LATEST UPDATES -->
       <section id="updates" class="updates">
         <div class="container">
           <div class="section-header">
-            <h2 data-i18n="updates-title">📢 Latest Updates</h2>
+            <h2 data-i18n-with-icon="updates-title" data-icon="newspaper">
+              <i data-lucide="newspaper"></i>
+              Latest Updates
+            </h2>
             <div class="header-actions">
               <a
                 href="https://www.linkedin.com/in/ismailcelik"
@@ -155,18 +158,6 @@
                 />
                 Follow on LinkedIn
               </a>
-              <div class="carousel-controls">
-                <button
-                  id="update-prev"
-                  class="carousel-btn"
-                  aria-label="Previous"
-                >
-                  <i data-lucide="chevron-left"></i>
-                </button>
-                <button id="update-next" class="carousel-btn" aria-label="Next">
-                  <i data-lucide="chevron-right"></i>
-                </button>
-              </div>
             </div>
           </div>
           <div class="updates-carousel-wrapper">
@@ -174,12 +165,19 @@
               <!-- Cards will be injected here by JS -->
               <div class="loading-spinner">Loading updates...</div>
             </div>
-            <div class="carousel-progress-container">
-              <div
-                id="carousel-progress-bar"
-                class="carousel-progress-bar"
-              ></div>
-            </div>
+          </div>
+          <div class="updates-actions">
+            <button
+              id="updates-load-more"
+              class="updates-load-more-btn"
+              type="button"
+              hidden
+              data-i18n-with-icon="updates-load-more"
+              data-icon="plus"
+            >
+              <i data-lucide="plus"></i>
+              Daha Fazlasını Oku
+            </button>
           </div>
 
           <!-- Update Detail Modal -->
