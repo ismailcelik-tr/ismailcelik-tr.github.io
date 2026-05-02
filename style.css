@@ -1421,6 +1421,7 @@ footer {
 
 .command-line {
   display: flex;
+  align-items: center;
   margin-bottom: 0.65rem;
   min-width: 0;
 }
@@ -1428,6 +1429,7 @@ footer {
 .prompt {
   color: var(--primary);
   margin-right: 0.5rem;
+  line-height: 1;
 }
 
 .typing {
@@ -1460,6 +1462,7 @@ footer {
   width: 8px;
   height: 15px;
   background: #e5e7eb;
+  vertical-align: middle;
   animation: blink 1s step-end infinite;
 }
 
