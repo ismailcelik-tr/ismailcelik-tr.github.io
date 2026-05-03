@@ -407,5 +407,22 @@
     "TechTrends",
     "SoftwareEngineering"
   ]
+},
+{
+  "id": 28,
+  "date": "2026-05-03",
+  "content": "In Visual Studio Code, the feature that adds Copilot as a “co-author” to commits is now enabled by default(!).\n\nThe issue is:\n\nIf I didn’t use AI → why is its name appearing in my commit? \nEven if I did use it → why don’t I get to decide this?\n\nA critical area like the commit history is being changed “silently.” AI should assist developers — not make decisions on their behalf.",
+  "link": "",
+  "linkPreview": {
+    "title": "AI & Developer Ethics",
+    "description": "A discussion on AI tools making implicit decisions in developer workflows, focusing on commit authorship in VS Code."
+  },
+  "tags": [
+    "AI",
+    "DeveloperTools",
+    "TechEthics",
+    "VSCode",
+    "Copilot"
+  ]
 }
 ]
