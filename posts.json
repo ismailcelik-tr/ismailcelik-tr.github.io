@@ -424,5 +424,21 @@
     "VSCode",
     "Copilot"
   ]
+},
+  ,
+{
+  "id": 29,
+  "date": "2026-05-04",
+  "content": "AI success rate: 67%\nDoctors' success rate: 50–55%\n\nSince yesterday morning, I’ve been asking myself:\n\n“Am I on the wrong path in my career?”\n\nAfter reading a few more articles like this today, the answer to that question has become crystal clear.\n\nNow it’s time to make a change. ☺️\n\nThe question is:\n\nAre we adapting fast enough?",
+  "link": "https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+  "linkPreview": {
+    "title": "AI Outperforms Doctors in Emergency Diagnosis",
+    "description": "A Harvard study shows AI surpassing doctors in emergency triage accuracy, raising questions about career paths and adaptation in the age of AI."
+  },
+  "tags": [
+    "AI",
+    "TechTrends",
+    "FutureOfWork"
+  ]
 }
 ]
