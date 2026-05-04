@@ -439,5 +439,22 @@
     "TechTrends",
     "FutureOfWork"
   ]
+},
+{
+  "id": 30,
+  "date": "2026-05-04",
+  "content": "A bridge that lets you use \"Claude Code\" at a much lower cost — about 17x cheaper?\n\nIt retains Claude Code’s advanced capabilities but replaces the “brain” component with more affordable alternatives like DeepSeek V4 Pro instead of the expensive Claude models.\n\nBy the way, DeepSeek V4 Pro’s scores are actually pretty good.\n\nThe real trend is becoming clearer:\n\nThe interface stays premium.\nThe intelligence layer becomes interchangeable.",
+  "link": "https://github.com/aattaran/deepclaude",
+  "linkPreview": {
+    "title": "DeepClaude",
+    "description": "A bridge for using Claude Code-style workflows with more affordable model backends like DeepSeek V4 Pro."
+  },
+  "tags": [
+    "AI",
+    "ClaudeCode",
+    "DeepSeek",
+    "DeveloperTools",
+    "CostOptimization"
+  ]
 }
 ]
