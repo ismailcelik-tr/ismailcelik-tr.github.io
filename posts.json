@@ -455,5 +455,51 @@
     "DeepSeek",
     "DeveloperTools"
   ]
- }
+ },
+  {
+  "id": 31,
+  "date": "2026-05-05",
+  "content": "Hi Cloudflare! I haven’t quite developed that much confidence in artificial intelligence when it comes to financial matters, but we’ll see. 😅",
+  "link": "https://blog.cloudflare.com/agents-stripe-projects/",
+  "linkPreview": {
+    "title": "Agents + Stripe Projects",
+    "description": "Cloudflare explores how AI agents can interact with financial systems like Stripe."
+  },
+  "tags": [
+    "AI",
+    "Cloudflare",
+    "Agents"
+  ]
+},
+  {
+  "id": 32,
+  "date": "2026-05-05",
+  "content": "Google DeepMind introduces multi-token prediction capabilities in Gemma 4. GG WP Google DeepMind! 😊",
+  "link": "https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/",
+  "linkPreview": {
+    "title": "Multi-token Prediction in Gemma 4",
+    "description": "Google DeepMind introduces multi-token prediction capabilities in Gemma 4."
+  },
+  "tags": [
+    "AI",
+    "GoogleDeepMind",
+    "LLM",
+    "Gemma"
+  ]
+},
+  {
+  "id": 33,
+  "date": "2026-05-06",
+  "content": "Actually, watching Google Antigravity's DOM access and page scans were really fun. Also, it was a pleasure to watch Codex take control of my Mac — a really nice experience.\n\nBut, I'll have to take a break from these until things get better. ☺️",
+  "link": "https://reflex.dev/blog/computer-use-is-45x-more-expensive-than-structured-apis/",
+  "linkPreview": {
+    "title": "Computer Use is 45x More Expensive",
+    "description": "An analysis comparing the cost of AI computer-use agents versus structured API approaches."
+  },
+  "tags": [
+    "AI",
+    "Agents",
+    "DeveloperTools"
+  ]
+}
 ]
