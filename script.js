@@ -21,12 +21,46 @@
     let certificationsLastFocusedElement = null;
     let visibleUpdateCount = 5;
     const updatesPageSize = 2;
+    const baseDocumentTitle = 'Ismail | Full-stack, mobile and AI systems built with practical architecture.';
+    const scrollingDocumentTitle = `${baseDocumentTitle} \u2022 `;
+    let titleScrollIndex = 0;
+    let titleScrollInterval = null;
+
+    const updateScrollingTitle = () => {
+        const rotatedTitle = scrollingDocumentTitle.slice(titleScrollIndex) + scrollingDocumentTitle.slice(0, titleScrollIndex);
+        document.title = rotatedTitle.trim();
+        titleScrollIndex = (titleScrollIndex + 1) % scrollingDocumentTitle.length;
+    };
+
+    const startTitleScroll = () => {
+        if (titleScrollInterval || document.hidden) return;
+        updateScrollingTitle();
+        titleScrollInterval = window.setInterval(updateScrollingTitle, 220);
+    };
+
+    const stopTitleScroll = () => {
+        if (!titleScrollInterval) return;
+        window.clearInterval(titleScrollInterval);
+        titleScrollInterval = null;
+        document.title = baseDocumentTitle;
+    };
 
     // --- Dynamic Year ---
     const yearElement = document.getElementById('current-year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
+
+    document.title = baseDocumentTitle;
+    startTitleScroll();
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopTitleScroll();
+            return;
+        }
+
+        startTitleScroll();
+    });
 
     // --- Translation Engine ---
     const translations = {
@@ -1298,5 +1332,4 @@
         }
     });
 });
-
 

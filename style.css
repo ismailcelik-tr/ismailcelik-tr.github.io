@@ -1874,14 +1874,13 @@ footer {
 }
 
 .update-card--featured .update-content {
-  max-width: 820px;
   font-size: 1.12rem;
   line-height: 1.72;
   -webkit-line-clamp: 5;
 }
 
 .update-card--featured .link-preview {
-  max-width: 760px;
+  width: 100%;
 }
 
 .update-meta {
