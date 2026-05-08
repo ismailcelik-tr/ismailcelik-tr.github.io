@@ -517,5 +517,39 @@
     "GoogleCloud",
     "FraudDetection"
   ]
-}
+},
+  [
+  {
+    "id": 35,
+    "date": "2026-05-08",
+    "content": "In the coming years, the most valuable \"Security Engineers\" will likely not be those who \"use artificial intelligence,\" but rather those who \"can design AI-powered security workflows.\"",
+    "link": "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
+    "linkPreview": {
+      "title": "AI-Powered Security Workflows",
+      "description": "The future of cybersecurity will rely on engineers who can design and orchestrate AI-driven security workflows."
+    },
+    "tags": [
+      "CyberSecurity",
+      "InfoSec",
+      "SecurityResearch",
+      "AI",
+      "Firefox"
+    ]
+  },
+  {
+    "id": 36,
+    "date": "2026-05-08",
+    "content": "It looks like we're going to have a bit of a headache these days. Here is \"Copy Fail 2: Electric Boogaloo\"",
+    "link": "https://github.com/0xdeadbeefnetwork/Copy_Fail2-Electric_Boogaloo",
+    "linkPreview": {
+      "title": "Copy Fail 2 & Dirty Frag",
+      "description": "Follow-up discussions and tools related to recent Linux vulnerability research."
+    },
+    "tags": [
+      "CyberSecurity",
+      "InfoSec",
+      "Linux"
+    ]
+  }
+]
 ]
