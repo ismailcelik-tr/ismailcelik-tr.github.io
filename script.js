@@ -45,6 +45,229 @@
         document.title = baseDocumentTitle;
     };
 
+    const initHeroShader = () => {
+        const canvas = document.getElementById('hero-shader');
+        if (!canvas) return;
+
+        const gl = canvas.getContext('webgl2');
+        if (!gl) {
+            canvas.classList.add('hero-shader-unavailable');
+            return;
+        }
+
+        const hero = document.getElementById('hero');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let program = null;
+        let buffer = null;
+        let frameId = null;
+        let pointerCount = 0;
+        let pointerCoords = [0, 0];
+        let lastPointer = [0, 0];
+        let pointerMove = [0, 0];
+        const pointers = new Map();
+
+        const vertexSource = `#version 300 es
+precision highp float;
+in vec4 position;
+void main() {
+    gl_Position = position;
+}`;
+
+        const fragmentSource = `#version 300 es
+precision highp float;
+out vec4 O;
+uniform vec2 resolution;
+uniform float time;
+#define FC gl_FragCoord.xy
+#define T time
+#define R resolution
+#define MN min(R.x,R.y)
+
+float rnd(vec2 p) {
+  p = fract(p * vec2(12.9898,78.233));
+  p += dot(p, p + 34.56);
+  return fract(p.x * p.y);
+}
+
+float noise(in vec2 p) {
+  vec2 i = floor(p), f = fract(p), u = f * f * (3. - 2. * f);
+  float a = rnd(i);
+  float b = rnd(i + vec2(1,0));
+  float c = rnd(i + vec2(0,1));
+  float d = rnd(i + 1.);
+  return mix(mix(a,b,u.x), mix(c,d,u.x), u.y);
+}
+
+float fbm(vec2 p) {
+  float t = .0, a = 1.;
+  mat2 m = mat2(1., -.5, .2, 1.2);
+  for (int i = 0; i < 5; i++) {
+    t += a * noise(p);
+    p *= 2. * m;
+    a *= .5;
+  }
+  return t;
+}
+
+float clouds(vec2 p) {
+  float d = 1., t = .0;
+  for (float i = .0; i < 3.; i++) {
+    float a = d * fbm(i * 10. + p.x * .2 + .2 * (1. + i) * p.y + d + i * i + p);
+    t = mix(t, d, a);
+    d = a;
+    p *= 2. / (i + 1.);
+  }
+  return t;
+}
+
+void main(void) {
+  vec2 uv = (FC - .5 * R) / MN, st = uv * vec2(2, 1);
+  vec3 col = vec3(0);
+  float bg = clouds(vec2(st.x + T * .5, -st.y));
+  uv *= 1. - .3 * (sin(T * .2) * .5 + .5);
+  for (float i = 1.; i < 12.; i++) {
+    uv += .1 * cos(i * vec2(.1 + .01 * i, .8) + i * i + T * .5 + .1 * uv.x);
+    vec2 p = uv;
+    float d = length(p);
+    col += .00125 / d * (cos(sin(i) * vec3(1,2,3)) + 1.);
+    float b = noise(i + p + bg * 1.731);
+    col += .002 * b / length(max(p, vec2(b * p.x * .02, p.y)));
+    col = mix(col, vec3(bg * .25, bg * .137, bg * .05), d);
+  }
+  O = vec4(col, 1);
+}`;
+
+        const compileShader = (type, source) => {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                console.error('Shader compilation error:', gl.getShaderInfoLog(shader));
+                gl.deleteShader(shader);
+                return null;
+            }
+
+            return shader;
+        };
+
+        const createProgram = () => {
+            const vertexShader = compileShader(gl.VERTEX_SHADER, vertexSource);
+            const fragmentShader = compileShader(gl.FRAGMENT_SHADER, fragmentSource);
+            if (!vertexShader || !fragmentShader) return null;
+
+            const shaderProgram = gl.createProgram();
+            gl.attachShader(shaderProgram, vertexShader);
+            gl.attachShader(shaderProgram, fragmentShader);
+            gl.linkProgram(shaderProgram);
+
+            if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+                console.error('Shader link error:', gl.getProgramInfoLog(shaderProgram));
+                gl.deleteProgram(shaderProgram);
+                return null;
+            }
+
+            gl.deleteShader(vertexShader);
+            gl.deleteShader(fragmentShader);
+            return shaderProgram;
+        };
+
+        const mapPointer = (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            return [
+                (event.clientX - rect.left) * scaleX,
+                canvas.height - (event.clientY - rect.top) * scaleY
+            ];
+        };
+
+        const resizeCanvas = () => {
+            const rect = canvas.getBoundingClientRect();
+            const dpr = Math.max(1, 0.5 * (window.devicePixelRatio || 1));
+            canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+            canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+            gl.viewport(0, 0, canvas.width, canvas.height);
+        };
+
+        const drawFrame = (time = performance.now()) => {
+            if (!program) return;
+
+            gl.clearColor(0, 0, 0, 1);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            gl.useProgram(program);
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+
+            gl.uniform2f(gl.getUniformLocation(program, 'resolution'), canvas.width, canvas.height);
+            gl.uniform1f(gl.getUniformLocation(program, 'time'), time * 0.001);
+            const position = gl.getAttribLocation(program, 'position');
+            gl.enableVertexAttribArray(position);
+            gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+            if (!reduceMotion.matches) {
+                frameId = window.requestAnimationFrame(drawFrame);
+            }
+        };
+
+        const restart = () => {
+            resizeCanvas();
+            if (frameId) {
+                window.cancelAnimationFrame(frameId);
+                frameId = null;
+            }
+            drawFrame();
+        };
+
+        program = createProgram();
+        if (!program) return;
+
+        buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, 1, -1, -1, 1, 1, 1, -1]), gl.STATIC_DRAW);
+
+        const updatePointerState = () => {
+            pointerCount = pointers.size;
+            pointerCoords = pointerCount > 0 ? Array.from(pointers.values()).flat() : [0, 0];
+        };
+
+        const onPointerDown = (event) => {
+            canvas.setPointerCapture?.(event.pointerId);
+            const coords = mapPointer(event);
+            pointers.set(event.pointerId, coords);
+            lastPointer = coords;
+            updatePointerState();
+        };
+
+        const onPointerMove = (event) => {
+            const coords = mapPointer(event);
+            pointerMove = [pointerMove[0] + event.movementX, pointerMove[1] + event.movementY];
+            lastPointer = coords;
+            if (pointers.has(event.pointerId)) {
+                pointers.set(event.pointerId, coords);
+                updatePointerState();
+            }
+        };
+
+        const onPointerUp = (event) => {
+            pointers.delete(event.pointerId);
+            updatePointerState();
+        };
+
+        canvas.addEventListener('pointerdown', onPointerDown);
+        canvas.addEventListener('pointermove', onPointerMove);
+        canvas.addEventListener('pointerup', onPointerUp);
+        canvas.addEventListener('pointerleave', onPointerUp);
+        hero?.addEventListener('pointermove', onPointerMove);
+        window.addEventListener('resize', restart);
+        reduceMotion.addEventListener?.('change', restart);
+        void pointerCount;
+        void pointerCoords;
+        void lastPointer;
+        void pointerMove;
+        restart();
+    };
+
     // --- Dynamic Year ---
     const yearElement = document.getElementById('current-year');
     if (yearElement) {
@@ -1239,18 +1462,9 @@
     observeRevealElements();
 
     setTheme(getPreferredTheme());
+    initHeroShader();
     updateLanguage(currentLang);
 
-    // 5. Special Lightning Trigger
-    const profileImg = document.getElementById('profile-img');
-    if (profileImg) {
-        profileImg.addEventListener('mouseover', () => {
-            profileImg.style.animationDuration = '0.5s';
-        });
-        profileImg.addEventListener('mouseleave', () => {
-            profileImg.style.animationDuration = '3s';
-        });
-    }
     if (updateModalCloseBtn) {
         updateModalCloseBtn.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -1332,4 +1546,3 @@
         }
     });
 });
-

@@ -84,6 +84,8 @@
 
     <main>
       <section id="hero" class="hero">
+        <canvas id="hero-shader" class="hero-shader-canvas" aria-hidden="true"></canvas>
+        <div class="hero-shader-vignette" aria-hidden="true"></div>
         <div class="container">
           <div class="hero-content">
             <div class="profile-container">
@@ -147,6 +149,12 @@
             </div>
           </div>
         </div>
+        <a class="hero-scroll-indicator" href="#updates" aria-label="Scroll to latest updates">
+          <span class="scroll-indicator-mouse">
+            <span class="scroll-indicator-dot"></span>
+          </span>
+          <i data-lucide="chevron-down"></i>
+        </a>
       </section>
 
       <!-- 0. LATEST UPDATES -->
@@ -681,4 +689,3 @@
     </script>
   </body>
 </html>
-
