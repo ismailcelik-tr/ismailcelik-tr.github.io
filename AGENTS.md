@@ -11,9 +11,11 @@
 - Responsive single-page portfolio experience.
 - Client-side language switching for `en`, `tr`, and `fr`.
 - Theme switching with system-preference support.
-- Modal-driven UI for certifications and updates.
+- Animated hero section with canvas/WebGL visual treatment and graceful fallback.
+- Modal-driven UI for updates, certifications, and quick navigation flows.
+- Keyboard-accessible command palette / quick navigation with `Ctrl/Cmd + K`.
 - Static content rendering from `posts.json`.
-- Lightweight interactive behavior implemented in plain JavaScript.
+- Lightweight interactive behavior implemented in plain JavaScript with localStorage-backed UI preferences.
 
 ### Target users
 - Recruiters and hiring managers.
@@ -24,8 +26,8 @@
 
 ### Frontend
 - HTML5: page structure and semantic markup.
-- CSS3: custom design system, layout, animation, and responsive rules.
-- Vanilla JavaScript (ES6+): client-side interactivity, i18n, theme state, modal behavior, and content rendering.
+- CSS3: custom design system, gradients, glassmorphism surfaces, animation, and responsive rules.
+- Vanilla JavaScript (ES6+): client-side interactivity, i18n, theme state, hero rendering, modal behavior, command palette behavior, and content rendering.
 
 ### Backend
 - None. This project has no application server.
@@ -40,10 +42,13 @@
 - Third-party frontend assets loaded from CDN:
   - Lucide icons via `unpkg`.
   - Google Fonts.
+  - Flag icons via `flagcdn`.
+  - Skill and social icons via `skillicons.dev`.
 
 ### Versions
 - No explicit package-managed runtime is pinned in-repo.
 - Assume modern evergreen browsers as the execution target.
+- Full visual fidelity assumes browsers with `fetch`, `localStorage`, `IntersectionObserver`, and preferably WebGL2 support.
 - Local development commonly uses Python 3 `http.server` or equivalent static hosting.
 
 ## 3. Architecture
@@ -52,17 +57,18 @@
 - The site is a static SPA-style document with all sections in `index.html`.
 - Styling is centralized in `style.css`.
 - Behavior is centralized in `script.js`.
-- Content is a mix of inline markup and static JSON loaded at runtime.
+- Content is a mix of inline markup, in-script translation/certification data, and static JSON loaded at runtime.
 
 ### How services communicate
 - There are no internal services.
 - Browser-side JavaScript fetches `posts.json`.
+- Browser-side JavaScript also reads and writes lightweight UI state through `localStorage`.
 - External communication is limited to static asset/CDN requests and outbound links.
 
 ### Folder structure
-- `index.html`: main document structure, section markup, modal markup, and CDN includes.
-- `style.css`: global styles, layout, components, themes, animations, and responsive rules.
-- `script.js`: translation dictionaries, DOM wiring, rendering logic, state handling, and modal/theme behavior.
+- `index.html`: main document structure, section markup, overlay/modal markup, command palette markup, and CDN includes.
+- `style.css`: global styles, layout, components, themes, hero visuals, animations, and responsive rules.
+- `script.js`: translation dictionaries, certification dataset, DOM wiring, hero shader logic, rendering logic, state handling, and modal/theme/command behavior.
 - `posts.json`: structured update/feed content consumed by the frontend.
 - `assets/`: local images and badge/logo assets.
 
@@ -74,17 +80,20 @@
 - Keep behavior deterministic and compatible with static hosting.
 - Favor readability over cleverness.
 - Minimize global side effects outside the existing `DOMContentLoaded` bootstrapping pattern.
+- Preserve keyboard support, focus handling, and body scroll locking across overlays and mobile navigation.
 
 ### Naming conventions
 - Use kebab-case for CSS classes and HTML ids unless matching an existing pattern.
 - Use camelCase for JavaScript variables and functions.
 - Use descriptive IDs for data objects, especially content entries and certifications.
 - Keep translation keys stable and grouped by feature.
+- Continue using `data-i18n` and `data-i18n-with-icon` consistently for localized UI copy.
 
 ### File organization rules
 - Do not introduce frameworks or bundlers for small changes.
 - Keep markup changes in `index.html`, styles in `style.css`, and behavior in `script.js`.
 - Add new static data to `posts.json` only when the content is truly data-driven.
+- Keep certification metadata and translation dictionaries aligned with the rendering logic in `script.js`.
 - Reuse existing component/class patterns before creating new ones.
 
 ## 5. Commands
@@ -117,6 +126,7 @@ python -m http.server 8000 --bind 127.0.0.1
 - There is no backend API.
 - Treat `posts.json` as the primary structured data interface.
 - New data structures must be additive and backward-compatible with existing rendering logic.
+- Posts are rendered in reverse chronological order on the client, so append new entries without changing the expected object shape.
 
 ### Error handling format
 - Fail soft in the UI.
@@ -127,6 +137,7 @@ python -m http.server 8000 --bind 127.0.0.1
 - Assume JSON content is trusted only after shape checks in rendering code.
 - Validate existence of required fields before rendering dynamic content.
 - Preserve multilingual content completeness where a feature is localized.
+- When adding certification entries in `script.js`, keep localized `issued` and `skills` values complete for `en`, `tr`, and `fr` when those fields are used.
 
 ## 7. Testing Strategy
 
@@ -135,8 +146,12 @@ python -m http.server 8000 --bind 127.0.0.1
   - navigation
   - theme switching
   - language switching
+  - hero animation/fallback behavior and reduced-motion-safe behavior
+  - quick navigation / command palette open-close, keyboard search, and command execution
   - certifications modal
+  - certifications modal focus trap and overlay close behavior
   - updates modal and pagination/load-more behavior
+  - mobile menu open-close and scroll locking
   - responsive layout at mobile and desktop widths
 
 ### If tests are added
@@ -169,6 +184,8 @@ python -m http.server 8000 --bind 127.0.0.1
 - Keep accessibility intact when editing interactive elements.
 - Update translations in all supported languages when adding user-facing text.
 - When changing data-driven UI, update both content and rendering assumptions together.
+- Keep `meta[name="theme-color"]`, theme classes, and localized command labels in sync when touching theme or navigation behavior.
+- Preserve graceful fallbacks for `posts.json` loading and hero rendering when browser capabilities are unavailable.
 
 ### What the agent must NEVER do
 - Do not add a framework, bundler, or backend without explicit user approval.
@@ -182,6 +199,7 @@ python -m http.server 8000 --bind 127.0.0.1
 - Refactor one concern at a time: markup, styles, behavior, or data.
 - Preserve existing CSS class semantics where possible.
 - Re-test all affected interactive flows after any refactor.
+- Preserve overlay semantics, keyboard shortcuts, and focus return behavior when touching modal or command-palette code.
 - Prefer additive changes over broad rewrites.
 
 ### Rules for adding dependencies
@@ -200,6 +218,7 @@ python -m http.server 8000 --bind 127.0.0.1
 - Avoid large libraries for small UI behavior.
 - Optimize images and prefer local assets for stable content.
 - Do not add blocking scripts unless necessary.
+- Be careful with animation, shader, and blur-heavy changes so the page stays smooth on mid-range devices.
 - Preserve responsive performance on mid-range mobile devices.
 
 ### Security
@@ -212,4 +231,3 @@ python -m http.server 8000 --bind 127.0.0.1
 
 - [README.md](./README.md): project summary and local run basics.
 - [LICENSE](./LICENSE): repository license terms.
-
