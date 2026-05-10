@@ -1,19 +1,21 @@
 :root {
-  --primary: #38bdf8;
-  --primary-rgb: 56, 189, 248;
-  --secondary: #7dd3fc;
-  --accent: #94a3b8;
-  --bg-dark: #0b0f14;
-  --bg-dark-rgb: 11, 15, 20;
-  --bg-light: #f7f8fb;
-  --bg-light-rgb: 247, 248, 251;
-  --text-dark: #e5e7eb;
-  --text-light: #18212f;
-  --card-bg-dark: rgba(18, 24, 32, 0.74);
-  --card-bg-light: rgba(255, 255, 255, 0.86);
-  --border-dark: rgba(148, 163, 184, 0.18);
-  --border-light: rgba(24, 33, 47, 0.1);
-  --lightning-color: #7dd3fc;
+  --primary: #f59e0b;
+  --primary-rgb: 245, 158, 11;
+  --secondary: #fb7185;
+  --accent: #64748b;
+  --bg-dark: #1b1718;
+  --bg-dark-rgb: 27, 23, 24;
+  --bg-light: #eef2f6;
+  --bg-light-rgb: 238, 242, 246;
+  --surface-dark: #231f21;
+  --surface-light: #f8fafc;
+  --text-dark: #f4efe8;
+  --text-light: #20242c;
+  --card-bg-dark: rgba(42, 36, 38, 0.78);
+  --card-bg-light: rgba(255, 255, 255, 0.88);
+  --border-dark: rgba(245, 158, 11, 0.2);
+  --border-light: rgba(148, 103, 42, 0.18);
+  --lightning-color: #facc15;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --primary-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
 }
@@ -25,7 +27,11 @@ body.theme-dark {
   --text: var(--text-dark);
   --card-bg: var(--card-bg-dark);
   --border: var(--border-dark);
-  --primary-gradient: linear-gradient(135deg, #38bdf8, #7dd3fc);
+  --surface: var(--surface-dark);
+  --nav-bg: rgba(35, 31, 33, 0.84);
+  --footer-bg: rgba(35, 31, 33, 0.72);
+  --shadow-color: rgba(20, 14, 12, 0.34);
+  --primary-gradient: linear-gradient(135deg, #f59e0b, #fb7185);
 }
 
 body.theme-light {
@@ -34,7 +40,11 @@ body.theme-light {
   --text: var(--text-light);
   --card-bg: var(--card-bg-light);
   --border: var(--border-light);
-  --primary-gradient: linear-gradient(135deg, #0f6fb7, #38bdf8);
+  --surface: var(--surface-light);
+  --nav-bg: rgba(248, 250, 252, 0.86);
+  --footer-bg: rgba(229, 234, 241, 0.82);
+  --shadow-color: rgba(94, 72, 45, 0.12);
+  --primary-gradient: linear-gradient(135deg, #d97706, #f43f5e);
 }
 
 /* Global Styles */
@@ -59,13 +69,15 @@ body {
 
 body.theme-dark {
   background:
-    radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.1), transparent 30rem),
+    radial-gradient(circle at 18% 0%, rgba(245, 158, 11, 0.14), transparent 32rem),
+    radial-gradient(circle at 82% 18%, rgba(251, 113, 133, 0.09), transparent 30rem),
     var(--bg);
 }
 
 body.theme-light {
   background:
-    radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.12), transparent 32rem),
+    radial-gradient(circle at 18% 0%, rgba(245, 158, 11, 0.16), transparent 34rem),
+    radial-gradient(circle at 82% 18%, rgba(251, 113, 133, 0.1), transparent 32rem),
     var(--bg);
 }
 
@@ -91,7 +103,7 @@ h3 {
   padding: 1rem 0;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  background: rgba(var(--bg-rgb), 0.8);
+  background: var(--nav-bg);
   isolation: isolate;
 }
 
@@ -109,7 +121,7 @@ h3 {
   letter-spacing: 2px;
   text-decoration: none;
   cursor: pointer;
-  background: linear-gradient(90deg, #fff, #888);
+  background: linear-gradient(90deg, #fff7ed, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: var(--transition);
@@ -120,7 +132,7 @@ h3 {
 }
 
 body.theme-light .logo {
-  background: linear-gradient(90deg, #111, #444);
+  background: linear-gradient(90deg, #1f2937, #d97706);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -926,7 +938,7 @@ section {
 .glass:hover {
   border-color: rgba(var(--primary-rgb), 0.55);
   transform: translateY(-3px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 12px 26px var(--shadow-color);
 }
 
 /* About Grid */
@@ -1343,7 +1355,7 @@ body.theme-dark .cert-action:hover {
 }
 
 body.theme-dark .certifications-modal {
-  background: rgba(15, 17, 23, 0.98);
+  background: rgba(35, 31, 33, 0.98);
   color: #eef2f7;
 }
 
@@ -1435,14 +1447,16 @@ body.theme-dark .certifications-modal {
 /* Footer */
 footer {
   padding: 5rem 0;
-  background: rgba(0, 0, 0, 0.2);
+  background:
+    linear-gradient(180deg, rgba(var(--primary-rgb), 0.04), transparent 45%),
+    var(--footer-bg);
   border-top: 1px solid var(--border);
   text-align: center;
 }
 
 /* Expanding Section */
 .tech-stack.expanding {
-  background: var(--bg);
+  background: var(--surface);
   padding-top: 2rem;
 }
 
@@ -1480,8 +1494,8 @@ footer {
 }
 
 .social-btn.github:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #fff;
+  background: rgba(var(--primary-rgb), 0.12);
+  border-color: var(--primary);
 }
 
 .social-links {
@@ -1506,8 +1520,8 @@ footer {
 }
 
 .social-btn:hover {
-  background: var(--primary);
-  color: #000;
+  background: var(--primary-gradient);
+  color: #111827;
   border-color: var(--primary);
 }
 
@@ -1549,8 +1563,8 @@ footer {
 .perspective {
   padding: 5rem 0;
   background:
-    linear-gradient(180deg, transparent, rgba(var(--primary-rgb), 0.04), transparent),
-    var(--bg);
+    linear-gradient(180deg, transparent, rgba(var(--primary-rgb), 0.06), transparent),
+    var(--surface);
 }
 
 .perspective-layout {
@@ -2335,17 +2349,17 @@ footer {
   padding: 3rem;
   position: relative;
   overflow-y: auto;
-  background: var(--bg); /* Use the page background color */
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 25px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  box-shadow: 0 25px 50px var(--shadow-color);
   animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Light mode specific adjustment if needed */
 [data-theme="light"] .modal-content {
-  background: var(--bg);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  background: var(--surface);
+  box-shadow: 0 25px 50px var(--shadow-color);
 }
 
 @keyframes modalPop {

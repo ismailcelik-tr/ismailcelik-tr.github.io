@@ -1288,7 +1288,7 @@ void main(void) {
         body.classList.add(`theme-${theme}`);
         localStorage.setItem('theme', theme);
         if (themeColorMeta) {
-            themeColorMeta.setAttribute('content', theme === 'dark' ? '#0a0a0c' : '#f8f9fa');
+            themeColorMeta.setAttribute('content', theme === 'dark' ? '#1b1718' : '#eef2f6');
         }
     };
 
