@@ -566,5 +566,39 @@
     "AIAlignment",
     "MachineLearning"
   ]
-  }
+  },
+  {
+  "id": 38,
+  "date": "2026-05-10",
+  "content": "Since 2010, AI models have grown at an extraordinary rate in terms of the number of parameters. Around 2010, the most advanced NLP models typically had only a few million parameters.\n\nThen the acceleration began:\n• 2018 - GPT-1: ~117 million parameters\n• 2020 - GPT-3: ~175 billion parameters\n• 2023 - GPT-4: estimated at ~1-1.8 trillion parameters\n\nIn just over a decade, we’ve moved from systems with millions of parameters to pioneering models with trillions of parameters. And the next step is even more striking;\n\nProjections suggest that by 2030, AI systems will reach a scale of 10–100 trillion active parameters.\n\nThis means that many of the jobs we have today will become AI-native. I don’t know if AGI (Artificial General Intelligence) will be around by then, but many of us will either no longer be in our current jobs or will be doing our jobs in very different ways. Yes, in less than five years...\n\nAnd below is the response GPT-5.5 gave me when I asked it to generate a visual interpretation of this scenario. The last line certainly made me smile. 😊",
+  "link": "https://media.licdn.com/dms/image/v2/D5622AQExW5f1yZZjhg/feedshare-shrink_800/B56Z4NvhqjIsAc-/0/1778347023296?e=1779926400&v=beta&t=Sk3PTR2556TGC8a0VyDQ58dKekMhAMbk_ARYc4zw3Dc",
+  "linkPreview": {
+    "title": "The Growth of AI Parameters and the Future of Work",
+    "description": "A reflection on the exponential growth of AI model parameters from millions to trillions, and how this transformation could reshape jobs and the future of AGI by 2030."
+  },
+  "tags": [
+    "ArtificialIntelligence",
+    "AGI",
+    "MachineLearning",
+    "FutureOfWork",
+    "LLM"
+  ]
+},
+  {
+  "id": 39,
+  "date": "2026-05-10",
+  "content": "It has sold over 10,000 units so far, and there are already more than 200 apps available in the app store.\n\nMeet \"Reachy Mini\" powered by Hugging Face. Getting serious Wall-E vibes from this one. ☺️",
+  "link": "https://www.youtube.com/watch?v=JvdBJZ-qR18",
+  "linkPreview": {
+    "title": "Reachy Mini by Pollen Robotics and powered by Hugging Face",
+    "description": "Reachy Mini is an open-source embodied AI robot powered by Hugging Face, featuring a growing ecosystem with hundreds of apps and strong community interest."
+  },
+  "tags": [
+    "EmbodiedAI",
+    "PhysicalAI",
+    "HuggingFace",
+    "Robotics",
+    "AI"
+  ]
+}
 ]
