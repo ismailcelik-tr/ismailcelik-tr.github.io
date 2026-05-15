@@ -600,5 +600,73 @@
     "Robotics",
     "AI"
   ]
+},
+  {
+  "id": 40,
+  "date": "2026-05-15",
+  "content": "Make a note of this link.\n\nhttps://github.com/antirez/ds4\n\nThe goal is ambitious: Run \"DeepSeek V4 Flash\" as efficiently as possible on local devices. Right now the focus seems to be MacBooks with 96GB+ unified memory, but if this approach succeeds, it could accelerate a broader shift toward serious local AI workloads on consumer hardware.\n\nWhat also makes \"DeepSeek V4 Flash\" interesting is the model choice itself. From what I’ve seen:\n- shorter and more controlled reasoning traces\n- more practical “thinking mode” behavior\n- support for extremely large context windows (up to 1M tokens)\n\nDefinitely keeping an eye on this one.",
+  "link": "https://github.com/antirez/ds4",
+  "linkPreview": {
+    "title": "Make a note of this link",
+    "description": "An experimental project focused on running DeepSeek V4 Flash efficiently on local consumer hardware, particularly high-memory MacBooks, while exploring practical long-context AI workloads."
+  },
+  "tags": [
+    "AI",
+    "LLM",
+    "DeepSeek",
+    "LocalAI",
+    "MachineLearning"
+  ]
+},
+  {
+  "id": 41,
+  "date": "2026-05-15",
+  "content": "OpenAI Haha, Nice move! 😄\n\n\"Codex is coming to your phone. Now in preview in the ChatGPT mobile app.\"\nhttps://openai.com/index/work-with-codex-from-anywhere/\n\nBeing able to review and close PRs directly from your phone with AI coding agents feels less like a “future feature” and more like the direction software development is heading.\n\nBy the way, I can explain how to do this in Claude’s mobile app for Claude Code. ☺️",
+  "link": "https://openai.com/index/work-with-codex-from-anywhere/",
+  "linkPreview": {
+    "title": "Work with Codex from Anywhere",
+    "description": "OpenAI introduces Codex support in the ChatGPT mobile app, enabling developers to manage coding workflows and interact with AI coding agents directly from their phones."
+  },
+  "tags": [
+    "AI",
+    "ClaudeCode",
+    "OpenAI",
+    "Codex",
+    "SoftwareEngineering"
+  ]
+},
+  {
+  "id": 42,
+  "date": "2026-05-15",
+  "content": "As I’ve mentioned before, even though I summarize these articles with AI, I genuinely enjoy reading some of them in depth and taking the time to really explore the engineering behind them. This is definitely one of those articles.\n\nEnjoy the read. ☺️",
+  "link": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale/",
+  "linkPreview": {
+    "title": "How OpenAI delivers low-latency voice AI at scale",
+    "description": "OpenAI explains the engineering and networking architecture behind delivering real-time, low-latency voice AI experiences at global scale for ChatGPT Voice and the Realtime API."
+  },
+  "tags": [
+    "AI",
+    "VoiceAI",
+    "OpenAI",
+    "RealtimeAPI",
+    "SoftwareEngineering"
+  ]
+},
+  {
+  "id": 43,
+  "date": "2026-05-15",
+  "content": "In my opinion, the issue isn’t whether AI is ready for use in healthcare.\nThe real issue is that healthcare systems are often deploying AI with the wrong people, workflows, and tools.\n\nThis report is a good example of that:\nhttps://www.theregister.com/ai-ml/2026/05/14/ontario-auditors-find-doctors-ai-note-takers-routinely-blow-basic-facts/5240771\n\nAI in healthcare is an extremely high-stakes environment. The problem is rarely just “model capability.” AI can absolutely become transformative in healthcare.",
+  "link": "https://www.theregister.com/ai-ml/2026/05/14/ontario-auditors-find-doctors-ai-note-takers-routinely-blow-basic-facts/5240771",
+  "linkPreview": {
+    "title": "Ontario auditors find doctors' AI note takers routinely blow basic facts",
+    "description": "An audit in Ontario highlights how AI medical note-taking systems introduced factual errors and hallucinations, raising broader questions about deployment practices, oversight, and workflow design in healthcare AI."
+  },
+  "tags": [
+    "AI",
+    "MachineLearning",
+    "HealthTech",
+    "Automation",
+    "HealthcareAI"
+  ]
 }
 ]
