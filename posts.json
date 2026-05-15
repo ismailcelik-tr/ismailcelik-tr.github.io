@@ -655,7 +655,7 @@
   {
   "id": 43,
   "date": "2026-05-15",
-  "content": "In my opinion, the issue isn’t whether AI is ready for use in healthcare.\nThe real issue is that healthcare systems are often deploying AI with the wrong people, workflows, and tools.\n\nThis report is a good example of that:\nhttps://www.theregister.com/ai-ml/2026/05/14/ontario-auditors-find-doctors-ai-note-takers-routinely-blow-basic-facts/5240771\n\nAI in healthcare is an extremely high-stakes environment. The problem is rarely just “model capability.” AI can absolutely become transformative in healthcare.",
+  "content": "In my opinion, the issue isn’t whether AI is ready for use in healthcare.\nThe real issue is that healthcare systems are often deploying AI with the wrong people, workflows, and tools.\n\nAI in healthcare is an extremely high-stakes environment. The problem is rarely just “model capability.” AI can absolutely become transformative in healthcare.",
   "link": "https://www.theregister.com/ai-ml/2026/05/14/ontario-auditors-find-doctors-ai-note-takers-routinely-blow-basic-facts/5240771",
   "linkPreview": {
     "title": "Ontario auditors find doctors' AI note takers routinely blow basic facts",
