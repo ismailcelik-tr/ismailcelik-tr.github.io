@@ -313,6 +313,20 @@ void main(void) {
             "hero-exp3": "AI Integration",
             "hero-exp4": "Cloud & DevOps",
             "hero-exp5": "AI & LLM Engineering",
+            "hf-title": "Trending on 🤗 This Month For Me",
+            "hf-lead": "Here’s what I’ve been exploring on Hugging Face this month in terms of models, spaces, and datasets that I want to explore and turn into practical AI experiments.",
+            "hf-models-title": "Models",
+            "hf-spaces-title": "Spaces",
+            "hf-datasets-title": "Datasets",
+            "hf-model1-title": "google/gemma-4-E4B-it",
+            "hf-model2-title": "deepseek-ai/DeepSeek-V4-Flash",
+            "hf-model3-title": "Qwen/Qwen3.6-35B-A3B",
+            "hf-space1-title": "smolagents/ml-intern",
+            "hf-space2-title": "mteb/leaderboard",
+            "hf-space3-title": "prithivMLmods/FireRed-Image-Edit-1.0-Fast",
+            "hf-data1-title": "open-thoughts/AgentTrove",
+            "hf-data2-title": "alibaba-multimodal-industrial-ai/IndustryBench",
+            "hf-data3-title": "AlienKevin/SWE-ZERO-12M-trajectories",
             "about-title": "🔥 About Me",
             "about-card1-title": "Architecture",
             "about-card1-p": "Strong focus on systems programming, backend engineering, and high-performance solutions.",
@@ -408,6 +422,7 @@ void main(void) {
             "command-title": "Quick Navigation",
             "command-placeholder": "Search sections or commands...",
             "command-empty": "No matching command.",
+            "command-go-huggingface": "Go to Hugging Face Focus",
             "command-go-updates": "Go to Latest Updates",
             "command-go-projects": "Go to Projects",
             "command-go-certifications": "Go to Certifications",
@@ -440,6 +455,20 @@ void main(void) {
             "hero-exp3": "AI Entegrasyonu",
             "hero-exp4": "Cloud & DevOps",
             "hero-exp5": "AI & LLM Engineering",
+            "hf-title": "Bu Ay 🤗 Benim İçin Öne Çıkanlar",
+            "hf-lead": "Bu ay Hugging Face üzerinde modeller, spaceler ve veri setleri açısından neleri keşfettiğimi; bunları pratik AI denemelerine nasıl dönüştürebileceğimi burada topluyorum.",
+            "hf-models-title": "Modeller",
+            "hf-spaces-title": "Spaces",
+            "hf-datasets-title": "Veri Setleri",
+            "hf-model1-title": "google/gemma-4-E4B-it",
+            "hf-model2-title": "deepseek-ai/DeepSeek-V4-Flash",
+            "hf-model3-title": "Qwen/Qwen3.6-35B-A3B",
+            "hf-space1-title": "smolagents/ml-intern",
+            "hf-space2-title": "mteb/leaderboard",
+            "hf-space3-title": "prithivMLmods/FireRed-Image-Edit-1.0-Fast",
+            "hf-data1-title": "open-thoughts/AgentTrove",
+            "hf-data2-title": "alibaba-multimodal-industrial-ai/IndustryBench",
+            "hf-data3-title": "AlienKevin/SWE-ZERO-12M-trajectories",
             "about-title": "🔥 Hakkımda",
             "about-card1-title": "Mimari",
             "about-card1-p": "Sistem programlama, backend mühendisliği ve yüksek performanslı çözümlere güçlü odak.",
@@ -535,6 +564,7 @@ void main(void) {
             "command-title": "Hızlı Geçiş",
             "command-placeholder": "Bölüm veya komut ara...",
             "command-empty": "Eşleşen komut yok.",
+            "command-go-huggingface": "Hugging Face odağına git",
             "command-go-updates": "Güncel bölümüne git",
             "command-go-projects": "Çalışmalara git",
             "command-go-certifications": "Sertifikalara git",
@@ -567,6 +597,20 @@ void main(void) {
             "hero-exp3": "Intégration d'IA",
             "hero-exp4": "Cloud & DevOps",
             "hero-exp5": "Ingénierie IA & LLM",
+            "hf-title": "Ce Qui M’intéresse sur 🤗 ce Mois-ci",
+            "hf-lead": "Voici ce que j’explore ce mois-ci sur Hugging Face côté modèles, spaces et jeux de données, avec l’objectif de les transformer en expériences IA pratiques.",
+            "hf-models-title": "Modèles",
+            "hf-spaces-title": "Spaces",
+            "hf-datasets-title": "Jeux de données",
+            "hf-model1-title": "google/gemma-4-E4B-it",
+            "hf-model2-title": "deepseek-ai/DeepSeek-V4-Flash",
+            "hf-model3-title": "Qwen/Qwen3.6-35B-A3B",
+            "hf-space1-title": "smolagents/ml-intern",
+            "hf-space2-title": "mteb/leaderboard",
+            "hf-space3-title": "prithivMLmods/FireRed-Image-Edit-1.0-Fast",
+            "hf-data1-title": "open-thoughts/AgentTrove",
+            "hf-data2-title": "alibaba-multimodal-industrial-ai/IndustryBench",
+            "hf-data3-title": "AlienKevin/SWE-ZERO-12M-trajectories",
             "about-title": "🔥 À propos de moi",
             "about-card1-title": "Architecture",
             "about-card1-p": "Accent mis sur la programmation système, l'ingénierie backend et les solutions haute performance.",
@@ -662,6 +706,7 @@ void main(void) {
             "command-title": "Accès Rapide",
             "command-placeholder": "Rechercher une section ou une commande...",
             "command-empty": "Aucune commande correspondante.",
+            "command-go-huggingface": "Aller au focus Hugging Face",
             "command-go-updates": "Aller aux actualités",
             "command-go-projects": "Aller aux projets",
             "command-go-certifications": "Aller aux certifications",
@@ -1040,9 +1085,9 @@ void main(void) {
                         src="${cert.logo.src}"
                         alt="${cert.logo.alt || cert.provider}"
                         class="${[
-                            cert.logoFit === 'contain' ? 'cert-logo-image--contain' : '',
-                            cert.logoClass || ''
-                        ].filter(Boolean).join(' ')}"
+                    cert.logoFit === 'contain' ? 'cert-logo-image--contain' : '',
+                    cert.logoClass || ''
+                ].filter(Boolean).join(' ')}"
                     />
                 </div>
             `;
@@ -1239,7 +1284,7 @@ void main(void) {
                 visiblePosts.forEach((post, index) => {
                     const card = document.createElement('div');
                     card.className = `update-card glass${index === 0 ? ' update-card--featured' : ''}`;
-                    
+
                     const relativeTime = getRelativeTime(post.date, lang);
                     const primaryTag = post.tags?.[0] || 'Update';
 
@@ -1265,13 +1310,13 @@ void main(void) {
                             <i data-lucide="arrow-up-right"></i>
                         </div>
                     `;
-                    
+
                     // Modal Open Event
                     card.addEventListener('click', () => {
-                          const modalBody = document.getElementById('modal-body');
-                          if (!updateModalOverlay || !modalBody) return;
-                          
-                          modalBody.innerHTML = `
+                        const modalBody = document.getElementById('modal-body');
+                        if (!updateModalOverlay || !modalBody) return;
+
+                        modalBody.innerHTML = `
                               <div class="modal-date">${relativeTime}</div>
                             <div class="modal-full-content">${post.content}</div>
                             ${post.tags ? `
@@ -1288,11 +1333,11 @@ void main(void) {
                                   </div>
                               ` : ''}
                           `;
-                          
-                          updateModalOverlay.classList.add('active');
-                          syncBodyScrollLock();
-                          if (window.lucide) lucide.createIcons();
-                      });
+
+                        updateModalOverlay.classList.add('active');
+                        syncBodyScrollLock();
+                        if (window.lucide) lucide.createIcons();
+                    });
 
                     updatesContainer.appendChild(card);
                 });
@@ -1329,7 +1374,7 @@ void main(void) {
             const key = el.getAttribute('data-i18n-with-icon');
             const iconName = el.getAttribute('data-icon');
             const existingImg = el.querySelector('img');
-            
+
             if (translations[lang] && translations[lang][key]) {
                 if (existingImg) {
                     // Preserve the image icon
@@ -1354,7 +1399,7 @@ void main(void) {
         };
         const flagImg = document.getElementById('current-lang-flag');
         const flagText = document.getElementById('current-lang-text');
-        
+
         if (flagImg) flagImg.src = flagUrls[lang];
         if (flagText) flagText.textContent = lang.toUpperCase();
 
@@ -1448,6 +1493,7 @@ void main(void) {
     }
 
     const getCommandItems = (lang) => [
+        { label: translations[lang]["command-go-huggingface"], keywords: ['hugging face', 'hf', 'models', 'ai', 'llm', 'rag'], action: () => document.getElementById('huggingface')?.scrollIntoView({ behavior: 'smooth' }) },
         { label: translations[lang]["command-go-updates"], keywords: ['updates', 'latest', 'news', 'güncel', 'actualités'], action: () => document.getElementById('updates')?.scrollIntoView({ behavior: 'smooth' }) },
         { label: translations[lang]["command-go-projects"], keywords: ['projects', 'work', 'çalışmalar', 'projets'], action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) },
         { label: translations[lang]["command-go-certifications"], keywords: ['certifications', 'certification', 'sertifikalar', 'certifications'], action: () => document.getElementById('certifications')?.scrollIntoView({ behavior: 'smooth' }) },
