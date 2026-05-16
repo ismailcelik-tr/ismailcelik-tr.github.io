@@ -123,16 +123,20 @@ float clouds(vec2 p) {
 void main(void) {
   vec2 uv = (FC - .5 * R) / MN, st = uv * vec2(2, 1);
   vec3 col = vec3(0);
+  vec3 glow = vec3(.08, .72, .68);
+  vec3 bloom = vec3(.16, .56, .95);
+  vec3 smoke = vec3(.02, .18, .2);
+  vec3 accent = vec3(.42, .08, .18);
   float bg = clouds(vec2(st.x + T * .5, -st.y));
   uv *= 1. - .3 * (sin(T * .2) * .5 + .5);
   for (float i = 1.; i < 12.; i++) {
     uv += .1 * cos(i * vec2(.1 + .01 * i, .8) + i * i + T * .5 + .1 * uv.x);
     vec2 p = uv;
     float d = length(p);
-    col += .00125 / d * (cos(sin(i) * vec3(1,2,3)) + 1.);
+    col += .00125 / d * mix(glow, bloom, .5 + .5 * sin(i + T * .08));
     float b = noise(i + p + bg * 1.731);
-    col += .002 * b / length(max(p, vec2(b * p.x * .02, p.y)));
-    col = mix(col, vec3(bg * .25, bg * .137, bg * .05), d);
+    col += .0016 * b * mix(glow, accent, b * .35) / length(max(p, vec2(b * p.x * .02, p.y)));
+    col = mix(col, smoke * bg, d);
   }
   O = vec4(col, 1);
 }`;
@@ -301,6 +305,9 @@ void main(void) {
             "hero-bio": "I build reliable web and mobile experiences, connect AI into real workflows, and care about the systems work that keeps products fast, maintainable, and useful.",
             "hero-primary-action": "View Projects",
             "hero-secondary-action": "Start a Conversation",
+            "hero-cv-label": "Download CV",
+            "hero-cv-en": "English",
+            "hero-cv-tr": "Turkish",
             "hero-exp1": "Mobile Expertise",
             "hero-exp2": "Clean Code",
             "hero-exp3": "AI Integration",
@@ -316,6 +323,16 @@ void main(void) {
             "tech-title": "🛠 Tech Stack & Skills",
             "tech-expanding-title": "🌟 Expanding the Horizon",
             "work-title": "🚀 What I'm Working On",
+            "work-lead": "A focused snapshot of the systems, product ideas, and technical experiments I am shaping right now.",
+            "work-eyebrow": "Current focus",
+            "work-feature-title": "Building practical AI-ready product systems",
+            "work-feature-p": "I am combining full-stack development, mobile experience, cloud architecture, and AI-assisted workflows into portfolio-grade products that are reliable enough for real users.",
+            "work-signal1-title": "Frontend",
+            "work-signal1-p": "React, React Native, Flutter, TypeScript",
+            "work-signal2-title": "Backend",
+            "work-signal2-p": "Node.js, Spring Boot, Express.js, REST APIs, WebSocket",
+            "work-signal3-title": "Database & AI Data",
+            "work-signal3-p": "MongoDB, PostgreSQL, MySQL, MSSQL, ChromaDB, Qdrant",
             "work-card1-title": "Advanced Architecture",
             "work-card1-p": "Implementing Clean Architecture and modular design patterns across mobile and backend.",
             "work-card2-title": "Web & Mobile Sync",
@@ -328,6 +345,37 @@ void main(void) {
             "work-card5-p": "Optimizing development workflows through automated pipelines and custom GitHub Actions.",
             "work-card6-title": "System Performance",
             "work-card6-p": "Monitoring and fine-tuning resource efficiency with high-performance system metrics.",
+            "cv-projects-eyebrow": "Selected work",
+            "cv-projects-title": "Selected Projects & Ongoing Work",
+            "cv-project1-title": "Gemini RAG Knowledge Assistant",
+            "cv-project1-note": "A production-oriented Retrieval-Augmented Generation assistant built with Gemini API, FastAPI, vector search, and Google Cloud-ready architecture.",
+            "cv-project2-title": "Factory RAG Assistant",
+            "cv-project2-note": "An assistant concept for turning factory documents and operational knowledge into searchable AI workflows.",
+            "cv-project3-title": "Netelsan Cloud",
+            "cv-project3-note": "A mobile cloud experience for Netelsan users across iOS and Android app stores.",
+            "cv-project4-title": "Netelsan Burglar Alarm System",
+            "cv-project4-note": "A production mobile alarm system for monitoring and managing burglar alarm workflows.",
+            "cv-project5-title": "PCB Anomaly Detection System",
+            "cv-project5-note": "Computer vision pipeline designed to reduce manual PCB production checks and catch anomalies earlier.",
+            "cv-project6-title": "Remote Alarm Monitoring Software",
+            "cv-project6-note": "A web monitoring interface for alarm systems, control-center data, and realtime operational visibility.",
+            "cv-project7-title": "Automatic Versioning & Distribution System",
+            "cv-project7-note": "An internal release automation flow built to reduce production-line installation mistakes.",
+            "cv-project8-title": "Vehicle Tracking Mobile & Web Apps",
+            "cv-project8-note": "Cross-platform applications for vehicle tracking scenarios across mobile and web surfaces.",
+            "cv-project9-title": "Log Management & Monitoring Systems",
+            "cv-project9-note": "Server and network monitoring setup for log visibility, infrastructure tracking, and operational response.",
+            "cv-project10-title": "Cisco Network Configuration Tool",
+            "cv-project10-note": "A Windows tool that shortened authorized Cisco configuration changes from minutes to seconds.",
+            "cv-project11-title": "Pardus Migration & Open Source Server Stack",
+            "cv-project11-note": "A migration and implementation project for Linux-based server/client environments and open-source services.",
+            "cv-project12-title": "Terminal Server Web Control Application",
+            "cv-project12-note": "A web admin application for resolving terminal-server user issues through modular controls.",
+            "work-roadmap-eyebrow": "Project direction",
+            "work-roadmap-title": "From experiments to usable releases",
+            "work-roadmap-1": "Prototype fast, then harden the architecture around the workflows that prove useful.",
+            "work-roadmap-2": "Connect web, mobile, cloud, and AI pieces with maintainable interfaces.",
+            "work-roadmap-3": "Document the outcome clearly so recruiters, teams, and collaborators can evaluate the work quickly.",
             "certifications-title": "Certifications",
             "certifications-id-label": "Credential ID",
             "certifications-cta": "View Credential",
@@ -350,7 +398,7 @@ void main(void) {
             "perspective-title": "🤝 Collaborative Strategy",
             "perspective-p1": "With years of experience in web and mobile application development, I have mastered the skill of understanding client requirements according to the latest trends. I have worked with businesses from different niches, so you can rely on me for yours.",
             "perspective-p2": "I have a solid foundation in designing innovative mobile solutions that significantly improve user experience and accelerate business growth. My business background gives me a unique perspective on aligning technology with strategic objectives, ensuring my contributions are both technically sound and commercially viable. Having worked on various live projects, I can help you with the best possible suggestions and ideas we can proceed with. With me, you aren’t forced to accept anything. I give you a variety of options we can work on together.",
-            "footer-copy": "© 2026 Ismail Celik | Licensed under MIT",
+            "footer-copy": "© 2026 İsmail ÇELİK | Licensed under MIT",
             "updates-title": "Latest Updates",
             "follow-linkedin": "Follow on LinkedIn",
             "update-read": "Read update",
@@ -384,6 +432,9 @@ void main(void) {
             "hero-bio": "Güvenilir web ve mobil deneyimler geliştiriyorum, AI'ı gerçek iş akışlarına bağlıyorum ve ürünleri hızlı, sürdürülebilir ve kullanışlı tutan sistem tarafını önemsiyorum.",
             "hero-primary-action": "Projeleri Gör",
             "hero-secondary-action": "İletişime Geç",
+            "hero-cv-label": "CV indir",
+            "hero-cv-en": "İngilizce",
+            "hero-cv-tr": "Türkçe",
             "hero-exp1": "Mobil Uzmanlık",
             "hero-exp2": "Temiz Kod",
             "hero-exp3": "AI Entegrasyonu",
@@ -399,6 +450,16 @@ void main(void) {
             "tech-title": "🛠 Teknoloji Yığını & Yetenekler",
             "tech-expanding-title": "🌟 Ufku Genişletmek",
             "work-title": "🚀 Neler Üzerinde Çalışıyorum",
+            "work-lead": "Şu anda şekillendirdiğim sistemleri, ürün fikirlerini ve teknik denemeleri hızlıca gösteren odaklı bir alan.",
+            "work-eyebrow": "Güncel odak",
+            "work-feature-title": "Pratik, AI'a hazır ürün sistemleri geliştiriyorum",
+            "work-feature-p": "Full-stack geliştirme, mobil deneyim, bulut mimarisi ve AI destekli iş akışlarını gerçek kullanıcılar için yeterince güvenilir portfolyo ürünlerinde birleştiriyorum.",
+            "work-signal1-title": "Frontend",
+            "work-signal1-p": "React, React Native, Flutter, TypeScript",
+            "work-signal2-title": "Backend",
+            "work-signal2-p": "Node.js, Spring Boot, Express.js, REST API'leri, WebSocket",
+            "work-signal3-title": "Veritabanı & AI Veri",
+            "work-signal3-p": "MongoDB, PostgreSQL, MySQL, MSSQL, ChromaDB, Qdrant",
             "work-card1-title": "Gelişmiş Mimari",
             "work-card1-p": "Mobil ve backend genelinde Temiz Mimari ve modüler tasarım desenleri uygulama.",
             "work-card2-title": "Web & Mobil Senkronizasyon",
@@ -411,6 +472,37 @@ void main(void) {
             "work-card5-p": "Otomatik iş akışları ve özel GitHub Action'lar ile geliştirme süreçlerini optimize ediyorum.",
             "work-card6-title": "Sistem Performansı",
             "work-card6-p": "Yüksek performanslı sistem metrikleri ile kaynak verimliliğini izliyor ve ince ayarlar yapıyorum.",
+            "cv-projects-eyebrow": "Seçili çalışmalar",
+            "cv-projects-title": "Seçili Projeler ve Devam Eden Çalışmalar",
+            "cv-project1-title": "Gemini RAG Knowledge Assistant",
+            "cv-project1-note": "Gemini API, FastAPI, vektör arama ve Google Cloud uyumlu mimari ile geliştirilen, üretim odaklı bir Retrieval-Augmented Generation asistanı.",
+            "cv-project2-title": "Factory RAG Assistant",
+            "cv-project2-note": "Fabrika dokümanlarını ve operasyonel bilgiyi aranabilir AI iş akışlarına dönüştüren asistan yaklaşımı.",
+            "cv-project3-title": "Netelsan Cloud",
+            "cv-project3-note": "Netelsan kullanıcıları için iOS ve Android mağazalarında yer alan mobil bulut deneyimi.",
+            "cv-project4-title": "Netelsan Burglar Alarm System",
+            "cv-project4-note": "Hırsız alarm süreçlerini izleme ve yönetme için üretimde kullanılan mobil alarm sistemi.",
+            "cv-project5-title": "PCB Anomali Tespit Sistemi",
+            "cv-project5-note": "PCB üretim kontrollerini azaltmak ve anomalileri erken yakalamak için geliştirilen görüntü işleme hattı.",
+            "cv-project6-title": "Uzaktan Alarm İzleme Yazılımı",
+            "cv-project6-note": "Alarm sistemleri, kontrol merkezi verileri ve gerçek zamanlı operasyon görünürlüğü için web izleme arayüzü.",
+            "cv-project7-title": "Otomatik Versiyonlama ve Dağıtım Sistemi",
+            "cv-project7-note": "Üretim hattındaki manuel kurulum hatalarını azaltmak için geliştirilen iç dağıtım otomasyonu.",
+            "cv-project8-title": "Araç Takip Mobil ve Web Uygulamaları",
+            "cv-project8-note": "Araç takip senaryoları için mobil ve web yüzeylerinde çalışan platformlar arası uygulamalar.",
+            "cv-project9-title": "Log Yönetimi ve İzleme Sistemleri",
+            "cv-project9-note": "Log görünürlüğü, altyapı takibi ve operasyonel müdahale için sunucu ve ağ izleme kurulumu.",
+            "cv-project10-title": "Cisco Ağ Konfigürasyon Aracı",
+            "cv-project10-note": "Yetkili Cisco konfigürasyon işlemlerini dakikalardan saniyelere indiren Windows aracı.",
+            "cv-project11-title": "Pardus Geçişi ve Açık Kaynak Sunucu Yığını",
+            "cv-project11-note": "Linux tabanlı sunucu/istemci ortamları ve açık kaynak servisler için geçiş ve kurulum projesi.",
+            "cv-project12-title": "Terminal Server Web Kontrol Uygulaması",
+            "cv-project12-note": "Terminal server kullanıcı problemlerini modüler kontrollerle çözmek için geliştirilen web yönetim uygulaması.",
+            "work-roadmap-eyebrow": "Proje yönü",
+            "work-roadmap-title": "Deneylerden kullanılabilir sürümlere",
+            "work-roadmap-1": "Hızlı prototip çıkarıp faydası kanıtlanan iş akışlarının mimarisini sağlamlaştırıyorum.",
+            "work-roadmap-2": "Web, mobil, bulut ve AI parçalarını sürdürülebilir arayüzlerle birbirine bağlıyorum.",
+            "work-roadmap-3": "Sonucu net belgeliyorum; işe alım ekipleri, teknik ekipler ve iş ortakları çalışmayı hızlıca değerlendirebilsin.",
             "certifications-title": "Sertifikalar",
             "certifications-id-label": "Yeterlilik Kimliği",
             "certifications-cta": "Yeterlilik belgesini göster",
@@ -433,7 +525,7 @@ void main(void) {
             "perspective-title": "🤝 İşbirlikçi Strateji",
             "perspective-p1": "Web ve mobil uygulama geliştirme konusundaki yılların deneyimiyle, en son trendlere göre müşteri gereksinimlerini anlama becerilerinde ustalaştım. Farklı nişlerden işletmelerle çalıştım, bu yüzden kendi işletmeniz için bana güvenebilirsiniz.",
             "perspective-p2": "Kullanıcı deneyimini önemli ölçüde iyileştiren ve iş büyümesini hızlandıran yenilikçi mobil çözümler tasarlama konusunda sağlam bir temele sahibim. İş geçmişim, teknolojiyi stratejik hedeflerle uyumlu hale getirme konusunda bana benzersiz bir bakış açısı sağlıyor; katkılarımın hem teknik olarak sağlam hem de ticari olarak uygulanabilir olmasını garanti ediyor. Hali hazırda yayında olan çeşitli projelerde çalışmış biri olarak, ilerleyebileceğimiz en iyi öneri ve fikirlerle size yardımcı olabilirim. Benimle çalışırken hiçbir şeyi kabul etmeye zorlanmazsınız; birlikte üzerinde çalışabileceğimiz çeşitli seçenekler sunarım.",
-            "footer-copy": "© 2026 Ismail Celik | MIT Lisansı ile lisanslanmıştır",
+            "footer-copy": "© 2026 İsmail ÇELİK | MIT Lisansı ile lisanslanmıştır",
             "updates-title": "Güncel",
             "follow-linkedin": "LinkedIn'de Takip Et",
             "update-read": "Güncellemeyi oku",
@@ -467,6 +559,9 @@ void main(void) {
             "hero-bio": "Je construis des expériences web et mobiles fiables, j'intègre l'IA dans des flux de travail réels et je soigne les systèmes qui rendent les produits rapides, maintenables et utiles.",
             "hero-primary-action": "Voir les projets",
             "hero-secondary-action": "Discuter",
+            "hero-cv-label": "Télécharger le CV",
+            "hero-cv-en": "Anglais",
+            "hero-cv-tr": "Turc",
             "hero-exp1": "Expertise Mobile",
             "hero-exp2": "Code Propre",
             "hero-exp3": "Intégration d'IA",
@@ -482,6 +577,16 @@ void main(void) {
             "tech-title": "🛠 Stack Tech & Compétences",
             "tech-expanding-title": "🌟 Élargir l'horizon",
             "work-title": "🚀 Mes Projets Actuels",
+            "work-lead": "Un aperçu ciblé des systèmes, idées produit et expérimentations techniques que je façonne actuellement.",
+            "work-eyebrow": "Priorité actuelle",
+            "work-feature-title": "Construire des systèmes produit pratiques prêts pour l'IA",
+            "work-feature-p": "Je combine développement full-stack, expérience mobile, architecture cloud et workflows assistés par IA dans des produits de portfolio fiables pour de vrais utilisateurs.",
+            "work-signal1-title": "Frontend",
+            "work-signal1-p": "React, React Native, Flutter, TypeScript",
+            "work-signal2-title": "Backend",
+            "work-signal2-p": "Node.js, Spring Boot, Express.js, API REST, WebSocket",
+            "work-signal3-title": "Base de données & données IA",
+            "work-signal3-p": "MongoDB, PostgreSQL, MySQL, MSSQL, ChromaDB, Qdrant",
             "work-card1-title": "Architecture Avancée",
             "work-card1-p": "Mise en œuvre de la Clean Architecture et de modèles de conception modulaires.",
             "work-card2-title": "Synchro Web & Mobile",
@@ -494,6 +599,37 @@ void main(void) {
             "work-card5-p": "Optimisation des flux de travail de développement via des pipelines automatisés et des Actions GitHub personnalisées.",
             "work-card6-title": "Performance Système",
             "work-card6-p": "Surveillance et optimisation de l'efficacité des ressources avec des métriques système haute performance.",
+            "cv-projects-eyebrow": "Travaux sélectionnés",
+            "cv-projects-title": "Projets sélectionnés et travaux en cours",
+            "cv-project1-title": "Gemini RAG Knowledge Assistant",
+            "cv-project1-note": "Assistant Retrieval-Augmented Generation orienté production, construit avec Gemini API, FastAPI, la recherche vectorielle et une architecture compatible Google Cloud.",
+            "cv-project2-title": "Factory RAG Assistant",
+            "cv-project2-note": "Concept d'assistant transformant documents d'usine et savoir opérationnel en workflows IA consultables.",
+            "cv-project3-title": "Netelsan Cloud",
+            "cv-project3-note": "Expérience cloud mobile pour les utilisateurs Netelsan, disponible sur iOS et Android.",
+            "cv-project4-title": "Netelsan Burglar Alarm System",
+            "cv-project4-note": "Système mobile d'alarme en production pour surveiller et gérer les flux d'alarme intrusion.",
+            "cv-project5-title": "Système de détection d'anomalies PCB",
+            "cv-project5-note": "Pipeline de vision conçu pour réduire les contrôles PCB manuels et détecter les anomalies plus tôt.",
+            "cv-project6-title": "Logiciel de supervision d'alarmes à distance",
+            "cv-project6-note": "Interface web de supervision pour systèmes d'alarme, données de centre de contrôle et visibilité temps réel.",
+            "cv-project7-title": "Système de versioning et distribution automatiques",
+            "cv-project7-note": "Automatisation interne de release conçue pour réduire les erreurs d'installation en production.",
+            "cv-project8-title": "Applications mobiles et web de suivi de véhicules",
+            "cv-project8-note": "Applications multiplateformes pour des scénarios de suivi de véhicules sur mobile et web.",
+            "cv-project9-title": "Systèmes de gestion et supervision des logs",
+            "cv-project9-note": "Mise en place de supervision serveurs et réseaux pour logs, suivi d'infrastructure et réponse opérationnelle.",
+            "cv-project10-title": "Outil de configuration réseau Cisco",
+            "cv-project10-note": "Outil Windows réduisant les changements Cisco autorisés de plusieurs minutes à quelques secondes.",
+            "cv-project11-title": "Migration Pardus et stack serveur open source",
+            "cv-project11-note": "Projet de migration et d'implémentation pour environnements Linux serveur/client et services open source.",
+            "cv-project12-title": "Application web de contrôle Terminal Server",
+            "cv-project12-note": "Application web d'administration pour résoudre les problèmes Terminal Server via des contrôles modulaires.",
+            "work-roadmap-eyebrow": "Direction projet",
+            "work-roadmap-title": "Des expérimentations aux versions utilisables",
+            "work-roadmap-1": "Prototyper rapidement, puis renforcer l'architecture autour des workflows réellement utiles.",
+            "work-roadmap-2": "Relier web, mobile, cloud et IA avec des interfaces maintenables.",
+            "work-roadmap-3": "Documenter clairement le résultat pour que recruteurs, équipes et collaborateurs puissent l'évaluer vite.",
             "certifications-title": "Certifications",
             "certifications-id-label": "ID du certificat",
             "certifications-cta": "Afficher le certificat",
@@ -516,7 +652,7 @@ void main(void) {
             "perspective-title": "🤝 Stratégie Collaborative",
             "perspective-p1": "Avec des années d'expérience dans le développement d'applications web et mobiles, j'ai acquis la maîtrise de la compréhension des besoins des clients selon les dernières tendances. J'ai travaillé avec des entreprises de différents secteurs, vous pouvez donc compter sur moi pour le vôtre.",
             "perspective-p2": "J'ai une base solide dans la conception de solutions mobiles innovantes qui améliorent considérablement l'expérience utilisateur et accélèrent la croissance de l'entreprise. Mon parcours professionnel me donne une perspective unique sur l'alignement de la technologie avec les objectifs stratégiques, garantissant que mes contributions sont à la fois techniquement solides et commercialement viables. Ayant travaillé sur divers projets déjà en ligne, je peux vous aider avec les meilleures suggestions et idées possibles pour progresser. Avec moi, vous n'êtes forcé de rien accepter ; je vous propose une variété d'options sur lesquelles nous pouvons travailler ensemble.",
-            "footer-copy": "© 2026 Ismail Celik | Sous licence MIT",
+            "footer-copy": "© 2026 İsmail ÇELİK | Sous licence MIT",
             "updates-title": "Actualités",
             "follow-linkedin": "Suivre sur LinkedIn",
             "update-read": "Lire l'actualité",
@@ -1283,13 +1419,23 @@ void main(void) {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     };
 
+    const syncBrandIcons = (theme) => {
+        document.querySelectorAll('.brand-icon[data-light-src][data-dark-src]').forEach((icon) => {
+            const nextSrc = theme === 'dark' ? icon.dataset.darkSrc : icon.dataset.lightSrc;
+            if (nextSrc && icon.getAttribute('src') !== nextSrc) {
+                icon.setAttribute('src', nextSrc);
+            }
+        });
+    };
+
     const setTheme = (theme) => {
         body.classList.remove('theme-dark', 'theme-light', 'theme-auto');
         body.classList.add(`theme-${theme}`);
         localStorage.setItem('theme', theme);
         if (themeColorMeta) {
-            themeColorMeta.setAttribute('content', theme === 'dark' ? '#1b1718' : '#eef2f6');
+            themeColorMeta.setAttribute('content', theme === 'dark' ? '#101418' : '#eef2f6');
         }
+        syncBrandIcons(theme);
     };
 
     // 2. Theme Toggle Event
