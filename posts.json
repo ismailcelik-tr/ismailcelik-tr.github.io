@@ -672,7 +672,7 @@
   {
     "id": 44,
     "date": "2026-05-15",
-    "content": "AI infrastructure is no longer just:\n\n“Which model are you running?”\n\nIt’s becoming:\n\n“How fast can your entire system move, retrieve, and persist data?”\n\nDell and Kioxia just demonstrated nearly 10 PB of flash storage inside a compact 2U server using ultra-dense QLC NVMe SSDs.\n\nHere: https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574\n\nThat number sounds absurd until you realize where the industry is heading:\n\n- Larger vector databases\n- Multimodal datasets\n- Long-context AI systems\n- Retrieval-heavy architectures\n- Agent memory systems",
+    "content": "AI infrastructure is no longer just:\n“Which model are you running?”\n\nIt’s becoming:\n“How fast can your entire system move, retrieve, and persist data?”\n\nDell and Kioxia just demonstrated nearly 10 PB of flash storage inside a compact 2U server using ultra-dense QLC NVMe SSDs.\n\nHere: https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574\n\nThat number sounds absurd until you realize where the industry is heading:\n- Larger vector databases\n- Multimodal datasets\n- Long-context AI systems\n- Retrieval-heavy architectures\n- Agent memory systems",
     "link": "https://www.blocksandfiles.com/flash/2026/05/14/kioxia-and-dell-cram-10-pb-into-slim-2ru-server/5240574",
     "linkPreview": {
       "title": "Kioxia and Dell cram nearly 10 PB into slim 2U server",
@@ -706,7 +706,7 @@
   {
     "id": 46,
     "date": "2026-05-16",
-    "content": "NVIDIA’s SANA-WM project is one of the most impressive AI demos I’ve seen recently.\n\nThe future may not belong only to the biggest models.\n\nI think it will belong to the most efficient architectures.\n\nProject:\n\nhttps://nvlabs.github.io/Sana/WM/",
+    "content": "NVIDIA’s SANA-WM project is one of the most impressive AI demos I’ve seen recently. The future may not belong only to the biggest models.\n\nI think it will belong to the most efficient architectures.\n\nProject:\nhttps://nvlabs.github.io/Sana/WM/",
     "link": "https://nvlabs.github.io/Sana/WM/",
     "linkPreview": {
       "title": "SANA-WM",
@@ -723,7 +723,7 @@
   {
     "id": 47,
     "date": "2026-05-17",
-    "content": "I wish we could see similar initiatives in Turkey as well.\n\n\nAs part of Malta’s “AI for All” initiative, citizens first complete an AI literacy course developed by the University of Malta; they then gain free access to ChatGPT Plus for one year.\n\n\nhttps://openai.com/index/malta-chatgpt-plus-partnership/\n\n\n#ArtificialIntelligence #ChatGPT #OpenAI #DigitalTransformation",
+    "content": "I wish we could see similar initiatives in Turkey as well.\n\nAs part of Malta’s “AI for All” initiative, citizens first complete an AI literacy course developed by the University of Malta; they then gain free access to ChatGPT Plus for one year.\n\nhttps://openai.com/index/malta-chatgpt-plus-partnership/\n\n#ArtificialIntelligence #ChatGPT #OpenAI #DigitalTransformation",
     "link": "https://openai.com/index/malta-chatgpt-plus-partnership/",
     "linkPreview": {
       "title": "OpenAI and Malta partner to bring ChatGPT Plus to all citizens",
