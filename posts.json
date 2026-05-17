@@ -753,5 +753,21 @@
       "AIOperatingSystem",
       "OperatingSystems"
     ]
+  },
+  {
+  "id": 49,
+  "date": "2026-05-17",
+  "content": "In the past, when using AI, we operated on a “one prompt, one response” model, and this didn’t impose excessive costs on AI providers. But in modern agentic workflows, capabilities such as:\n\n- Planning\n- Reflection\n- Verification\n- Retrieval\n- Subagents\n- Memory retrieval\n- Reasoning loops, and so on, are becoming standard. And the cost of this has started to become truly burdensome for the companies providing these services.\n\nI recommend reading: https://www.thestateofbrand.com/news/ai-subscription-time-bomb\n\nAnd believe me, the $20 we pay to OpenAI, Anthropic, or Google for ChatGPT, Claude, and Gemini is nothing compared to the cost of these capabilities!\n\nIt might not be very soon, but in the near future, we’ll likely be discussing and budgeting for monthly fees of $100—or even $1,000—for AI tools we can’t live without.\n\nMy advice to you is to visit Hugging Face at least once a day and start researching how to build your own LLM systems now. Because when that day comes, you’ll have no choice but to do it.",
+  "link": "https://www.thestateofbrand.com/news/ai-subscription-time-bomb",
+  "linkPreview": {
+    "title": "The AI Subscription Time Bomb",
+    "description": "A deep dive into how agentic AI workflows are dramatically increasing infrastructure and operational costs for major AI providers."
+  },
+  "tags": [
+    "AgenticAI",
+    "LLM",
+    "AIInfrastructure",
+    "AIAgents",
+  ]
   }
 ]
