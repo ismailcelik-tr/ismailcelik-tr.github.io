@@ -788,5 +788,23 @@
       "SoftwareArchitecture",
       "AIInfrastructure"
     ]
+  },
+  {
+    "id": 51,
+    "date": "2026-05-18",
+    "content": "Hmm. How can I explain this? It’s a “data access infrastructure for AI coding agents.” Yeah, something like that. 😊\n\nhttps://github.com/MinishLab/semble\n\nThe core idea is fascinating: instead of agents repeatedly using grep + file reads + huge context windows, \"Semble\" focuses on:\n\n- Token-efficient retrieval\n\n- Ultra-fast code search\n\n\"~98% fewer tokens than traditional grep+read workflows\" 🫢\n\n#AI #AgenticAI #AIInfrastructure #SoftwareEngineering #MCP #DeveloperTools",
+    "link": "https://github.com/MinishLab/semble",
+    "linkPreview": {
+      "title": "MinishLab / Semble",
+      "description": "A token-efficient data access and code retrieval infrastructure designed for AI coding agents and modern agentic development workflows."
+    },
+    "tags": [
+      "AI",
+      "AgenticAI",
+      "AIInfrastructure",
+      "SoftwareEngineering",
+      "MCP",
+      "DeveloperTools"
+    ]
   }
 ]
