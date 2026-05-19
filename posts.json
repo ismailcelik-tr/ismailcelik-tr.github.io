@@ -828,7 +828,7 @@
   {
   "id": 53,
   "date": "2026-05-19",
-  "content": "The biggest shift in the last 6 months hasn’t been “bigger models.” It has been the rise of more agentic systems. And very soon, i think, the conversation will move beyond “agentic systems” toward \"truly autonomous systems\".\n\nUnfortunately, at that stage, the demand may no longer be for people who simply use AI tools, but for people who can design, guide, manage, and supervise autonomous AI systems effectively.\n\nhttps://simonwillison.net/2026/May/19/5-minute-llms/",
+  "content": "The biggest shift in the last 6 months hasn’t been “bigger models.” It has been the rise of more agentic systems. And very soon, i think, the conversation will move beyond “agentic systems” toward \"truly autonomous systems\".\n\nUnfortunately, at that stage, the demand may no longer be for people who simply use AI tools, but for people who can design, guide, manage, and supervise autonomous AI systems effectively.",
   "link": "https://simonwillison.net/2026/May/19/5-minute-llms/",
   "linkPreview": {
     "title": "5-minute LLMs",
@@ -839,6 +839,23 @@
     "MachineLearning",
     "AgenticAI",
     "AIInfrastructure"
+  ]
+},
+  {
+  "id": 54,
+  "date": "2026-05-19",
+  "content": "Cursor is moving beyond being a classic “AI-powered IDE” and is increasingly evolving into a more agent-like runtime.\n\nI suspect that very soon, the lines between Cursor (IDE-First), Anthropic's Claude Code (CLI-First), and OpenAI's Codex (Cloud-Agent-First) will begin to blur significantly.",
+  "link": "https://cursor.com/blog/composer-2-5",
+  "linkPreview": {
+    "title": "Composer 2.5 - Cursor",
+    "description": "Cursor introduces Composer 2.5, expanding beyond a traditional AI-powered IDE toward a more agentic and autonomous development experience."
+  },
+  "tags": [
+    "AI",
+    "Cursor",
+    "ClaudeCode",
+    "Codex",
+    "DeveloperTools"
   ]
 }
 ]
