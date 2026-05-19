@@ -723,7 +723,7 @@
   {
     "id": 47,
     "date": "2026-05-17",
-    "content": "I wish we could see similar initiatives in Turkey as well.\n\nAs part of Malta’s “AI for All” initiative, citizens first complete an AI literacy course developed by the University of Malta; they then gain free access to ChatGPT Plus for one year.\n\nhttps://openai.com/index/malta-chatgpt-plus-partnership/\n\n#ArtificialIntelligence #ChatGPT #OpenAI #DigitalTransformation",
+    "content": "I wish we could see similar initiatives in Turkey as well.\n\nAs part of Malta’s “AI for All” initiative, citizens first complete an AI literacy course developed by the University of Malta; they then gain free access to ChatGPT Plus for one year.\n\nhttps://openai.com/index/malta-chatgpt-plus-partnership/",
     "link": "https://openai.com/index/malta-chatgpt-plus-partnership/",
     "linkPreview": {
       "title": "OpenAI and Malta partner to bring ChatGPT Plus to all citizens",
@@ -792,7 +792,7 @@
   {
     "id": 51,
     "date": "2026-05-18",
-    "content": "Hmm. How can I explain this? It’s a “data access infrastructure for AI coding agents.” Yeah, something like that. 😊\n\nhttps://github.com/MinishLab/semble\n\nThe core idea is fascinating: instead of agents repeatedly using grep + file reads + huge context windows, \"Semble\" focuses on:\n- Token-efficient retrieval\n- Ultra-fast code search\n\n\"~98% fewer tokens than traditional grep+read workflows\" 🫢\n\n#AI #AgenticAI #AIInfrastructure #SoftwareEngineering #MCP #DeveloperTools",
+    "content": "Hmm. How can I explain this? It’s a “data access infrastructure for AI coding agents.” Yeah, something like that. 😊\n\nhttps://github.com/MinishLab/semble\n\nThe core idea is fascinating: instead of agents repeatedly using grep + file reads + huge context windows, \"Semble\" focuses on:\n- Token-efficient retrieval\n- Ultra-fast code search\n\n\"~98% fewer tokens than traditional grep+read workflows\" 🫢",
     "link": "https://github.com/MinishLab/semble",
     "linkPreview": {
       "title": "MinishLab / Semble",
@@ -823,6 +823,22 @@
     "ToLive",
     "NormalPeople",
     "BookRecommendations"
+  ]
+},
+  {
+  "id": 53,
+  "date": "2026-05-19",
+  "content": "The biggest shift in the last 6 months hasn’t been “bigger models.” It has been the rise of more agentic systems. And very soon, i think, the conversation will move beyond “agentic systems” toward \"truly autonomous systems\".\n\nUnfortunately, at that stage, the demand may no longer be for people who simply use AI tools, but for people who can design, guide, manage, and supervise autonomous AI systems effectively.\n\nhttps://simonwillison.net/2026/May/19/5-minute-llms/",
+  "link": "https://simonwillison.net/2026/May/19/5-minute-llms/",
+  "linkPreview": {
+    "title": "5-minute LLMs",
+    "description": "Simon Willison explores the rapid evolution of AI systems, highlighting the transition from larger models to increasingly agentic and autonomous architectures."
+  },
+  "tags": [
+    "AI",
+    "MachineLearning",
+    "AgenticAI",
+    "AIInfrastructure"
   ]
 }
 ]
