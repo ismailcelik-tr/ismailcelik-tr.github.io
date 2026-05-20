@@ -857,5 +857,21 @@
     "Codex",
     "DeveloperTools"
   ]
-}
+},
+  {
+  "id": 55,
+  "date": "2026-05-20",
+  "content": "Google has begun integrating Gemini into:\n- Search,\n- Workspace,\n- Android,\n- Developer Tools,\n- and Workflow Systems.\n\nThe transition from the era of \"AI assistants\" to the era of \"AI agents\" is continuing across all sectors. By the way, Gemini 3.5 Flash turned out pretty well.\n\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/#gemini-3-5-flash",
+  "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/#gemini-3-5-flash",
+  "linkPreview": {
+    "title": "Gemini 3.5 Flash",
+    "description": "Google introduces Gemini 3.5 Flash, highlighting faster multimodal performance and deeper integration of AI agents across products and workflows."
+  },
+  "tags": [
+    "AI",
+    "Gemini",
+    "GoogleIO",
+    "AIAgents"
+  ]
+ }
 ]
