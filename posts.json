@@ -873,5 +873,53 @@
     "GoogleIO",
     "AIAgents"
   ]
- }
+ },
+  {
+  "id": 56,
+  "date": "2026-05-22",
+  "content": "What Microsoft just did… and what we started seeing after Google I/O with Gemini “usage limits” screens… are not random product decisions.\n\nAI is no longer a toy. It now requires \"serious engineering\" and \"cost discipline\".",
+  "link": "https://aiweekly.co/alerts/microsoft-drops-claude-code-after-budget-overrun",
+  "linkPreview": {
+    "title": "Microsoft Drops Claude Code After Budget Overrun",
+    "description": "Microsoft reportedly ended its internal Claude Code rollout after token-based AI costs exceeded budget expectations, highlighting the growing economics challenge of agentic AI systems."
+  },
+  "tags": [
+    "AI",
+    "AIAgents",
+    "LLM",
+    "AIInfrastructure",
+    "SoftwareEngineering"
+  ]
+},
+  {
+  "id": 57,
+  "date": "2026-05-22",
+  "content": "Google I/O showed us AI assistants buying concert tickets from a poster photo and a text message in seconds. A few days later, Google Search gets confused by the word “disregard.” We are simultaneously living in:\n- the future of software,\n- and the weirdest \"beta test\" in history. 🤭\n\nFor the word “disregard”; Instead of treating it as a normal search query, Gemini interprets it almost like a command: “Understood. Message disregarded.” And then the search page leaves abnormal blank spaces afterward.",
+  "link": "https://techcrunch.com/2026/05/22/you-can-no-longer-google-the-word-disregard/",
+  "linkPreview": {
+    "title": "You can no longer Google the word ‘disregard’",
+    "description": "Google’s AI-powered Search appears to misinterpret the word “disregard” as an instruction, exposing strange behaviors in the company’s new AI-first search experience."
+  },
+  "tags": [
+    "AI",
+    "Google",
+    "Gemini",
+    "AIAgents"
+  ]
+},
+  {
+  "id": 58,
+  "date": "2026-05-22",
+  "content": "A $48,000 personal GPU server... For now, it makes more sense to use cloud-based large language models (LLMs) like Claude, ChatGPT, or Gemini...\n\nPaying $20 a month for ChatGPT Plus doesn’t seem so expensive all of a sudden, does it? ☺️",
+  "link": "https://rosmine.ai/2026/05/13/was-my-48k-gpu-worth-it/",
+  "linkPreview": {
+    "title": "Was my $48K GPU server worth it?",
+    "description": "An independent AI researcher shares the costs, tradeoffs, and lessons learned from building a $48,000 personal GPU server for local AI workloads."
+  },
+  "tags": [
+    "AI",
+    "LLM",
+    "AIInfrastructure"
+  ]
+}
 ]
