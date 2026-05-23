@@ -921,5 +921,40 @@
     "LLM",
     "AIInfrastructure"
   ]
-}
+},
+  {
+  "id": 59,
+  "date": "2026-05-23",
+  "content": "Your computer’s operating system and much of the software on it receive updates almost every day, don’t they? Anthropic's Project Glasswing and approximately 50 partners (Amazon, Microsoft, Apple, Google, NVIDIA etc.) are likely the reason why.\n\nhttps://www.anthropic.com/research/glasswing-initial-update",
+  "link": "https://www.anthropic.com/research/glasswing-initial-update",
+  "linkPreview": {
+    "title": "Project Glasswing: An initial update",
+    "description": "Anthropic shares new findings from Project Glasswing, an AI-assisted cybersecurity initiative conducted with major technology partners to identify critical software vulnerabilities."
+  },
+  "tags": [
+    "AI",
+    "CyberSecurity",
+    "Anthropic",
+    "AISecurity",
+    "SoftwareEngineering"
+  ]
+},
+  {
+  "id": 60,
+  "date": "2026-05-23",
+  "content": "\"Make something people want.\" - Paul Graham, Y Combinator.\n\nStarting from scratch takes a little time, but it’s usually worth it. Yes, it looks better this way. Here’s the Claude Code guide, ranging from simple to—just a bit—professional. ☺️\n\nhttps://github.com/ismailcelik-tr/claude-code-guide/",
+  "link": "https://github.com/ismailcelik-tr/claude-code-guide/",
+  "linkPreview": {
+    "title": "ismailcelik-tr/claude-code-guide",
+    "description": "A practical Claude Code guide covering workflows from beginner setups to more professional AI engineering and software architecture practices."
+  },
+  "tags": [
+    "AI",
+    "ClaudeCode",
+    "AIEngineering",
+    "DeveloperTools",
+    "SoftwareEngineering",
+    "AICoding"
+  ]
+ }
 ]
