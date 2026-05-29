@@ -1301,12 +1301,7 @@ void main(void) {
                     card.className = `update-card glass${index === 0 ? ' update-card--featured' : ''}`;
 
                     const relativeTime = getRelativeTime(post.date, lang);
-                    const primaryTag = post.tags?.[0] || 'Update';
-
                     card.innerHTML = `
-                        <div class="update-meta">
-                            <span class="update-category">${primaryTag}</span>
-                        </div>
                         <div class="update-content">${post.content}</div>
                         ${post.tags ? `
                             <div class="update-tags">
