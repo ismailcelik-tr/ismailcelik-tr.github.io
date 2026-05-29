@@ -1305,7 +1305,6 @@ void main(void) {
 
                     card.innerHTML = `
                         <div class="update-meta">
-                            <div class="update-date">${relativeTime}</div>
                             <span class="update-category">${primaryTag}</span>
                         </div>
                         <div class="update-content">${post.content}</div>
