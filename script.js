@@ -1299,23 +1299,13 @@ void main(void) {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     };
 
-    const syncBrandIcons = (theme) => {
-        document.querySelectorAll('.brand-icon[data-light-src][data-dark-src]').forEach((icon) => {
-            const nextSrc = theme === 'dark' ? icon.dataset.darkSrc : icon.dataset.lightSrc;
-            if (nextSrc && icon.getAttribute('src') !== nextSrc) {
-                icon.setAttribute('src', nextSrc);
-            }
-        });
-    };
-
     const setTheme = (theme) => {
         body.classList.remove('theme-dark', 'theme-light', 'theme-auto');
         body.classList.add(`theme-${theme}`);
         localStorage.setItem('theme', theme);
         if (themeColorMeta) {
-            themeColorMeta.setAttribute('content', theme === 'dark' ? '#101418' : '#eef2f6');
+            themeColorMeta.setAttribute('content', theme === 'dark' ? '#1f1e1b' : '#faf9f5');
         }
-        syncBrandIcons(theme);
     };
 
     // 2. Theme Toggle Event
