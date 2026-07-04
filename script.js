@@ -25,6 +25,7 @@
     const scrollingDocumentTitle = `${baseDocumentTitle} \u2022 `;
     let titleScrollIndex = 0;
     let titleScrollInterval = null;
+    let setShaderTheme = () => {};
 
     const updateScrollingTitle = () => {
         const rotatedTitle = scrollingDocumentTitle.slice(titleScrollIndex) + scrollingDocumentTitle.slice(0, titleScrollIndex);
@@ -60,11 +61,7 @@
         let program = null;
         let buffer = null;
         let frameId = null;
-        let pointerCount = 0;
-        let pointerCoords = [0, 0];
-        let lastPointer = [0, 0];
-        let pointerMove = [0, 0];
-        const pointers = new Map();
+        let darkValue = document.body.classList.contains('theme-dark') ? 1 : 0;
 
         const vertexSource = `#version 300 es
 precision highp float;
@@ -78,6 +75,7 @@ precision highp float;
 out vec4 O;
 uniform vec2 resolution;
 uniform float time;
+uniform float dark;
 #define FC gl_FragCoord.xy
 #define T time
 #define R resolution
@@ -109,35 +107,21 @@ float fbm(vec2 p) {
   return t;
 }
 
-float clouds(vec2 p) {
-  float d = 1., t = .0;
-  for (float i = .0; i < 3.; i++) {
-    float a = d * fbm(i * 10. + p.x * .2 + .2 * (1. + i) * p.y + d + i * i + p);
-    t = mix(t, d, a);
-    d = a;
-    p *= 2. / (i + 1.);
-  }
-  return t;
-}
-
 void main(void) {
-  vec2 uv = (FC - .5 * R) / MN, st = uv * vec2(2, 1);
-  vec3 col = vec3(0);
-  vec3 glow = vec3(.08, .72, .68);
-  vec3 bloom = vec3(.16, .56, .95);
-  vec3 smoke = vec3(.02, .18, .2);
-  vec3 accent = vec3(.42, .08, .18);
-  float bg = clouds(vec2(st.x + T * .5, -st.y));
-  uv *= 1. - .3 * (sin(T * .2) * .5 + .5);
-  for (float i = 1.; i < 12.; i++) {
-    uv += .1 * cos(i * vec2(.1 + .01 * i, .8) + i * i + T * .5 + .1 * uv.x);
-    vec2 p = uv;
-    float d = length(p);
-    col += .00125 / d * mix(glow, bloom, .5 + .5 * sin(i + T * .08));
-    float b = noise(i + p + bg * 1.731);
-    col += .0016 * b * mix(glow, accent, b * .35) / length(max(p, vec2(b * p.x * .02, p.y)));
-    col = mix(col, smoke * bg, d);
-  }
+  vec2 uv = (FC - .5 * R) / MN;
+  float n = fbm(uv * 1.6 + vec2(T * .02, -T * .012));
+  float m = smoothstep(.35, 1.45, n);
+  vec3 baseL = vec3(.980, .976, .961);
+  vec3 tintL = vec3(.925, .910, .873);
+  vec3 warmL = vec3(.851, .467, .341);
+  vec3 baseD = vec3(.122, .118, .106);
+  vec3 tintD = vec3(.173, .165, .149);
+  vec3 warmD = vec3(.322, .208, .157);
+  vec3 base = mix(baseL, baseD, dark);
+  vec3 tint = mix(tintL, tintD, dark);
+  vec3 warm = mix(warmL, warmD, dark);
+  vec3 col = mix(base, tint, m);
+  col = mix(col, warm, .05 * smoothstep(.75, 1.3, n));
   O = vec4(col, 1);
 }`;
 
@@ -176,16 +160,6 @@ void main(void) {
             return shaderProgram;
         };
 
-        const mapPointer = (event) => {
-            const rect = canvas.getBoundingClientRect();
-            const scaleX = canvas.width / rect.width;
-            const scaleY = canvas.height / rect.height;
-            return [
-                (event.clientX - rect.left) * scaleX,
-                canvas.height - (event.clientY - rect.top) * scaleY
-            ];
-        };
-
         const resizeCanvas = () => {
             const rect = canvas.getBoundingClientRect();
             const dpr = Math.max(1, 0.5 * (window.devicePixelRatio || 1));
@@ -197,13 +171,14 @@ void main(void) {
         const drawFrame = (time = performance.now()) => {
             if (!program) return;
 
-            gl.clearColor(0, 0, 0, 1);
+            gl.clearColor(0.98, 0.976, 0.961, 1);
             gl.clear(gl.COLOR_BUFFER_BIT);
             gl.useProgram(program);
             gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
 
             gl.uniform2f(gl.getUniformLocation(program, 'resolution'), canvas.width, canvas.height);
             gl.uniform1f(gl.getUniformLocation(program, 'time'), time * 0.001);
+            gl.uniform1f(gl.getUniformLocation(program, 'dark'), darkValue);
             const position = gl.getAttribLocation(program, 'position');
             gl.enableVertexAttribArray(position);
             gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
@@ -230,45 +205,12 @@ void main(void) {
         gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, 1, -1, -1, 1, 1, 1, -1]), gl.STATIC_DRAW);
 
-        const updatePointerState = () => {
-            pointerCount = pointers.size;
-            pointerCoords = pointerCount > 0 ? Array.from(pointers.values()).flat() : [0, 0];
-        };
-
-        const onPointerDown = (event) => {
-            canvas.setPointerCapture?.(event.pointerId);
-            const coords = mapPointer(event);
-            pointers.set(event.pointerId, coords);
-            lastPointer = coords;
-            updatePointerState();
-        };
-
-        const onPointerMove = (event) => {
-            const coords = mapPointer(event);
-            pointerMove = [pointerMove[0] + event.movementX, pointerMove[1] + event.movementY];
-            lastPointer = coords;
-            if (pointers.has(event.pointerId)) {
-                pointers.set(event.pointerId, coords);
-                updatePointerState();
-            }
-        };
-
-        const onPointerUp = (event) => {
-            pointers.delete(event.pointerId);
-            updatePointerState();
-        };
-
-        canvas.addEventListener('pointerdown', onPointerDown);
-        canvas.addEventListener('pointermove', onPointerMove);
-        canvas.addEventListener('pointerup', onPointerUp);
-        canvas.addEventListener('pointerleave', onPointerUp);
-        hero?.addEventListener('pointermove', onPointerMove);
         window.addEventListener('resize', restart);
         reduceMotion.addEventListener?.('change', restart);
-        void pointerCount;
-        void pointerCoords;
-        void lastPointer;
-        void pointerMove;
+        setShaderTheme = (theme) => {
+            darkValue = theme === 'dark' ? 1 : 0;
+            if (!frameId) drawFrame();
+        };
         restart();
     };
 
@@ -298,10 +240,8 @@ void main(void) {
             "nav-skills": "Skills",
             "nav-work": "Work",
             "nav-contact": "Contact",
-            "hero-hi": "Hi",
-            "hero-name": "I'm İsmail!",
             "hero-eyebrow": "Product-Minded Engineering",
-            "hero-subtitle": "Full-stack, mobile and AI systems built with practical architecture.",
+            "hero-title": "Full-stack, mobile and AI systems built with practical architecture.",
             "hero-bio": "I build reliable web and mobile experiences, connect AI into real workflows, and care about the systems work that keeps products fast, maintainable, and useful.",
             "hero-primary-action": "View Projects",
             "hero-secondary-action": "Start a Conversation",
@@ -387,10 +327,8 @@ void main(void) {
             "nav-skills": "Yetenekler",
             "nav-work": "Çalışmalar",
             "nav-contact": "İletişim",
-            "hero-hi": "Selam",
-            "hero-name": "Ben İsmail!",
             "hero-eyebrow": "Ürün Odaklı Mühendislik",
-            "hero-subtitle": "Pratik mimariyle geliştirilen full-stack, mobil ve AI sistemleri.",
+            "hero-title": "Pratik mimariyle geliştirilen full-stack, mobil ve AI sistemleri.",
             "hero-bio": "Güvenilir web ve mobil deneyimler geliştiriyorum, AI'ı gerçek iş akışlarına bağlıyorum ve ürünleri hızlı, sürdürülebilir ve kullanışlı tutan sistem tarafını önemsiyorum.",
             "hero-primary-action": "Projeleri Gör",
             "hero-secondary-action": "İletişime Geç",
@@ -476,10 +414,8 @@ void main(void) {
             "nav-skills": "Compétences",
             "nav-work": "Travaux",
             "nav-contact": "Contact",
-            "hero-hi": "Salut",
-            "hero-name": "Je suis İsmail !",
             "hero-eyebrow": "Ingénierie Orientée Produit",
-            "hero-subtitle": "Systèmes full-stack, mobiles et IA avec une architecture pratique.",
+            "hero-title": "Systèmes full-stack, mobiles et IA avec une architecture pratique.",
             "hero-bio": "Je construis des expériences web et mobiles fiables, j'intègre l'IA dans des flux de travail réels et je soigne les systèmes qui rendent les produits rapides, maintenables et utiles.",
             "hero-primary-action": "Voir les projets",
             "hero-secondary-action": "Discuter",
@@ -1306,6 +1242,7 @@ void main(void) {
         if (themeColorMeta) {
             themeColorMeta.setAttribute('content', theme === 'dark' ? '#1f1e1b' : '#faf9f5');
         }
+        setShaderTheme(theme);
     };
 
     // 2. Theme Toggle Event
