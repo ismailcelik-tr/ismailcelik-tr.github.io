@@ -278,6 +278,8 @@ body.theme-dark .work-status--live { color: #81c784; }
 /* Certifications */
 .certifications-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .cert-shell { padding: 1.25rem; }
+.cert-shell--compact { padding: 1rem; }
+.cert-shell--compact .cert-badge-visual { width: 64px; height: 64px; }
 .cert-row { display: flex; justify-content: space-between; gap: 1rem; }
 .cert-main { display: flex; gap: 0.9rem; min-width: 0; }
 .cert-logo { flex-shrink: 0; width: 44px; height: 44px; border-radius: var(--radius); overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--bg); border: 1px solid var(--border); }
