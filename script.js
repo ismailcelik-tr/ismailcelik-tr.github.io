@@ -910,7 +910,7 @@ void main(void) {
             : '';
 
         return `
-            <article class="cert-shell glass certification-card${isCompact}">
+            <article class="cert-shell card certification-card${isCompact}">
                 <div class="cert-row">
                     <div class="cert-main">
                         ${getCertificationLogoMarkup(cert)}
