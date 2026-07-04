@@ -350,3 +350,39 @@ footer h2 { margin-bottom: 1.5rem; }
 .social-btn:hover { color: var(--accent-text); }
 .social-btn svg { width: 18px; height: 18px; }
 .copyright { font-size: 0.82rem; color: var(--text-secondary); }
+
+/* Command palette */
+.command-palette-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1200;
+  background: rgba(20, 18, 14, 0.55);
+  align-items: flex-start; justify-content: center; padding: 15vh 1.5rem 1.5rem;
+}
+.command-palette-overlay.active { display: flex; }
+.command-palette { width: 100%; max-width: 520px; overflow: hidden; }
+.command-palette-header {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.85rem 1rem; border-bottom: 1px solid var(--border);
+}
+.command-palette-header svg { width: 16px; height: 16px; color: var(--text-secondary); flex-shrink: 0; }
+.command-palette-input {
+  flex: 1; background: none; border: none; outline: none;
+  color: var(--text); font-family: var(--font-body); font-size: 0.95rem;
+}
+.command-palette-close-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: 0.2rem; }
+.command-palette-body { padding: 0.6rem; }
+.command-palette-label {
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-secondary); padding: 0.25rem 0.5rem 0.5rem;
+}
+.command-palette-results { display: flex; flex-direction: column; max-height: 40vh; overflow-y: auto; }
+.command-item {
+  background: none; border: none; border-radius: var(--radius);
+  padding: 0.6rem 0.75rem; color: var(--text); font-family: var(--font-body);
+  font-size: 0.9rem; text-align: left; cursor: pointer;
+}
+.command-item:hover, .command-item.active { background: var(--bg); color: var(--accent-text); }
+.command-empty { padding: 0.75rem; color: var(--text-secondary); font-size: 0.9rem; }
+
+/* Update detail modal */
+.modal-full-content { font-size: 0.95rem; }
+.modal-link-preview { margin-top: 0.75rem; }

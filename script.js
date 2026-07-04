@@ -1408,12 +1408,14 @@ void main(void) {
         });
     }, { threshold: 0.1 });
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const observeRevealElements = (root = document) => {
-        root.querySelectorAll('.glass, .section-header').forEach(el => {
+        if (prefersReducedMotion.matches) return;
+        root.querySelectorAll('.card, .section-header').forEach(el => {
             if (el.dataset.revealBound === 'true') return;
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s ease-out';
+            el.style.transform = 'translateY(16px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             observer.observe(el);
             el.dataset.revealBound = 'true';
         });
