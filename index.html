@@ -248,7 +248,32 @@
           <div class="section-header">
             <h2 data-i18n="skills-title">Skills</h2>
           </div>
-          <div class="skills-grid" id="skills-grid"></div>
+          <div class="skills-grid" id="skills-grid">
+            <div class="skills-group">
+              <h3 data-i18n="skills-group-mobile">Mobile</h3>
+              <p>React Native · Flutter · iOS · Android</p>
+            </div>
+            <div class="skills-group">
+              <h3 data-i18n="skills-group-backend">Backend</h3>
+              <p>Node.js · Spring Boot · Express.js · FastAPI · REST · WebSocket</p>
+            </div>
+            <div class="skills-group">
+              <h3 data-i18n="skills-group-ai">AI &amp; Data</h3>
+              <p>Python · RAG · LLM · PyTorch · TensorFlow · ChromaDB · Qdrant</p>
+            </div>
+            <div class="skills-group">
+              <h3 data-i18n="skills-group-cloud">Cloud &amp; DevOps</h3>
+              <p>AWS · GCP · Docker · Kubernetes · CI/CD · Nginx · Linux</p>
+            </div>
+            <div class="skills-group">
+              <h3 data-i18n="skills-group-data">Databases</h3>
+              <p>PostgreSQL · MongoDB · MySQL · MSSQL · Redis</p>
+            </div>
+            <div class="skills-group">
+              <h3 data-i18n="skills-group-lang">Languages &amp; Tools</h3>
+              <p>TypeScript · JavaScript · Java · Dart · Go · Rust · Git</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -256,33 +281,11 @@
       <section id="about" class="about">
         <div class="container">
           <div class="section-header">
-            <h2 data-i18n="about-title">🔥 About Me</h2>
+            <h2 data-i18n="about-title">About</h2>
           </div>
-          <div class="bio-grid">
-            <div class="bio-card glass">
-              <i data-lucide="cpu"></i>
-              <h3 data-i18n="about-card1-title">Architecture</h3>
-              <p data-i18n="about-card1-p">
-                Strong focus on systems programming, backend engineering, and
-                high-performance solutions.
-              </p>
-            </div>
-            <div class="bio-card glass">
-              <i data-lucide="layers"></i>
-              <h3 data-i18n="about-card2-title">Foundations</h3>
-              <p data-i18n="about-card2-p">
-                Enjoy building things from scratch: network servers, parsers,
-                and CLIs.
-              </p>
-            </div>
-            <div class="bio-card glass">
-              <i data-lucide="zap"></i>
-              <h3 data-i18n="about-card3-title">Low-Level</h3>
-              <p data-i18n="about-card3-p">
-                Interested in memory management, concurrency, I/O protocols, and
-                performance tuning.
-              </p>
-            </div>
+          <div class="about-prose">
+            <p data-i18n="about-p1">I work across mobile, full-stack and AI systems, with a strong focus on architecture, backend engineering and high-performance solutions.</p>
+            <p data-i18n="about-p2">I enjoy building things from scratch — network servers, parsers, CLI tools — and I care about the low-level details: memory management, concurrency, I/O protocols and performance tuning.</p>
           </div>
         </div>
       </section>
@@ -290,43 +293,23 @@
       <!-- 6. CONTACT / FOOTER -->
       <footer id="contact">
         <div class="container">
-          <h2 data-i18n="footer-title">📫 Connect with Me</h2>
+          <h2 data-i18n="footer-title">Let's work together</h2>
           <div class="social-links">
-            <a
-              href="https://linkedin.com/in/ismailcelik/"
-              target="_blank"
-              class="social-btn linkedin"
-            >
-              <img
-                src="https://skillicons.dev/icons?i=linkedin"
-                alt="LinkedIn"
-              />
+            <a href="https://linkedin.com/in/ismailcelik/" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <i data-lucide="linkedin"></i>
               <span data-i18n="footer-linkedin">LinkedIn</span>
             </a>
-            <a
-              href="https://github.com/ismailcelik-tr"
-              target="_blank"
-              class="social-btn github"
-            >
-              <img
-                class="brand-icon brand-icon--github"
-                src="https://cdn.simpleicons.org/github/FFFFFF"
-                data-light-src="https://cdn.simpleicons.org/github/111827"
-                data-dark-src="https://cdn.simpleicons.org/github/FFFFFF"
-                alt="GitHub"
-              />
+            <a href="https://github.com/ismailcelik-tr" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <i data-lucide="github"></i>
               <span data-i18n="footer-website">GitHub</span>
             </a>
-            <a href="mailto:ismailceliktr00@gmail.com" class="social-btn email">
+            <a href="mailto:ismailceliktr00@gmail.com" class="social-btn">
               <i data-lucide="mail"></i>
               <span data-i18n="footer-email">Email</span>
             </a>
           </div>
           <p class="copyright">
-            <span data-i18n="footer-copy"
-              >© <span id="current-year"></span> İsmail ÇELİK | Licensed under
-              MIT</span
-            >
+            <span data-i18n="footer-copy">© <span id="current-year"></span> İsmail ÇELİK | Licensed under MIT</span>
           </p>
         </div>
       </footer>

@@ -327,3 +327,26 @@ body.theme-dark .work-status--live { color: #81c784; }
   .certifications-list { grid-template-columns: 1fr; }
   .cert-badge-visual { display: none; }
 }
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem 2.5rem; }
+.skills-group h3 { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: 0.25rem; }
+.skills-group p { font-size: 0.95rem; color: var(--text-secondary); }
+@media (max-width: 640px) { .skills-grid { grid-template-columns: 1fr; } }
+
+/* About */
+.about-prose { max-width: 640px; display: flex; flex-direction: column; gap: 1rem; }
+.about-prose p { color: var(--text-secondary); }
+
+/* Footer */
+footer { padding: 4.5rem 0 2.5rem; }
+footer h2 { margin-bottom: 1.5rem; }
+.social-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem; }
+.social-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--text); text-decoration: none; font-size: 0.95rem;
+  transition: var(--transition);
+}
+.social-btn:hover { color: var(--accent-text); }
+.social-btn svg { width: 18px; height: 18px; }
+.copyright { font-size: 0.82rem; color: var(--text-secondary); }
