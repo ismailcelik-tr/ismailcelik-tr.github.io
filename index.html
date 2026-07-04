@@ -115,22 +115,10 @@
             <h2 data-i18n="updates-title">
               Latest Updates
             </h2>
-            <div class="header-actions">
-              <a
-                href="https://www.linkedin.com/in/ismailcelik"
-                target="_blank"
-                class="linkedin-cta"
-                data-i18n="follow-linkedin"
-              >
-                Follow on LinkedIn
-              </a>
-            </div>
+            <a href="https://www.linkedin.com/in/ismailcelik" target="_blank" rel="noopener noreferrer" class="text-link" data-i18n="follow-linkedin">Follow on LinkedIn</a>
           </div>
-          <div class="updates-carousel-wrapper">
-            <div id="updates-container" class="updates-carousel">
-              <!-- Cards will be injected here by JS -->
-              <div class="loading-spinner">Loading updates...</div>
-            </div>
+          <div id="updates-container" class="updates-list">
+            <div class="loading-spinner">Loading updates...</div>
           </div>
           <div class="updates-actions">
             <button
@@ -146,7 +134,7 @@
 
           <!-- Update Detail Modal -->
           <div id="update-modal-overlay" class="modal-overlay">
-            <div class="modal-content glass">
+            <div class="modal-content card">
               <button id="modal-close" class="modal-close-btn">
                 <i data-lucide="x"></i>
               </button>

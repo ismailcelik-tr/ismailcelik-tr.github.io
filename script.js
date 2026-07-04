@@ -304,7 +304,6 @@ void main(void) {
             "footer-copy": "© 2026 İsmail ÇELİK | Licensed under MIT",
             "updates-title": "Latest Updates",
             "follow-linkedin": "Follow on LinkedIn",
-            "update-read": "Read update",
             "updates-load-more": "Read More",
             "updates-load-error": "Updates could not be loaded. Open the site through a local server instead of the file directly.",
             "command-trigger": "Quick Nav",
@@ -391,7 +390,6 @@ void main(void) {
             "footer-copy": "© 2026 İsmail ÇELİK | MIT Lisansı ile lisanslanmıştır",
             "updates-title": "Güncel",
             "follow-linkedin": "LinkedIn'de Takip Et",
-            "update-read": "Güncellemeyi oku",
             "updates-load-more": "Daha Fazlasını Oku",
             "updates-load-error": "Güncellemeler yüklenemedi. Dosyayı doğrudan açmak yerine siteyi yerel sunucu üzerinden aç.",
             "command-trigger": "Hızlı Geçiş",
@@ -478,7 +476,6 @@ void main(void) {
             "footer-copy": "© 2026 İsmail ÇELİK | Sous licence MIT",
             "updates-title": "Actualités",
             "follow-linkedin": "Suivre sur LinkedIn",
-            "update-read": "Lire l'actualité",
             "updates-load-more": "Lire plus",
             "updates-load-error": "Les actualités n'ont pas pu être chargées. Ouvrez le site via un serveur local plutôt que le fichier directement.",
             "command-trigger": "Accès",
@@ -1055,30 +1052,35 @@ void main(void) {
             })
             .then(posts => {
                 updatesContainer.innerHTML = '';
-                const readUpdateLabel = translations[lang]?.["update-read"] || translations.en["update-read"];
-                const visiblePosts = posts.slice().reverse().slice(0, visibleUpdateCount);
+                const validPosts = Array.isArray(posts)
+                    ? posts.filter((post) => post && post.date && post.content)
+                    : [];
+                const localeMap = { en: 'en-GB', tr: 'tr-TR', fr: 'fr-FR' };
+                const formatPostDate = (dateString) => new Intl.DateTimeFormat(
+                    localeMap[lang] || 'en-GB', { month: 'short', year: 'numeric' }
+                ).format(new Date(dateString));
+                const visiblePosts = validPosts.slice().reverse().slice(0, visibleUpdateCount);
 
-                visiblePosts.forEach((post, index) => {
-                    const card = document.createElement('div');
-                    card.className = `update-card glass${index === 0 ? ' update-card--featured' : ''}`;
+                visiblePosts.forEach((post) => {
+                    const card = document.createElement('article');
+                    card.className = 'update-entry card';
 
                     const relativeTime = getRelativeTime(post.date, lang);
                     card.innerHTML = `
-                        <div class="update-content">${post.content}</div>
-                        ${post.tags ? `
-                            <div class="update-tags">
-                                ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
-                            </div>
-                        ` : ''}
-                          ${post.linkPreview ? `
-                              <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
-                                  <div class="preview-title">${post.linkPreview.title}</div>
-                                  <div class="preview-desc">${post.linkPreview.description}</div>
-                              </a>
-                          ` : ''}
-                        <div class="update-card-footer">
-                            <span>${readUpdateLabel}</span>
-                            <i data-lucide="arrow-up-right"></i>
+                        <time class="update-date" datetime="${post.date}">${formatPostDate(post.date)}</time>
+                        <div class="update-body">
+                            <div class="update-content">${post.content}</div>
+                            ${post.tags ? `
+                                <div class="update-tags">
+                                    ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                            ${post.linkPreview ? `
+                                <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
+                                    <div class="preview-title">${post.linkPreview.title}</div>
+                                    <div class="preview-desc">${post.linkPreview.description}</div>
+                                </a>
+                            ` : ''}
                         </div>
                     `;
 
@@ -1114,8 +1116,8 @@ void main(void) {
                 });
 
                 if (updatesLoadMoreBtn) {
-                    updatesLoadMoreBtn.hidden = visibleUpdateCount >= posts.length;
-                    updatesLoadMoreBtn.disabled = visibleUpdateCount >= posts.length;
+                    updatesLoadMoreBtn.hidden = visibleUpdateCount >= validPosts.length;
+                    updatesLoadMoreBtn.disabled = visibleUpdateCount >= validPosts.length;
                 }
 
                 if (window.lucide) lucide.createIcons();
