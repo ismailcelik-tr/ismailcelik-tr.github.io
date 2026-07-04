@@ -11,7 +11,7 @@
 - Responsive single-page portfolio experience.
 - Client-side language switching for `en`, `tr`, and `fr`.
 - Theme switching with system-preference support.
-- Animated hero section with canvas/WebGL visual treatment and graceful fallback.
+- Animated hero section with a calm, palette-matched WebGL texture and graceful CSS and reduced-motion fallbacks.
 - Modal-driven UI for updates, certifications, and quick navigation flows.
 - Keyboard-accessible command palette / quick navigation with `Ctrl/Cmd + K`.
 - Static content rendering from `posts.json`.
@@ -26,7 +26,7 @@
 
 ### Frontend
 - HTML5: page structure and semantic markup.
-- CSS3: custom design system, gradients, glassmorphism surfaces, animation, and responsive rules.
+- CSS3: editorial design system (warm neutral palette, serif display type, flat surfaces), animation, and responsive rules.
 - Vanilla JavaScript (ES6+): client-side interactivity, i18n, theme state, hero rendering, modal behavior, command palette behavior, and content rendering.
 
 ### Backend
@@ -41,9 +41,8 @@
 - Static asset delivery through the browser.
 - Third-party frontend assets loaded from CDN:
   - Lucide icons via `unpkg`.
-  - Google Fonts.
+  - Google Fonts (Inter, Source Serif 4).
   - Flag icons via `flagcdn`.
-  - Skill and social icons via `skillicons.dev`.
 
 ### Versions
 - No explicit package-managed runtime is pinned in-repo.
@@ -218,7 +217,7 @@ python -m http.server 8000 --bind 127.0.0.1
 - Avoid large libraries for small UI behavior.
 - Optimize images and prefer local assets for stable content.
 - Do not add blocking scripts unless necessary.
-- Be careful with animation, shader, and blur-heavy changes so the page stays smooth on mid-range devices.
+- Be careful with animation and shader-heavy changes so the page stays smooth on mid-range devices.
 - Preserve responsive performance on mid-range mobile devices.
 
 ### Security

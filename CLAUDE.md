@@ -15,14 +15,14 @@ Personal portfolio for İsmail Çelik (`ismailcelik-tr.github.io`). Static singl
 ### Tech Stack
 
 - HTML5 / Vanilla CSS3 / Vanilla JavaScript (ES6+)
-- CDN assets only: Lucide Icons (unpkg), Google Fonts, flagcdn, skillicons.dev
+- CDN assets only: Lucide Icons (unpkg), Google Fonts (Inter, Source Serif 4), flagcdn
 - Python 3 for CV generation (`scripts/generate_cv_pdfs.py`)
 
 ### Repository Structure
 
 ```
 index.html         # All section and modal markup
-style.css          # Full design system; theming via CSS custom properties
+style.css          # Editorial design system; theming via CSS custom properties
 script.js          # i18n dicts (en/tr/fr), certifications dataset, all DOM logic
 posts.json         # Updates feed — fetched at runtime, rendered reverse-chronological
 assets/            # Images and badge/logo assets

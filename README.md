@@ -1,13 +1,10 @@
-# İsmail | Mobile & Fullstack Developer ⚡
+# İsmail | Mobile & Fullstack Developer
 
 Welcome to my personal portfolio repository! This project serves as a comprehensive showcase of my expertise in mobile development, fullstack engineering, and my passion for AI and Data Science.
 
-![Ismail Portfolio](https://img.shields.io/badge/status-optimized-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
 ## 🚀 Overview
 
-This portfolio is a high-performance, single-page application built with a focus on **pixel-perfect design**, **responsive interactions**, and **multi-language support**. It highlights my architectural philosophy: From Neural Data to Pixel Perfection.
+This portfolio is a calm, editorial single-page portfolio inspired by modern documentation-grade design; multilingual (en/tr/fr) with dark/light themes.
 
 ## ✨ Key Features
 
@@ -16,12 +13,13 @@ This portfolio is a high-performance, single-page application built with a focus
 - 📱 **Mobile First**: Fully responsive design with a custom-built mobile navigation system.
 - ⚡ **Performance Optimized**: Lightweight assets, smooth animations (CSS & JS), and high accessibility scores.
 - 🛡️ **Clean Architecture**: Modular code structure across HTML, CSS, and Vanilla JavaScript.
+- 📖 **Editorial Design**: Warm neutral palette, serif display headings, flat surfaces with sharp 1px borders.
 
 ## 🛠 Tech Stack
 
 - **Frontend**: HTML5, Vanilla CSS3 (Custom Design System), JavaScript (ES6+)
 - **Icons**: [Lucide Icons](https://lucide.dev/)
-- **Typography**: Inter & Outfit (Google Fonts)
+- **Typography**: Inter & Source Serif 4 (Google Fonts)
 - **Deployment**: GitHub Pages
 
 ## 📂 Project Structure
