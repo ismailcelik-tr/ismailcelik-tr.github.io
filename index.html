@@ -85,12 +85,10 @@
     <main>
       <section id="hero" class="hero">
         <canvas id="hero-shader" class="hero-shader-canvas" aria-hidden="true"></canvas>
-        <div class="hero-shader-vignette" aria-hidden="true"></div>
         <div class="container">
           <div class="hero-content">
             <div class="profile-container">
               <div class="lightning-wrapper">
-                <div class="lightning-strike"></div>
                 <img
                   src="assets/ismail-2.png"
                   alt="İsmail Çelik"
@@ -135,102 +133,7 @@
                   Türkçe
                 </a>
               </div>
-              <div class="expertise-tags">
-                <span data-i18n-with-icon="hero-exp1" data-icon="smartphone"
-                  ><i data-lucide="smartphone"></i> Mobile Expertise</span
-                >
-                <span data-i18n-with-icon="hero-exp2" data-icon="code-2"
-                  ><i data-lucide="code-2"></i> Clean Code</span
-                >
-                <span data-i18n-with-icon="hero-exp4" data-icon="cloud"
-                  ><i data-lucide="cloud"></i> Cloud & DevOps</span
-                >
-                <span data-i18n-with-icon="hero-exp5" data-icon="bot"
-                  ><i data-lucide="bot"></i> AI & LLM Engineering</span
-                >
-                <span data-i18n-with-icon="hero-exp3" data-icon="brain"
-                  ><i data-lucide="brain"></i> AI Integration</span
-                >
-              </div>
             </div>
-          </div>
-        </div>
-        <a class="hero-scroll-indicator" href="#huggingface" aria-label="Scroll to Hugging Face focus">
-          <span class="scroll-indicator-mouse">
-            <span class="scroll-indicator-dot"></span>
-          </span>
-          <i data-lucide="chevron-down"></i>
-        </a>
-      </section>
-
-      <!-- HUGGING FACE FOCUS -->
-      <section id="huggingface" class="huggingface-focus">
-        <div class="container">
-          <div class="hf-trending-heading">
-            <span></span>
-            <h2 data-i18n="hf-title">Trending on 🤗 This Month For Me</h2>
-            <span></span>
-            <p class="section-lead" data-i18n="hf-lead">
-              Here’s what I’ve been exploring on Hugging Face this month in terms of models, domains, and datasets that I want to explore and turn into practical AI experiments.
-            </p>
-          </div>
-          <div class="hf-trending-board">
-            <article class="hf-trending-column">
-              <h3 data-i18n-with-icon="hf-spaces-title" data-icon="blocks">
-                <i data-lucide="blocks"></i>
-                Spaces
-              </h3>
-              <div class="hf-trending-list">
-                <a class="hf-trending-item" href="https://huggingface.co/spaces/smolagents/ml-intern" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-space1-title">smolagents/ml-intern</strong>
-                </a>
-                <a class="hf-trending-item" href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-space2-title">mteb/leaderboard</strong>
-                </a>
-                <a class="hf-trending-item" href="https://huggingface.co/spaces/prithivMLmods/FireRed-Image-Edit-1.0-Fast" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-space3-title">prithivMLmods/FireRed-Image-Edit-1.0-Fast</strong>
-                </a>
-              </div>
-            </article>
-
-            <article class="hf-trending-column hf-trending-column--models">
-              <h3 data-i18n-with-icon="hf-models-title" data-icon="box">
-                <i data-lucide="box"></i>
-                Models
-              </h3>
-              <div class="hf-trending-list">
-                <a class="hf-trending-item is-hot" href="https://huggingface.co/google/gemma-4-E4B-it" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-model1-title">google/gemma-4-E4B-it</strong>
-                  <small>LLM</small>
-                </a>
-                <a class="hf-trending-item is-cool" href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-model2-title">deepseek-ai/DeepSeek-V4-Flash</strong>
-                  <small>Flash</small>
-                </a>
-                <a class="hf-trending-item is-blue" href="https://huggingface.co/Qwen/Qwen3.6-35B-A3B" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-model3-title">Qwen/Qwen3.6-35B-A3B</strong>
-                  <small>Qwen</small>
-                </a>
-              </div>
-            </article>
-
-            <article class="hf-trending-column">
-              <h3 data-i18n-with-icon="hf-datasets-title" data-icon="database">
-                <i data-lucide="database"></i>
-                Datasets
-              </h3>
-              <div class="hf-trending-list">
-                <a class="hf-trending-item" href="https://huggingface.co/datasets/open-thoughts/AgentTrove" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-data1-title">open-thoughts/AgentTrove</strong>
-                </a>
-                <a class="hf-trending-item" href="https://huggingface.co/datasets/alibaba-multimodal-industrial-ai/IndustryBench" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-data2-title">alibaba-multimodal-industrial-ai/IndustryBench</strong>
-                </a>
-                <a class="hf-trending-item" href="https://huggingface.co/datasets/AlienKevin/SWE-ZERO-12M-trajectories" target="_blank" rel="noopener noreferrer">
-                  <strong data-i18n="hf-data3-title">AlienKevin/SWE-ZERO-12M-trajectories</strong>
-                </a>
-              </div>
-            </article>
           </div>
         </div>
       </section>
@@ -298,92 +201,9 @@
       <section id="projects" class="work">
         <div class="container">
           <div class="section-header">
-            <h2 data-i18n="work-title">🚀 What I'm Working On</h2>
-            <p class="section-lead" data-i18n="work-lead">
-              A focused snapshot of the systems, product ideas, and technical
-              experiments I am shaping right now.
-            </p>
-          </div>
-          <div class="work-feature glass">
-            <div class="work-feature-copy">
-              <span class="work-eyebrow" data-i18n="work-eyebrow">Current focus</span>
-              <h3 data-i18n="work-feature-title">Building practical AI-ready product systems</h3>
-              <p data-i18n="work-feature-p">
-                I am combining full-stack development, mobile experience, cloud
-                architecture, and AI-assisted workflows into portfolio-grade
-                products that are reliable enough for real users.
-              </p>
-            </div>
-            <div class="work-feature-panel" aria-label="Active project signals">
-              <div class="work-signal">
-                <strong data-i18n="work-signal1-title">Frontend</strong>
-                <span data-i18n="work-signal1-p">React, React Native, Flutter, TypeScript</span>
-              </div>
-              <div class="work-signal">
-                <strong data-i18n="work-signal2-title">Backend</strong>
-                <span data-i18n="work-signal2-p">Node.js, Spring Boot, Express.js, REST APIs, WebSocket</span>
-              </div>
-              <div class="work-signal">
-                <strong data-i18n="work-signal3-title">Database & AI Data</strong>
-                <span data-i18n="work-signal3-p">MongoDB, PostgreSQL, MySQL, MSSQL, ChromaDB, Qdrant</span>
-              </div>
-            </div>
-          </div>
-          <div class="work-grid">
-            <div class="work-card glass">
-              <div class="work-icon"><i data-lucide="shield-check"></i></div>
-              <h3 data-i18n="work-card1-title">Advanced Architecture</h3>
-              <p data-i18n="work-card1-p">
-                Implementing Clean Architecture and modular design patterns
-                across mobile and backend.
-              </p>
-            </div>
-            <div class="work-card glass">
-              <div class="work-icon"><i data-lucide="globe"></i></div>
-              <h3 data-i18n="work-card2-title">Web & Mobile Sync</h3>
-              <p data-i18n="work-card2-p">
-                Developing unified experiences using React.js and
-                high-performance cross-platform tools.
-              </p>
-            </div>
-            <div class="work-card glass">
-              <div class="work-icon"><i data-lucide="bar-chart-3"></i></div>
-              <h3 data-i18n="work-card3-title">AI & Data</h3>
-              <p data-i18n="work-card3-p">
-                Integrating machine learning models into mobile environments for
-                intelligent user experiences.
-              </p>
-            </div>
-            <div class="work-card glass">
-              <div class="work-icon"><i data-lucide="cloud"></i></div>
-              <h3 data-i18n="work-card4-title">Cloud Systems</h3>
-              <p data-i18n="work-card4-p">
-                Architecting scalable and reliable cloud infrastructures using
-                AWS, Docker, and Kubernetes to ensure high availability and
-                performance.
-              </p>
-            </div>
-            <div class="work-card glass">
-              <div class="work-icon"><i data-lucide="terminal"></i></div>
-              <h3 data-i18n="work-card5-title">Automation & CI/CD</h3>
-              <p data-i18n="work-card5-p">
-                Optimizing development workflows through automated pipelines and
-                custom GitHub Actions.
-              </p>
-            </div>
-            <div class="work-card glass">
-              <div class="work-icon"><i data-lucide="activity"></i></div>
-              <h3 data-i18n="work-card6-title">System Performance</h3>
-              <p data-i18n="work-card6-p">
-                Monitoring and fine-tuning resource efficiency with
-                high-performance system metrics.
-              </p>
-            </div>
+            <h2 data-i18n="work-title">Selected Work</h2>
           </div>
           <div class="cv-projects">
-            <div class="cv-projects-header">
-              <h3 data-i18n="cv-projects-title">🧩 Selected Projects & Ongoing Work</h3>
-            </div>
             <div class="cv-project-grid">
               <article class="cv-project-card glass">
                 <div class="cv-project-main">
@@ -646,26 +466,6 @@
               </article>
             </div>
           </div>
-          <div class="work-roadmap glass">
-            <div>
-              <span class="work-eyebrow" data-i18n="work-roadmap-eyebrow">Project direction</span>
-              <h3 data-i18n="work-roadmap-title">From experiments to usable releases</h3>
-            </div>
-            <ul class="work-roadmap-list">
-              <li>
-                <span>01</span>
-                <p data-i18n="work-roadmap-1">Prototype fast, then harden the architecture around the workflows that prove useful.</p>
-              </li>
-              <li>
-                <span>02</span>
-                <p data-i18n="work-roadmap-2">Connect web, mobile, cloud, and AI pieces with maintainable interfaces.</p>
-              </li>
-              <li>
-                <span>03</span>
-                <p data-i18n="work-roadmap-3">Document the outcome clearly so recruiters, teams, and collaborators can evaluate the work quickly.</p>
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -693,212 +493,13 @@
         </div>
       </section>
 
-      <!-- 2. TECH STACK (PRIMARY) -->
-      <section id="tech" class="tech-stack">
+      <!-- SKILLS -->
+      <section id="tech" class="skills">
         <div class="container">
           <div class="section-header">
-            <h2 data-i18n="tech-title">🛠 Tech Stack & Skills</h2>
+            <h2 data-i18n="skills-title">Skills</h2>
           </div>
-          <div class="tech-grid glass">
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212281763-e6ecd7ef-c4aa-45b6-a97c-f33f6bb592bd.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212281780-0afd9616-8310-46e9-a898-c4f5269f1387.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif"
-              width="100"
-            />
-            <img
-              src="https://user-images.githubusercontent.com/74038190/212281775-b468df30-4edc-4bf8-a4ee-f52e1aaddc86.gif"
-              width="100"
-            />
-            <img
-              src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/1a797f46-efe4-41e6-9e75-5303e1bbcbfa"
-              width="100"
-            />
-            <img
-              src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/29fd6286-4e7b-4d6c-818f-c4765d5e39a9"
-              width="100"
-            />
-            <img
-              src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/67f477ed-6624-42da-99f0-1a7b1a16eecb"
-              width="100"
-            />
-            <img
-              src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/3c16d4f2-b757-4c70-8f42-43d5dddd2c36"
-              width="100"
-            />
-            <img
-              src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/3fb2cdf6-8920-462e-87a4-95af376418aa"
-              width="100"
-            />
-            <img
-              src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/398b19b1-9aae-4c1f-8bc0-d172a2c08d68"
-              width="100"
-            />
-            <img
-              src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/e0d299f2-767c-4c21-bd49-90f2a19f1a78"
-              width="100"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. EXPANDING HORIZON (SECONDARY) -->
-      <section id="tech-expanding" class="tech-stack expanding">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-i18n="tech-expanding-title">🌟 Expanding the Horizon</h2>
-          </div>
-          <div class="tech-grid glass">
-            <img
-              src="https://skillicons.dev/icons?i=ts&theme=dark"
-              width="100"
-              alt="TypeScript"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=dart&theme=dark"
-              width="100"
-              alt="Dart"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=rust&theme=dark"
-              width="100"
-              alt="Rust"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=go&theme=dark"
-              width="100"
-              alt="Go"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=zig&theme=dark"
-              width="100"
-              alt="Zig"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=docker&theme=dark"
-              width="100"
-              alt="Docker"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=postgres&theme=dark"
-              width="100"
-              alt="PostgreSQL"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=kubernetes&theme=dark"
-              width="100"
-              alt="Kubernetes"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=gcp&theme=dark"
-              width="100"
-              alt="Google Cloud"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=prometheus&theme=dark"
-              width="100"
-              alt="Prometheus"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=grafana&theme=dark"
-              width="100"
-              alt="Grafana"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=pytorch&theme=dark"
-              width="100"
-              alt="PyTorch"
-              class="pulse-glow"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=tensorflow&theme=dark"
-              width="100"
-              alt="TensorFlow"
-              class="pulse-glow"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=aws&theme=dark"
-              width="100"
-              alt="AWS"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=bun&theme=dark"
-              width="100"
-              alt="Bun"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=cmake&theme=dark"
-              width="100"
-              alt="CMake"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=electron&theme=dark"
-              width="100"
-              alt="Electron"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=fastapi&theme=dark"
-              width="100"
-              alt="FastAPI"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=nestjs&theme=dark"
-              width="100"
-              alt="NestJS"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=nginx&theme=dark"
-              width="100"
-              alt="Nginx"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=redis&theme=dark"
-              width="100"
-              alt="Redis"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=ruby&theme=dark"
-              width="100"
-              alt="Ruby"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=spring&theme=dark"
-              width="100"
-              alt="Spring"
-            />
-            <img
-              src="https://skillicons.dev/icons?i=google&theme=dark"
-              width="100"
-              alt="Antigravity"
-              class="pulse-glow"
-            />
-          </div>
+          <div class="skills-grid" id="skills-grid"></div>
         </div>
       </section>
 
@@ -932,47 +533,6 @@
                 Interested in memory management, concurrency, I/O protocols, and
                 performance tuning.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. COLLABORATIVE STRATEGY -->
-      <section id="perspective" class="perspective">
-        <div class="container">
-          <div class="perspective-layout">
-            <div class="perspective-card glass">
-              <h2 data-i18n="perspective-title">🤝 Collaborative Strategy</h2>
-              <div class="perspective-content">
-                <p data-i18n="perspective-p1"></p>
-                <p data-i18n="perspective-p2"></p>
-              </div>
-            </div>
-
-            <div class="terminal-card glass">
-              <div class="terminal-header">
-                <div class="terminal-buttons">
-                  <span class="btn close"></span>
-                  <span class="btn minimize"></span>
-                  <span class="btn maximize"></span>
-                </div>
-                <div class="terminal-title">strategy.sh</div>
-              </div>
-              <div class="terminal-body">
-                <div class="command-line">
-                  <span class="prompt">$</span>
-                  <span class="typing">./deploy --strategy perfect</span>
-                </div>
-                <div class="output line-1">initializing modules... [OK]</div>
-                <div class="output line-2">compiling neural_data... [OK]</div>
-                <div class="output line-3">
-                  rendering pixel perfection... [OK]
-                </div>
-                <div class="command-line final">
-                  <span class="prompt">$</span>
-                  <span class="cursor"></span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1013,19 +573,11 @@
               <span data-i18n="footer-email">Email</span>
             </a>
           </div>
-          <p class="footer-motto" data-i18n="footer-motto">
-            &#x26A1; From Neural Data to Pixel Perfection.
-          </p>
           <p class="copyright">
             <span data-i18n="footer-copy"
               >© <span id="current-year"></span> İsmail ÇELİK | Licensed under
               MIT</span
             >
-            <img
-              src="https://img.shields.io/badge/status-optimized-brightgreen.svg?style=flat"
-              alt="status: optimized"
-              class="footer-badge"
-            />
           </p>
         </div>
       </footer>
