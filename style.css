@@ -210,13 +210,6 @@ body.theme-dark .dark-icon { display: inline; }
   flex-shrink: 0;
 }
 .hero-text { max-width: 640px; text-align: center; }
-.hero-eyebrow {
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-  margin-bottom: 1rem;
-}
 .hero-title {
   font-size: clamp(2rem, 5.5vw, 3.4rem);
   font-weight: 500;
