@@ -24,6 +24,30 @@ body.theme-light {
   --border: #e8e6dd;
 }
 
+/* Default light tokens so var(--bg) etc. work before JS sets a theme class */
+body {
+  --bg: #faf9f5;
+  --text: #191919;
+  --text-secondary: #555550;
+  --accent-text: #b0552f;
+  --surface: #ffffff;
+  --border: #e8e6dd;
+}
+
+/* Dark first-paint for users who prefer dark and JS hasn't run yet */
+@media (prefers-color-scheme: dark) {
+  body.theme-auto {
+    --bg: #1f1e1b;
+    --text: #f0efe9;
+    --text-secondary: #b5b3a7;
+    --accent-text: #e08d6d;
+    --surface: #262521;
+    --border: #3a3833;
+  }
+  body.theme-auto .dark-icon { display: inline; }
+  body.theme-auto .light-icon { display: none; }
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
@@ -131,6 +155,10 @@ section { padding: 4.5rem 0; border-bottom: 1px solid var(--border); }
 .lang-dropdown button:hover { background: var(--bg); }
 body.theme-dark .light-icon { display: none; }
 body.theme-light .dark-icon { display: none; }
+/* Pre-JS default: light behavior (hide moon) */
+body .dark-icon { display: none; }
+/* Counteract the base default when dark theme is active */
+body.theme-dark .dark-icon { display: inline; }
 .mobile-menu-btn { display: none; }
 .mobile-menu-btn .close-icon { display: none; }
 .mobile-menu-btn.active .menu-icon { display: none; }
@@ -147,6 +175,11 @@ body.theme-light .dark-icon { display: none; }
   .nav-links a { padding: 0.7rem 0; width: 100%; font-size: 1rem; }
   .mobile-menu-btn { display: inline-flex; }
   .command-palette-btn span, .command-palette-btn kbd { display: none; }
+}
+
+@media (max-width: 480px) {
+  #current-lang-text { display: none; }
+  .lang-btn svg { display: none; }
 }
 
 /* Hero */

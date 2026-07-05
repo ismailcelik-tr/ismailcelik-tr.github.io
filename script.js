@@ -56,7 +56,6 @@
             return;
         }
 
-        const hero = document.getElementById('hero');
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         let program = null;
         let buffer = null;
@@ -272,19 +271,12 @@ void main(void) {
             "cv-project5-title": "PCB Anomaly Detection System",
             "cv-project5-note": "Computer vision pipeline designed to reduce manual PCB production checks and catch anomalies earlier.",
             "cv-project6-title": "Remote Alarm Monitoring Software",
-            "cv-project6-note": "A web monitoring interface for alarm systems, control-center data, and realtime operational visibility.",
             "cv-project7-title": "Automatic Versioning & Distribution System",
-            "cv-project7-note": "An internal release automation flow built to reduce production-line installation mistakes.",
             "cv-project8-title": "Vehicle Tracking Mobile & Web Apps",
-            "cv-project8-note": "Cross-platform applications for vehicle tracking scenarios across mobile and web surfaces.",
             "cv-project9-title": "Log Management & Monitoring Systems",
-            "cv-project9-note": "Server and network monitoring setup for log visibility, infrastructure tracking, and operational response.",
             "cv-project10-title": "Cisco Network Configuration Tool",
-            "cv-project10-note": "A Windows tool that shortened authorized Cisco configuration changes from minutes to seconds.",
             "cv-project11-title": "Pardus Migration & Open Source Server Stack",
-            "cv-project11-note": "A migration and implementation project for Linux-based server/client environments and open-source services.",
             "cv-project12-title": "Terminal Server Web Control Application",
-            "cv-project12-note": "A web admin application for resolving terminal-server user issues through modular controls.",
             "certifications-title": "Certifications",
             "certifications-id-label": "Credential ID",
             "certifications-cta": "View Credential",
@@ -360,19 +352,12 @@ void main(void) {
             "cv-project5-title": "PCB Anomali Tespit Sistemi",
             "cv-project5-note": "PCB üretim kontrollerini azaltmak ve anomalileri erken yakalamak için geliştirilen görüntü işleme hattı.",
             "cv-project6-title": "Uzaktan Alarm İzleme Yazılımı",
-            "cv-project6-note": "Alarm sistemleri, kontrol merkezi verileri ve gerçek zamanlı operasyon görünürlüğü için web izleme arayüzü.",
             "cv-project7-title": "Otomatik Versiyonlama ve Dağıtım Sistemi",
-            "cv-project7-note": "Üretim hattındaki manuel kurulum hatalarını azaltmak için geliştirilen iç dağıtım otomasyonu.",
             "cv-project8-title": "Araç Takip Mobil ve Web Uygulamaları",
-            "cv-project8-note": "Araç takip senaryoları için mobil ve web yüzeylerinde çalışan platformlar arası uygulamalar.",
             "cv-project9-title": "Log Yönetimi ve İzleme Sistemleri",
-            "cv-project9-note": "Log görünürlüğü, altyapı takibi ve operasyonel müdahale için sunucu ve ağ izleme kurulumu.",
             "cv-project10-title": "Cisco Ağ Konfigürasyon Aracı",
-            "cv-project10-note": "Yetkili Cisco konfigürasyon işlemlerini dakikalardan saniyelere indiren Windows aracı.",
             "cv-project11-title": "Pardus Geçişi ve Açık Kaynak Sunucu Yığını",
-            "cv-project11-note": "Linux tabanlı sunucu/istemci ortamları ve açık kaynak servisler için geçiş ve kurulum projesi.",
             "cv-project12-title": "Terminal Server Web Kontrol Uygulaması",
-            "cv-project12-note": "Terminal server kullanıcı problemlerini modüler kontrollerle çözmek için geliştirilen web yönetim uygulaması.",
             "certifications-title": "Sertifikalar",
             "certifications-id-label": "Yeterlilik Kimliği",
             "certifications-cta": "Yeterlilik belgesini göster",
@@ -448,19 +433,12 @@ void main(void) {
             "cv-project5-title": "Système de détection d'anomalies PCB",
             "cv-project5-note": "Pipeline de vision conçu pour réduire les contrôles PCB manuels et détecter les anomalies plus tôt.",
             "cv-project6-title": "Logiciel de supervision d'alarmes à distance",
-            "cv-project6-note": "Interface web de supervision pour systèmes d'alarme, données de centre de contrôle et visibilité temps réel.",
             "cv-project7-title": "Système de versioning et distribution automatiques",
-            "cv-project7-note": "Automatisation interne de release conçue pour réduire les erreurs d'installation en production.",
             "cv-project8-title": "Applications mobiles et web de suivi de véhicules",
-            "cv-project8-note": "Applications multiplateformes pour des scénarios de suivi de véhicules sur mobile et web.",
             "cv-project9-title": "Systèmes de gestion et supervision des logs",
-            "cv-project9-note": "Mise en place de supervision serveurs et réseaux pour logs, suivi d'infrastructure et réponse opérationnelle.",
             "cv-project10-title": "Outil de configuration réseau Cisco",
-            "cv-project10-note": "Outil Windows réduisant les changements Cisco autorisés de plusieurs minutes à quelques secondes.",
             "cv-project11-title": "Migration Pardus et stack serveur open source",
-            "cv-project11-note": "Projet de migration et d'implémentation pour environnements Linux serveur/client et services open source.",
             "cv-project12-title": "Application web de contrôle Terminal Server",
-            "cv-project12-note": "Application web d'administration pour résoudre les problèmes Terminal Server via des contrôles modulaires.",
             "certifications-title": "Certifications",
             "certifications-id-label": "ID du certificat",
             "certifications-cta": "Afficher le certificat",
@@ -1081,7 +1059,7 @@ void main(void) {
                                     ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
                                 </div>
                             ` : ''}
-                            ${post.linkPreview ? `
+                            ${post.linkPreview && post.link ? `
                                 <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
                                     <div class="preview-title">${post.linkPreview.title}</div>
                                     <div class="preview-desc">${post.linkPreview.description}</div>
@@ -1103,7 +1081,7 @@ void main(void) {
                                     ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
                                 </div>
                             ` : ''}
-                            ${post.linkPreview ? `
+                            ${post.linkPreview && post.link ? `
                                 <div class="modal-link-preview">
                                       <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="link-preview">
                                           <div class="preview-title">${post.linkPreview.title}</div>
