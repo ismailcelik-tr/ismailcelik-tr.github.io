@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
@@ -1024,6 +1024,12 @@ void main(void) {
         const updatesContainer = document.getElementById('updates-container');
         if (!updatesContainer) return;
 
+        const linkify = (text) => {
+            if (!text) return '';
+            const urlPattern = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+            return text.replace(urlPattern, '<a href="$1" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">$1</a>');
+        };
+
         fetch('posts.json')
             .then(res => {
                 if (!res.ok) {
@@ -1050,7 +1056,7 @@ void main(void) {
                     card.innerHTML = `
                         <time class="update-date" datetime="${post.date}">${formatPostDate(post.date)}</time>
                         <div class="update-body">
-                            <div class="update-content">${post.content}</div>
+                            <div class="update-content">${linkify(post.content)}</div>
                             ${post.tags ? `
                                 <div class="update-tags">
                                     ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}
@@ -1072,7 +1078,7 @@ void main(void) {
 
                         modalBody.innerHTML = `
                               <div class="modal-date">${relativeTime}</div>
-                            <div class="modal-full-content">${post.content}</div>
+                            <div class="modal-full-content">${linkify(post.content)}</div>
                             ${post.tags ? `
                                 <div class="modal-tags">
                                     ${post.tags.map(tag => `<span class="update-tag">#${tag}</span>`).join('')}

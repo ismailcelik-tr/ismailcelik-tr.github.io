@@ -925,7 +925,7 @@
   {
   "id": 59,
   "date": "2026-05-23",
-  "content": "Your computer’s operating system and much of the software on it receive updates almost every day, don’t they? Anthropic's Project Glasswing and approximately 50 partners (Amazon, Microsoft, Apple, Google, NVIDIA etc.) are likely the reason why.\n\nhttps://www.anthropic.com/research/glasswing-initial-update",
+  "content": "Your computer’s operating system and much of the software on it receive updates almost every day, don’t they? Anthropic's Project Glasswing and approximately 50 partners (Amazon, Microsoft, Apple, Google, NVIDIA etc.) are likely the reason why.",
   "link": "https://www.anthropic.com/research/glasswing-initial-update",
   "linkPreview": {
     "title": "Project Glasswing: An initial update",
@@ -941,8 +941,8 @@
 },
   {
   "id": 60,
-  "date": "2026-05-23",
-  "content": "\"Make something people want.\" - Paul Graham, Y Combinator.\n\nStarting from scratch takes a little time, but it’s usually worth it. Yes, it looks better this way. Here’s the Claude Code guide, ranging from simple to—just a bit—professional. ☺️\n\nhttps://github.com/ismailcelik-tr/claude-code-guide/",
+  "date": "2026-06-23",
+  "content": "\"Make something people want.\" - Paul Graham, Y Combinator.\n\nStarting from scratch takes a little time, but it’s usually worth it. Yes, it looks better this way. Here’s the Claude Code guide, ranging from simple to—just a bit—professional. ☺️",
   "link": "https://github.com/ismailcelik-tr/claude-code-guide/",
   "linkPreview": {
     "title": "ismailcelik-tr/claude-code-guide",
@@ -960,7 +960,7 @@
   {
   "id": 61,
   "date": "2026-07-12",
-  "content": "Artificial intelligence is no longer just transforming software; it is also reshaping modern defense.\nKey points highlighted in NATO’s latest comprehensive assessment aimed at strengthening its eastern flank include: cyber defense, multi-domain operations, real-time intelligence sharing, autonomous systems, AI-supported decision-making\nIt’s fascinating to see AI becoming a core component of modern defense strategy—not just in theory, but in real operational planning.\nI hope we’re on the right track.",
+  "content": "Artificial intelligence is no longer just transforming software; it is also reshaping modern defense.\n\nKey points highlighted in NATO’s latest comprehensive assessment aimed at strengthening its eastern flank include: cyber defense, multi-domain operations, real-time intelligence sharing, autonomous systems, AI-supported decision-making\n\nIt’s fascinating to see AI becoming a core component of modern defense strategy—not just in theory, but in real operational planning.\n\nI hope we’re on the right track.",
   "link": "https://www.nato.int/en/what-we-do/deterrence-and-defence/strengthening-natos-eastern-flank",
   "linkPreview": {
     "title": "Eastern Flank Deterrence Initiative",
@@ -973,6 +973,39 @@
     "CyberSecurity",
     "AutonomousSystems",
     "MilitaryTechnology"
+  ]
+},
+  {
+  "id": 62,
+  "date": "2026-07-12",
+  "content": "The rise of Anthropic and its models (which some still consider mere hype) has led OpenAI to make some very tough strategic decisions—or at the very least, has significantly accelerated this process.\n\nLast week, OpenAI essentially redesigned its product lineup from scratch. Many standalone products and experiments are being consolidated under a single platform. The shutdown of Atlas is one of the latest examples of this.\n\nFrom a technical standpoint, it’s a logical consolidation move. However, it’s hard to say the same from a user experience perspective. Especially when you remove products that active users have grown accustomed to overnight and force everyone to switch to a single experience, it creates a significant adaptation cost.\n\nHave you ChatGPT users managed to find where Codex is? And seriously, putting a pet (or whatever it’s called) on the desktop? 😒\n\nBy the way, I’m curious how things are going over at Google and Gemini. I hope it doesn’t end up like a second \"Google+\" story. 🙂",
+  "link": "https://www.theverge.com/ai-artificial-intelligence/963654/openai-chatgpt-atlas-ai-browser-shut-down-sunset",
+  "linkPreview": {
+    "title": "The ChatGPT browser is already dead",
+    "description": "OpenAI is already shutting down ChatGPT Atlas, its browser that could do tasks for you on your behalf, less than a year after launching it."
+  },
+  "tags": [
+    "OpenAI",
+    "Anthropic",
+    "ArtificialIntelligence",
+    "GenerativeAI"
+  ]
+},
+  {
+  "id": 63,
+  "date": "2026-07-12",
+  "content": "Another new work of art from Anthropic. This time, they're opening a window into what happens \"inside\" Large Language Models. Love it! 🫠\n\n🔗 https://www.anthropic.com/research/global-workspace\n\nActually, this post is a brief summary of a much more comprehensive research paper. For the link to the full research paper:\n\n🔗 https://transformer-circuits.pub/2026/workspace/index.html",
+  "link": "https://www.anthropic.com/research/global-workspace",
+  "linkPreview": {
+    "title": "A global workspace in language models",
+    "description": "Interpretability research on Claude's internal thoughts."
+  },
+  "tags": [
+    "ArtificialIntelligence",
+    "LLM",
+    "Anthropic",
+    "Claude",
+    "NeuralNetworks"
   ]
 }
 ]

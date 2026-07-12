@@ -237,7 +237,7 @@ body.theme-dark .dark-icon { display: inline; }
 .update-entry:hover { border-color: var(--accent-text); }
 .update-date { flex-shrink: 0; width: 72px; font-size: 0.82rem; color: var(--text-secondary); padding-top: 0.15rem; }
 .update-body { min-width: 0; }
-.update-content { font-size: 0.95rem; }
+.update-content { font-size: 0.95rem; white-space: pre-wrap; }
 .update-tags { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .update-tag { font-size: 0.78rem; color: var(--accent-text); }
 .link-preview {
@@ -420,5 +420,5 @@ footer h2 { margin-bottom: 1.5rem; }
 .command-empty { padding: 0.75rem; color: var(--text-secondary); font-size: 0.9rem; }
 
 /* Update detail modal */
-.modal-full-content { font-size: 0.95rem; }
+.modal-full-content { font-size: 0.95rem; white-space: pre-wrap; }
 .modal-link-preview { margin-top: 0.75rem; }
