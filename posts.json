@@ -956,5 +956,23 @@
     "SoftwareEngineering",
     "AICoding"
   ]
- }
+ },
+  {
+  "id": 61,
+  "date": "2026-07-12",
+  "content": "Artificial intelligence is no longer just transforming software; it is also reshaping modern defense.\nKey points highlighted in NATO’s latest comprehensive assessment aimed at strengthening its eastern flank include: cyber defense, multi-domain operations, real-time intelligence sharing, autonomous systems, AI-supported decision-making\nIt’s fascinating to see AI becoming a core component of modern defense strategy—not just in theory, but in real operational planning.\nI hope we’re on the right track.",
+  "link": "https://www.nato.int/en/what-we-do/deterrence-and-defence/strengthening-natos-eastern-flank",
+  "linkPreview": {
+    "title": "Eastern Flank Deterrence Initiative",
+    "description": "NATO outlines its strategy for strengthening deterrence and defense on its eastern flank, highlighting cyber defense, multi-domain operations, intelligence sharing, autonomous systems, and AI-supported decision-making."
+  },
+  "tags": [
+    "ArtificialIntelligence",
+    "DefenseTechnology",
+    "NATO",
+    "CyberSecurity",
+    "AutonomousSystems",
+    "MilitaryTechnology"
+  ]
+}
 ]
