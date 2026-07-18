@@ -1007,5 +1007,23 @@
     "Claude",
     "NeuralNetworks"
   ]
-}
+},
+{
+    "id": 64,
+    "date": "2026-07-18",
+    "content": "You should read the \"State of Open-Source AI\" report written by Mozilla CTO, Raffi Krikorian.\n\nThe point that \"open-source models are rapidly closing the gap, and the competitive advantage now lies not just in the model itself, but in the ecosystem surrounding it: agents, RAG, orchestration, deployment, and AI infrastructure\" is very important. I agree completely.\n\nThis is a valuable report for anyone working in the field of AI or planning to deploy production-level AI systems. The developments are beautifully visualized and summarized.",
+    "link": "https://stateofopensource.ai/",
+    "linkPreview": {
+      "title": "The State of Open Source AI — V1.0 · July 2026",
+      "description": "Mozilla's CTO Raffi Krikorian presents a data-driven look at how open-weight models are closing the capability gap with closed ones, arguing the real competitive edge is shifting to the agentic harness, deployment, and surrounding AI infrastructure."
+    },
+    "tags": [
+      "AI",
+      "AIEngineering",
+      "GenerativeAI",
+      "AgenticAI",
+      "LLM",
+      "OpenSource"
+    ]
+  }
 ]
