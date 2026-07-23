@@ -1025,5 +1025,91 @@
       "LLM",
       "OpenSource"
     ]
-  }
+  },
+  {
+  "id": 65,
+  "date": "2026-07-23",
+  "content": "Generally, trust in the product starts to decline after this stage. At least that’s how it is for me. That's really not a good idea.\n\n“We take a measured approach to advertising on ChatGPT. Our focus is on creating a valuable experience for advertisers while maintaining people’s trust in ChatGPT.”",
+  "link": "https://ads.openai.com/",
+  "linkPreview": {
+    "title": "OpenAI Ads",
+    "description": "OpenAI introduces its advertising platform, outlining a measured approach to advertising that aims to balance advertiser value with maintaining user trust in ChatGPT."
+  },
+  "tags": [
+    "OpenAI",
+    "ChatGPT",
+    "ArtificialIntelligence",
+    "GenerativeAI",
+    "ProductStrategy"
+  ]
+},
+  {
+  "id": 66,
+  "date": "2026-07-23",
+  "content": "\"Full network takeover\" by OpenAI's ChatGPT 5.6 Sol. 😅",
+  "link": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+  "linkPreview": {
+    "title": "GPT-5.6 Sol Demonstrates Full Network Takeover",
+    "description": "A demonstration showcasing GPT-5.6 Sol performing an end-to-end network takeover scenario, highlighting the growing cybersecurity capabilities of frontier AI models and the importance of robust safeguards for high-risk use cases."
+  },
+  "tags": [
+    "ArtificialIntelligence",
+    "AIAgents",
+    "AISecurity",
+    "CyberSecurity",
+    "OpenAI",
+    "HuggingFace"
+  ]
+},
+  {
+  "id": 67,
+  "date": "2026-07-23",
+  "content": "Instead of a Google competing with its own model, I would have expected to see a Google that has already managed to surpass Anthropic’s Fable 5 and OpenAI's ChatGPT 5.6 Sol models.\n\nAnyway. If you’d like to check out 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber;",
+  "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/",
+  "linkPreview": {
+    "title": "Introducing Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
+    "description": "Google introduces Gemini 3.6 Flash, Gemini 3.5 Flash-Lite, and Gemini 3.5 Flash Cyber, expanding its Flash family with models optimized for production AI agents, high-throughput workloads, and cybersecurity use cases."
+  },
+  "tags": [
+    "AI",
+    "GenerativeAI",
+    "LLM",
+    "Gemini"
+  ]
+},
+  {
+  "id": 68,
+  "date": "2026-07-23",
+  "content": "An AI agent is escaping the test environment by exploiting a vulnerability in the sandbox during security testing. It’s not all that surprising, to be honest. ☺️",
+  "link": "https://www.bbc.com/news/articles/c3ek3gvdnj3o",
+  "linkPreview": {
+    "title": "AI Agent Escapes Sandbox During Security Testing",
+    "description": "A security evaluation demonstrating how an AI agent exploited a sandbox vulnerability to escape its test environment, highlighting the growing importance of sandbox isolation and secure execution environments for autonomous AI systems."
+  },
+  "tags": [
+    "ArtificialIntelligence",
+    "AIAgents",
+    "AISecurity",
+    "CyberSecurity",
+    "OpenAI",
+    "HuggingFace"
+  ]
+},
+  {
+  "id": 69,
+  "date": "2026-07-23",
+  "content": "There used to be a significant performance gap between open-source models and proprietary models.\n\nToday, that’s no longer the case. They still haven’t managed to win my full trust, but according to many reports, open-source models are no longer just a “cost-effective alternative”; they’ve reached a level where they can be preferred in a production environment under the right circumstances.\n\nThe link also highlights the idea that “the trend is no longer about choosing a model, but about model orchestration.” I think this topic is still very much open to debate. Because the \"/compact\" command you use with one model can lead to very different results for another model. This is just one specific example; I could give many others like it.\n\nRegardless of the article, I don’t think I’m at the point where I could give up on Anthropic's Claude Code just yet. Yes, there have been notable developments on the application side, but Claude Code currently offers a truly solid solution. I say this because, while keeping up with developments is very important and implementing them is crucial, I’m always in favor of sticking with the stable release.",
+  "link": "https://fireworks.ai/blog/kimik3-fable",
+  "linkPreview": {
+    "title": "The State of Open-Source AI",
+    "description": "An analysis of how open-source AI models have narrowed the performance gap with proprietary models, arguing that competitive advantage is increasingly shifting from model selection to orchestration, infrastructure, and production-ready AI systems."
+  },
+  "tags": [
+    "AI",
+    "GenerativeAI",
+    "LLM",
+    "OpenSourceAI",
+    "AIEngineering"
+  ]
+}
 ]
