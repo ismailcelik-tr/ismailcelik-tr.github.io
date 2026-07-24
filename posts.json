@@ -1111,5 +1111,37 @@
     "OpenSourceAI",
     "AIEngineering"
   ]
-}
+},
+  {
+  "id": 70,
+  "date": "2026-07-23",
+  "content": "Best of this month for me:\n\nBooks\n\n1- \"Hamnet\", Maggie O'Farrell\n2- \"Project Hail Mary\", Andy Weir\n3- \"Death and the Gardener\", Georgi Gospodinov\n4- \"The Humans\", Matt Haig\n5- \"The Books of Jacob\", Olga Tokarczuk\n\nFilms\n\n1- \"Hamnet\"\n2- \"Project Hail Mary\"\n3- \"Nomadland\"\n4- \"Oppenheimer\"\n5- \"CODA\"\n\nEach of these books and films left a completely different impression, but they were all unforgettable in their own way. ☺️",
+  "link": "https://www.goodreads.com/book/show/43890641-hamnet",
+  "linkPreview": {
+    "title": "Hamnet by Maggie O'Farrell",
+    "description": "An award-winning historical novel inspired by the life and family of William Shakespeare, exploring grief, love, and the origins of one of literature's most enduring tragedies."
+  },
+  "tags": [
+    "Literature",
+    "Books",
+    "Films"
+  ]
+},
+  {
+  "id": 71,
+  "date": "2026-07-23",
+  "content": "Welcome, \"Claude Opus 5\"! 😊\n\nBy the way, for those who are interested, the \"System Cards of Claude Opus 5\" are here:",
+  "link": "https://www-cdn.anthropic.com/c5fbac3f0b1280a933ebd26d3cb8bb9f5bdeaf48/Claude%20Opus%205%20System%20Card.pdf",
+  "linkPreview": {
+    "title": "Introducing Claude Opus 5",
+    "description": "Anthropic introduces Claude Opus 5, its latest frontier language model, alongside updated capabilities, safety improvements, and technical documentation. The accompanying System Card provides a detailed overview of the model's evaluation methodology, safety measures, and deployment considerations."
+  },
+  "tags": [
+    "AI",
+    "GenerativeAI",
+    "LLM",
+    "Claude",
+    "Anthropic"
+  ]
+ }
 ]
