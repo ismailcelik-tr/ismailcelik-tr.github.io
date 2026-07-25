@@ -1143,5 +1143,38 @@
     "Claude",
     "Anthropic"
   ]
+ },
+  {
+  "id": 72,
+  "date": "2026-07-25",
+  "content": "OpenAI's \"ChatGPT Voice\" is now available in the desktop app:\n\n- You can start tasks by speaking and check progress with voice commands\n- You can interrupt during a response to change direction (truly very successful 😊)\n- (macOS) You can say \"look at this\" while pointing to content on your screen",
+  "link": "https://www.youtube.com/watch?v=E0ZMOschrTU",
+  "linkPreview": {
+    "title": "ChatGPT Voice: Now in the Desktop App",
+    "description": "OpenAI brings ChatGPT Voice, powered by GPT-Live, to the desktop app — letting users start and steer tasks in Chat, Work, and Codex using just their voice."
+  },
+  "tags": [
+    "ChatGPT",
+    "OpenAI",
+    "AI",
+    "ArtificialIntelligence",
+    "VoiceAI"
+  ]
+},
+  {
+  "id": 73,
+  "date": "2026-07-25",
+  "content": "You shouldn't build something you like or want to use; you should build something that \"People Like and Actually Want to Use\".\n\nThe number of apps added to the App Store in the first six months of 2026 nearly matched the total for all of 2025. Despite this, downloads increased by only 2%.",
+  "link": "https://9to5mac.com/2026/07/20/report-app-store-added-nearly-as-many-new-apps-in-h1-2026-as-in-all-of-2025/",
+  "linkPreview": {
+    "title": "App Store Added Nearly as Many New Apps in H1 2026 as in All of 2025",
+    "description": "Citing Sensor Tower data, the report shows new App Store releases roughly doubled in the first half of 2026 as AI-assisted \"vibecoding\" tools lower the barrier to publishing, while download growth stayed flat at just 2%."
+  },
+  "tags": [
+    "AI",
+    "GenerativeAI",
+    "Startup",
+    "AppStore"
+  ]
  }
 ]
