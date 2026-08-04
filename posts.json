@@ -1176,5 +1176,97 @@
     "Startup",
     "AppStore"
   ]
+ },
+  {
+  "id": 74,
+  "date": "2026-07-27",
+  "content": "They're not entirely wrong. (Actually, he's not entirely wrong. The article at the link was written by Dario Amodei, CEO of Anthropic.)\n\nOpen-weight models accelerate innovation, reduce costs, and strengthen the ecosystem. On the other hand, the risks of misuse are truly very high. And believe me—I've tried some of them, so I know from experience—it's very easy to bypass the safeguards.\n\nI think the real question we should be discussing isn't whether the model is open or closed, but whether it's being developed with safeguards in place, taking into account its capability level and the risks it could pose.",
+  "link": "https://www.anthropic.com/news/position-open-weights-models",
+  "linkPreview": {
+    "title": "Our Position on Open-Weights Models",
+    "description": "Anthropic CEO Dario Amodei clarifies that Anthropic has never called for a ban on open-weights models, and argues the real policy focus should be chip export controls, cracking down on distillation, and mandatory safety testing for capable models regardless of whether they're open or closed."
+  },
+  "tags": [
+    "AI",
+    "GenerativeAI",
+    "LLM",
+    "OpenSourceAI",
+    "Anthropic",
+    "AISafety",
+    "MachineLearning"
+  ]
+},
+  {
+  "id": 75,
+  "date": "2026-08-04",
+  "content": "When working with coding agents (Claude Code, Codex, OpenCode, etc.), many of you focus on model selection. While the model's power is important, how you use it is just as important. A study was conducted that focused, in part, on the following question: \"When using the same model, how much do the results change if we handle the context differently?\"\n\nEven if you don't have time to read the entire study, at least take a look at the summary. I recommend experimenting with the findings and applying them to your daily development processes.",
+  "link": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/benchmarking-opus-5-on-slop-code-bench.md",
+  "linkPreview": {
+    "title": "Benchmarking Opus 5 on SlopCodeBench",
+    "description": "A hands-on benchmark comparing Claude Opus 4.8, Sonnet 5, and Opus 5 on SlopCodeBench, a long-horizon coding benchmark that reveals requirements incrementally. It finds that even the strongest model degrades codebase quality over time and can't yet be trusted to run unattended without steering."
+  },
+  "tags": [
+    "AI",
+    "GenerativeAI",
+    "LLM",
+    "CodingAgents",
+    "AIAgents",
+    "ContextEngineering"
+  ]
+},
+  {
+  "id": 76,
+  "date": "2026-08-04",
+  "content": "When you're working on backend services or production LLM systems, saying \"it's faster\" isn't enough—you need to show it. Whether it's reducing API latency, improving retrieval performance, optimizing cache hit rates, or comparing infrastructure changes, clear visualizations make engineering decisions much easier to communicate.\n\nI'll likely be using it to visualize backend and LLM system optimizations going forward. Flint by Microsoft. 😊",
+  "link": "https://github.com/microsoft/flint-chart",
+  "linkPreview": {
+    "title": "Flint: A Visualization Language for the AI Era",
+    "description": "An open-source visualization intermediate language from Microsoft Research that lets AI agents generate polished, reliable charts from simple, human-editable specs, compiling a single input into Vega-Lite, ECharts, or Chart.js output — with an MCP server for direct use in agent and coding workflows."
+  },
+  "tags": [
+    "Backend",
+    "SoftwareEngineering",
+    "LLM",
+    "RAG",
+    "Performance",
+    "DataVisualization",
+    "Microsoft"
+  ]
+},
+  {
+  "id": 77,
+  "date": "2026-08-04",
+  "content": "Apple quietly introduced a new hardware leasing program in the U.S.: \"Apple Upgrade\". Hardware is moving toward a subscription-first business model.\n\nThis part is important: If you wish to keep the device at the end of the contract period, you'll be offered a purchase option where the payments you've made up to that point count toward the down payment.\n\nCurrently available only in the U.S.",
+  "link": "https://www.apple.com/newsroom/2026/07/apple-upgrade-launches-in-the-united-states/",
+  "linkPreview": {
+    "title": "Apple Upgrade Launches in the United States",
+    "description": "Apple introduces Apple Upgrade, a Klarna-backed leasing program for iPhone, Apple Watch, Mac, and iPad with monthly payments starting at $11.99. At the end of the lease, customers can upgrade, buy the device outright, or return it, and the program replaces the iPhone Upgrade Program in the U.S."
+  },
+  "tags": [
+    "Apple",
+    "AppleUpgrade",
+    "BusinessModel",
+    "Tech",
+    "Innovation"
+  ]
+},
+  {
+  "id": 78,
+  "date": "2026-08-04",
+  "content": "Competition in the open-source LLM ecosystem is heating up even more. I hope this puts enough price pressure on Anthropic, OpenAI and Google. Welcome, Qwen3.8-Max! (powered by Alibaba Cloud)\n\nI hope we'll eventually be able to start using this technology (I'm talking about its advanced form) locally in our homes, little by little. It probably won't happen very soon, but it will likely happen eventually. Until then, my advice to friends working in software is: focus on developing your skills in AI engineering first, and then move on to the hardware side.",
+  "link": "https://qwen.ai/blog?id=qwen3.8",
+  "linkPreview": {
+    "title": "Qwen3.8-Max: Alibaba's Largest and Most Capable Model Yet",
+    "description": "Alibaba unveils Qwen3.8-Max, a 2.4-trillion-parameter mixture-of-experts model that activates about 95 billion parameters per query, handles text, image, and video with up to a 1M-token context, and ranks near the top of the Arena leaderboards, trailing mainly Anthropic's Claude Fable 5. Open weights are set to follow the hosted API release."
+  },
+  "tags": [
+    "AI",
+    "ArtificialIntelligence",
+    "GenerativeAI",
+    "LLM",
+    "Qwen",
+    "AlibabaCloud",
+    "OpenSourceAI"
+  ]
  }
 ]
