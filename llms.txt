@@ -1,0 +1,47 @@
+# İsmail Çelik
+
+> Senior Software & AI Engineer in Ankara, Türkiye (GMT+3), remote-ready. 10+ years building backend services, mobile apps and the infrastructure they run on; now shipping LLM features to production: agents, RAG and on-device ML.
+
+## Profile
+
+- Current: Senior Software Engineer at Netelsan (Dec 2025 – present). Backend and platform engineering for IP intercom, burglar alarm and smart-home products: WebRTC service infrastructure on AWS, Prometheus/Grafana observability, automated release pipeline to the production line.
+- Previous: Software Engineer (contract) for Al Samah Est., sole engineer on a company-wide ERP (Java, Spring Boot, React, Flutter), 2022–2023; Software Engineer at Netelsan, 2021–2022; Mobile Application Developer at Bitcraft, 2019–2021; IT Specialist at Alfa E-Ticaret, 2018–2019; System & Network Engineer, Turkish Naval Forces, 2013–2016.
+- Education: BSc Computer Engineering, Karadeniz Technical University (2013); BSc Business Administration, Anadolu University (2025); BSc Management Information Systems, Istanbul University (ongoing).
+- Contact: ismailceliktr00@gmail.com · [LinkedIn](https://www.linkedin.com/in/ismailcelik) · [GitHub](https://github.com/ismailcelik-tr)
+
+## CV
+
+- [CV (English, PDF)](https://ismailcelik-tr.github.io/generated-cv/001-ismailcelik-en.pdf)
+- [CV (Turkish, PDF)](https://ismailcelik-tr.github.io/generated-cv/001-ismailcelik-tr.pdf)
+
+## Selected work
+
+- [Netelsan Cloud](https://apps.apple.com/tr/app/netelsan-cloud/id6757862775?l=en): Mobile cloud app for Netelsan users on iOS and Android. React Native, Node.js, PostgreSQL.
+- [Netelsan Burglar Alarm System](https://apps.apple.com/py/app/netelsan-h%C4%B1rs%C4%B1z-alarm-sistemi/id1384915254): Production mobile app for monitoring and managing burglar alarms. React Native, Node.js, MongoDB.
+- [VectraX](https://github.com/ismailcelik-tr/vectrax): Real-time, operator-driven visual tracking that follows any boxed object frame by frame and reports its confidence. Python, OpenCV, Core ML, RF-DETR.
+- [SMD Vision Inspector](https://github.com/ismailcelik-tr/smd-vision-inspector): Deterministic computer-vision inspection for SMD placement lines. Python, OpenCV.
+- [The Message (Çağrı)](https://apps.apple.com/vn/app/the-message-daily-guide/id6773722876): Turkish/English Islamic guidance app with scheduled daily notifications. React Native, Expo, NestJS, Supabase. [Source](https://github.com/ismailcelik-tr/the-message)
+- [Tilavet Meal](https://github.com/ismailcelik-tr/tilavet-meal): Listens to live Quran recitation and plays the verified Turkish meal of the recited ayah; 0 wrong meals across 837 blind tests, runs on-device on iPhone. Python, Swift, speech recognition.
+- [DilKart](https://dilkart.fly.dev): Offline-first English flashcards with FSRS spaced repetition and a three-way dictionary, synced across iOS and web. TypeScript, Expo, SQLite, Supabase. [Source](https://github.com/ismailcelik-tr/dilkart)
+- [Claude Code Guide](https://github.com/ismailcelik-tr/claude-code-guide): Practical guide to using Claude Code at every stage of development, in English and Turkish.
+
+## Skills
+
+- Backend: Node.js, NestJS, Spring Boot, Express.js, FastAPI, REST, WebSocket, MQTT
+- AI & data: Python, RAG, LLM, AI agents, Claude Code, Ollama, computer vision, OpenCV, Core ML, speech recognition, PyTorch, TensorFlow, ChromaDB, Qdrant
+- Mobile: React Native, Expo, Flutter, iOS, Android
+- Cloud & DevOps: AWS, GCP, Fly.io, Docker, Kubernetes, CI/CD, GitHub Actions, Prometheus, Grafana, Nginx, Linux
+- Databases: PostgreSQL, Supabase, SQLite, MongoDB, MySQL, MSSQL, Redis
+- Languages & tools: TypeScript, JavaScript, Python, Java, Swift, Dart, Go, Rust, Git
+
+## Certifications
+
+- AWS Cloud Quest: Cloud Practitioner; AWS Cloud Quest: Generative AI Practitioner (Amazon Web Services)
+- Building with the Claude API; Introduction to Model Context Protocol; Introduction to Agent Skills; AI Fluency: Framework & Foundations; Claude 101 (Anthropic)
+- Gen AI Agents; Gen AI Apps; Gen AI: Beyond the Chatbot; Introduction to Generative AI (Google)
+- Career Essentials in Generative AI (Microsoft & LinkedIn)
+- Python 101 for Data Science (IBM)
+
+## Optional
+
+- [Updates](https://ismailcelik-tr.github.io/posts.json): All short posts on AI and software as JSON, oldest first.

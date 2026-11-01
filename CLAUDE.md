@@ -27,6 +27,9 @@ script.js          # i18n dicts (en/tr/fr), certifications dataset, all DOM logi
 posts.json         # Updates feed — fetched at runtime, rendered reverse-chronological
 assets/            # Images and badge/logo assets
 generated-cv/      # CV PDFs (English and Turkish), linked from the hero
+scripts/           # prerender.py — bakes JS-rendered sections into index.html
+llms.txt           # Hand-written Markdown profile for AI agents
+robots.txt, sitemap.xml
 AGENTS.md          # Detailed development guidelines (imported above)
 ```
 
@@ -36,7 +39,7 @@ AGENTS.md          # Detailed development guidelines (imported above)
 |------|---------|
 | Run locally | `python -m http.server 8000 --bind 127.0.0.1` |
 | Update CV PDFs | Copy the exported PDFs over `generated-cv/001-ismailcelik-{en,tr}.pdf` |
-| Build | *(none — no build step)* |
+| Prerender | `python3 scripts/prerender.py` (needs Chrome; set `CHROME` if not found) |
 | Tests | *(none — manual browser testing only)* |
 | Lint / format | *(none configured — match surrounding style)* |
 
@@ -49,6 +52,8 @@ AGENTS.md          # Detailed development guidelines (imported above)
 - `posts.json` shape: `{ id, date, content, link, linkPreview, tags }` — additive and backward-compatible changes only.
 - Certification entries are hardcoded in `script.js`; include localized `issued` and `skills` for en/tr/fr.
 - Selected Work cards live in `index.html`; their text uses `cv-project{N}-title` / `cv-project{N}-note` keys. New projects take the next unused N; do not renumber existing keys.
+- Content between `<!-- prerender:* -->` markers in `index.html` is generated. Never edit it by hand; run `scripts/prerender.py` after changing `posts.json`, certifications or their rendering.
+- Crawlers and AI agents read the static HTML, not the JS render. Keep the English defaults in `index.html` equal to the `en` dictionary, and keep `<title>`, meta/OG tags, JSON-LD and `llms.txt` in sync when role, projects or skills change.
 
 ### Architecture Rules
 

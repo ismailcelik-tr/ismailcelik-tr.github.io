@@ -71,6 +71,8 @@
 - `posts.json`: structured update/feed content consumed by the frontend.
 - `assets/`: local images and badge/logo assets.
 - `generated-cv/`: English and Turkish CV PDFs linked from the hero. They are exported outside the repo and copied in.
+- `scripts/prerender.py`: renders the page in headless Chrome and bakes the updates and certifications markup between the `prerender` markers in `index.html`, so crawlers that skip JavaScript see it. `script.js` replaces that markup at runtime.
+- `llms.txt`, `robots.txt`, `sitemap.xml`: discovery files for search engines and AI agents. `llms.txt` is hand-written; keep it in sync with the page.
 
 ## 4. Development Guidelines
 
@@ -109,7 +111,10 @@ python -m http.server 8000 --bind 127.0.0.1
 ```
 
 ### Build
-- No build step exists.
+- No bundler. After changing `posts.json`, certifications or their rendering, refresh the static snapshot:
+```bash
+python3 scripts/prerender.py
+```
 
 ### Test
 - No automated test suite exists today.
