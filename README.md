@@ -28,6 +28,7 @@ This portfolio is a calm, editorial single-page portfolio inspired by modern doc
 - `style.css`: Editorial design system, animations, and responsive layouts.
 - `script.js`: i18n engine, theme management, and interactive UI logic.
 - `assets/`: Optimized images and media components.
+- `generated-cv/`: English and Turkish CV PDFs.
 
 ## ⚙️ Running Locally
 

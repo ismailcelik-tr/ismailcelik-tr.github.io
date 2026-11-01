@@ -16,7 +16,7 @@ Personal portfolio for İsmail Çelik (`ismailcelik-tr.github.io`). Static singl
 
 - HTML5 / Vanilla CSS3 / Vanilla JavaScript (ES6+)
 - CDN assets only: Lucide Icons (unpkg), Google Fonts (Inter, Source Serif 4), flagcdn
-- Python 3 for CV generation (`scripts/generate_cv_pdfs.py`)
+- CV PDFs are exported outside the repo and copied into `generated-cv/`
 
 ### Repository Structure
 
@@ -26,8 +26,7 @@ style.css          # Editorial design system; theming via CSS custom properties
 script.js          # i18n dicts (en/tr/fr), certifications dataset, all DOM logic
 posts.json         # Updates feed — fetched at runtime, rendered reverse-chronological
 assets/            # Images and badge/logo assets
-scripts/           # generate_cv_pdfs.py
-generated-cv/      # Output PDFs (English and Turkish)
+generated-cv/      # CV PDFs (English and Turkish), linked from the hero
 AGENTS.md          # Detailed development guidelines (imported above)
 ```
 
@@ -36,7 +35,7 @@ AGENTS.md          # Detailed development guidelines (imported above)
 | Task | Command |
 |------|---------|
 | Run locally | `python -m http.server 8000 --bind 127.0.0.1` |
-| Generate CV PDFs | `python scripts/generate_cv_pdfs.py` |
+| Update CV PDFs | Copy the exported PDFs over `generated-cv/001-ismailcelik-{en,tr}.pdf` |
 | Build | *(none — no build step)* |
 | Tests | *(none — manual browser testing only)* |
 | Lint / format | *(none configured — match surrounding style)* |
@@ -49,6 +48,7 @@ AGENTS.md          # Detailed development guidelines (imported above)
 - Keep translation keys stable and grouped by feature.
 - `posts.json` shape: `{ id, date, content, link, linkPreview, tags }` — additive and backward-compatible changes only.
 - Certification entries are hardcoded in `script.js`; include localized `issued` and `skills` for en/tr/fr.
+- Selected Work cards live in `index.html`; their text uses `cv-project{N}-title` / `cv-project{N}-note` keys. New projects take the next unused N; do not renumber existing keys.
 
 ### Architecture Rules
 

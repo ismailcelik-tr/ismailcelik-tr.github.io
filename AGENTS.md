@@ -70,6 +70,7 @@
 - `script.js`: translation dictionaries, certification dataset, DOM wiring, hero shader logic, rendering logic, state handling, and modal/theme/command behavior.
 - `posts.json`: structured update/feed content consumed by the frontend.
 - `assets/`: local images and badge/logo assets.
+- `generated-cv/`: English and Turkish CV PDFs linked from the hero. They are exported outside the repo and copied in.
 
 ## 4. Development Guidelines
 
@@ -137,6 +138,7 @@ python -m http.server 8000 --bind 127.0.0.1
 - Validate existence of required fields before rendering dynamic content.
 - Preserve multilingual content completeness where a feature is localized.
 - When adding certification entries in `script.js`, keep localized `issued` and `skills` values complete for `en`, `tr`, and `fr` when those fields are used.
+- When adding Selected Work cards, add `cv-project{N}-title` and `cv-project{N}-note` for `en`, `tr`, and `fr`, using the next unused N.
 
 ## 7. Testing Strategy
 
