@@ -1268,5 +1268,170 @@
     "AlibabaCloud",
     "OpenSourceAI"
   ]
- }
+ },
+  {
+    "id": 79,
+    "date": "2026-10-02",
+    "content": "Doesn’t that seem really strange to you, too? Instead of taking advantage of AI, people are going to great efforts to remove the AI they don’t use from their devices.\n\nFor example:\nhttps://github.com/omlahore/RemoveMacAI\n\nI guess this will be the fate of every AI that isn’t useful. Right now, everyone is developing something, and 95% of these are AI-based. But at the end of the day, perhaps only 10% of them will be deemed useful, and the rest—those that don’t make the cut—will end up in the trash.\n\nThese may be different topics, but if we consider them as “new technologies,” we see the same thing happening with electric vehicle manufacturers. “The others” have already begun to slowly disappear from the market.",
+    "link": "https://github.com/omlahore/RemoveMacAI",
+    "linkPreview": {
+      "title": "RemoveMacAI",
+      "description": "Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups. A native app and CLI, and every change can be undone."
+    },
+    "tags": [
+      "AI",
+      "ArtificialIntelligence",
+      "Technology",
+      "Innovation",
+      "ProductDevelopment"
+    ]
+  },
+  {
+    "id": 80,
+    "date": "2026-10-07",
+    "content": "Love it!  And yes, information is beautiful. ☺️",
+    "link": "https://informationisbeautiful.net/visualizations/worlds-largest-empires/",
+    "linkPreview": {
+      "title": "The World’s Largest & Longest Empires — Information is Beautiful",
+      "description": "Major dynasties mapped in an interactive visualization."
+    },
+    "tags": [
+      "DataVisualization",
+      "History"
+    ]
+  },
+  {
+    "id": 81,
+    "date": "2026-10-11",
+    "content": "From Spotify... According to their claims, they can reduce token usage by 90% or more, depending on the project you’re working on.\n\nTo briefly summarize the repo:\n- Reading large files is prevented before it overloads the main model’s context.\n- Batch analyses are offloaded to a model that consumes fewer resources, yielding concise, relevant findings.\n- Offload repetitive code generation via custom scripts.\n- Instead of relying solely on the instructions in the CLAUDE.md file, enforce critical rules using hooks.\n\nMeanwhile, some important issues are still marked as “open.” But if you’re curious, check here: https://github.com/spotify/portal-ai-plugins\n\nUse with caution. Test it in an isolated, non-production repository before considering it for a production development workflow.",
+    "link": "https://github.com/spotify/portal-ai-plugins",
+    "linkPreview": {
+      "title": "Spotify Portal AI Plugins",
+      "description": "Brings Spotify Portal into Claude Code, Codex, Cursor and pi: Portal CLI setup, software catalog search, service briefings, diagnostics and Portal actions."
+    },
+    "tags": [
+      "AIEngineering",
+      "ClaudeCode",
+      "LLM",
+      "SoftwareArchitecture",
+      "DeveloperTools"
+    ]
+  },
+  {
+    "id": 82,
+    "date": "2026-10-16",
+    "content": "- REVIEW.md: Making code review guidelines permanent\n- Anthropic’s core philosophy of quality: It’s not about avoiding mistakes, but about being able to manage them\n- Making validation an integral part of code production\n\nThe full article describing the code review approach of Anthropic’s Claude Code team: https://claude.dev/blog/solving-code-review-at-anthropic/",
+    "link": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+    "linkPreview": {
+      "title": "How the Claude Code team does code review",
+      "description": "How do you review code at the volume agents produce it? On the Claude Code team, once we had high coverage and deep reviews, we started optimizing for the minimum amount of human review time that doesn't raise reverts or incidents."
+    },
+    "tags": [
+      "Anthropic",
+      "ClaudeCode",
+      "AIEngineering",
+      "SoftwareEngineering"
+    ]
+  },
+  {
+    "id": 83,
+    "date": "2026-10-18",
+    "content": "If you’re just using Claude or ChatGPT and going about your life without ever trying things like this, I’ve got nothing to say to you. 🙂‍↔️\n\nHarness² from Google Research\n\nThe basic idea is this: Without changing an AI model’s weights, to enable it to perform the same task more successfully by improving the prompts, rules, tool usage, subagents, and other configurations around it.\n\nPS: Use with caution. Test it in an isolated, non-production repository before considering it for a production development workflow.",
+    "link": "https://github.com/google-research/harness2",
+    "linkPreview": {
+      "title": "Harness²: Recursive Agent Harnessing for an Open World",
+      "description": "Google Research project that improves an agent's results on a task by refining the prompts, rules, tools and subagents around the model, without changing its weights."
+    },
+    "tags": [
+      "AIEngineering",
+      "AIAgents",
+      "SoftwareEngineering",
+      "LLM",
+      "GoogleResearch"
+    ]
+  },
+  {
+    "id": 84,
+    "date": "2026-10-19",
+    "content": "Hugging Face might not like this article. 🙂\n\nThe risks of open models are real. Once model weights are published, it’s hard to regain control. However, I don’t think it’s entirely accurate to say that closed models are automatically safe and open models are automatically dangerous.\n\nLet me give an example from my own experience: While working on cybersecurity and security measures, I’m able to easily get a lot of technical support from open models that I run locally via Pi—support I couldn’t get from Fable or Opus. Open models are particularly helpful when it comes to analyzing security scenarios, assessing potential vulnerabilities, and developing defensive measures. Anthropic's models can be quite frustrating during the stages of generating and testing attack scenarios. It’s essential to always have a trusted open model at your disposal.\n\nIf you’re interested, the article is here: https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/",
+    "link": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/",
+    "linkPreview": {
+      "title": "Open models have real benefits. Do they outweigh the risks?",
+      "description": "Why the open-closed AI debate is more complicated than it seems."
+    },
+    "tags": [
+      "OpenSourceAI",
+      "AIEngineering",
+      "CyberSecurity",
+      "LLM",
+      "OpenModels"
+    ]
+  },
+  {
+    "id": 85,
+    "date": "2026-10-21",
+    "content": "DeepInfer is an inference framework that powers DeepSeek’s own large-scale production services.\n\nPreviously, they had mostly released individual kernels and libraries as open source (FlashMLA, DeepGEMM, DeepEP). Now, the engine itself—which brings these components together—has also been released as open source.",
+    "link": "https://github.com/deepseek-ai/DeepInfer",
+    "linkPreview": {
+      "title": "DeepInfer",
+      "description": "High-performance, large-scale inference framework for DeepSeek models."
+    },
+    "tags": [
+      "AI",
+      "DeepSeek",
+      "LLM",
+      "AIInfrastructure",
+      "OpenSourceAI",
+      "AIEngineering"
+    ]
+  },
+  {
+    "id": 86,
+    "date": "2026-10-24",
+    "content": "After PHP2Shell, now this. 🤭\n\nCalif just demonstrated iPhone compromise chains at Hexacon in Paris.\n\nThe demos:\n• 1-click exploit via Signal\n• Exploit via iMessage — the app almost every iPhone user has\n• Persistence on the device (\"Apple Persistent Threat\")\n\nNo CVEs or technical details yet — they say everything will be released in due time.\n\nPS: Calif is a cybersecurity and AI security firm that provides security and penetration testing services to AI giants such as OpenAI, Anthropic, Google and xAI.",
+    "link": "https://blog.calif.io/p/iphone",
+    "linkPreview": {
+      "title": "iPhone — Calif",
+      "description": "Today, we hacked what we'd set out to hack: the iPhone."
+    },
+    "tags": [
+      "CyberSecurity"
+    ]
+  },
+  {
+    "id": 87,
+    "date": "2026-10-28",
+    "content": "Gemini 4 Carbon topped the Artificial Analysis Intelligence Index v5.\n\nBefore OpenAI and Anthropic make their next flagship moves, Google has raised the bar once again. But I don’t think that’s the most interesting development.\n\nModels have become so powerful that they’re not just writing code; they’re also becoming increasingly capable of using tools, planning multi-step tasks, recovering from errors, and managing their own workflows.\n\nMaybe soon we’ll be saying, “Harness is dead—now we can talk about Agent Harness.”",
+    "link": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+    "linkPreview": {
+      "title": "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
+      "description": "Google’s Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5, and second only to Claude Opus 5.5 on the Artificial Analysis Coding Agent Index."
+    },
+    "tags": [
+      "AI",
+      "LLM",
+      "AIEngineering",
+      "AgenticAI",
+      "Google",
+      "Anthropic",
+      "OpenAI"
+    ]
+  },
+  {
+    "id": 88,
+    "date": "2026-10-30",
+    "content": "A new report, and once again the same point is emphasized: The issue is no longer about accessing AI; it’s about how quickly and effectively you can adapt AI to your organization.\n\nWorth reading and reviewing:\nhttps://www.bain.com/insights/topics/technology-report/",
+    "link": "https://www.bain.com/insights/topics/technology-report/",
+    "linkPreview": {
+      "title": "Technology Report 2026",
+      "description": "AI—the most consequential technology of our lifetimes."
+    },
+    "tags": [
+      "AI",
+      "ArtificialIntelligence",
+      "AIEngineering",
+      "Technology",
+      "AgenticAI"
+    ]
+  }
 ]
