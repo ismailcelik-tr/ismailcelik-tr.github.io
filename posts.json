@@ -1433,5 +1433,39 @@
       "Technology",
       "AgenticAI"
     ]
+  },
+  {
+    "id": 89,
+    "date": "2026-11-04",
+    "content": "I wish I could be part of this program. I really do.\n\nThe Anthropic Residency is an incredible opportunity. Link is here; https://x.com/AnthropicAI/status/2117343929960112486\n\nWith my background in software engineering and systems and network administration, the opportunity to contribute to AI research without necessarily having prior machine learning (ML) experience would be amazing.\n\nMaybe one day. Until then, let's keep learning, growing, and exploring.",
+    "link": "https://alignment.anthropic.com/2026/anthropic-residency/",
+    "linkPreview": {
+      "title": "Anthropic Residency: applications open for established technical leaders",
+      "description": "Today we are opening applications for the Anthropic Residency, our paid, fixed-term research program with placements lasting between six weeks and six months."
+    },
+    "tags": [
+      "Anthropic",
+      "AIResearch",
+      "ArtificialIntelligence",
+      "MachineLearning",
+      "SoftwareEngineering"
+    ]
+  },
+  {
+    "id": 90,
+    "date": "2026-11-07",
+    "content": "When you call an LLM API, how do you know which model actually generated the response?\n\nYou can’t know for sure. A router could silently swap it out for a cheaper model, or the token stream could be tampered with. You can’t tell just by looking at the output.\n\nAnthropic’s Frontier Red Team, in collaboration with researchers from EPFL, Massachusetts Institute of Technology, and StarkWare, has published a cryptographic solution to this problem: \"FlashProve\".\n\nHow it works:\n- The provider publishes a short commitment (fingerprint) regarding the model’s weights. The weights themselves remain secret.\n- For each request, a \"zkSNARK\" proof demonstrates that this committed model produced this output from this prompt.\n(zkSNARK: Zero-Knowledge Succinct Non-Interactive Argument of Knowledge. We can translate as follows: A method for demonstrating that a computation was performed correctly using a short, verifiable proof without revealing the computation’s confidential details.)\n- Anyone can verify this proof on a standard CPU without access to the weights.\n\nThe takeaway from this article: For anyone using third-party model providers, the “trust me” approach is gradually shifting toward a “verify this” approach.",
+    "link": "https://www.anthropic.com/research/provable-inference",
+    "linkPreview": {
+      "title": "Progress on provable inference for large language models",
+      "description": "Sharing progress on a powerful type of cryptographic proof known as a zkSNARK, which is uniquely fit for provable inference."
+    },
+    "tags": [
+      "AI",
+      "LLM",
+      "Anthropic",
+      "Cryptography",
+      "AISafety"
+    ]
   }
 ]

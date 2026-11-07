@@ -187,6 +187,56 @@
           <div id="updates-container" class="updates-list">
             <!-- prerender:updates -->
 <article class="update-entry card" data-reveal-bound="true">
+                        <time class="update-date" datetime="2026-11-07">Nov 2026</time>
+                        <div class="update-body">
+                            <div class="update-content">When you call an LLM API, how do you know which model actually generated the response?
+
+You can’t know for sure. A router could silently swap it out for a cheaper model, or the token stream could be tampered with. You can’t tell just by looking at the output.
+
+Anthropic’s Frontier Red Team, in collaboration with researchers from EPFL, Massachusetts Institute of Technology, and StarkWare, has published a cryptographic solution to this problem: "FlashProve".
+
+How it works:
+- The provider publishes a short commitment (fingerprint) regarding the model’s weights. The weights themselves remain secret.
+- For each request, a "zkSNARK" proof demonstrates that this committed model produced this output from this prompt.
+(zkSNARK: Zero-Knowledge Succinct Non-Interactive Argument of Knowledge. We can translate as follows: A method for demonstrating that a computation was performed correctly using a short, verifiable proof without revealing the computation’s confidential details.)
+- Anyone can verify this proof on a standard CPU without access to the weights.
+
+The takeaway from this article: For anyone using third-party model providers, the “trust me” approach is gradually shifting toward a “verify this” approach.</div>
+                            
+                                <div class="update-tags">
+                                    <span class="update-tag">#AI</span><span class="update-tag">#LLM</span><span class="update-tag">#Anthropic</span><span class="update-tag">#Cryptography</span><span class="update-tag">#AISafety</span>
+                                </div>
+                            
+                            
+                                <a href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
+                                    <div class="preview-title">Progress on provable inference for large language models</div>
+                                    <div class="preview-desc">Sharing progress on a powerful type of cryptographic proof known as a zkSNARK, which is uniquely fit for provable inference.</div>
+                                </a>
+                            
+                        </div>
+                    </article><article class="update-entry card" data-reveal-bound="true">
+                        <time class="update-date" datetime="2026-11-04">Nov 2026</time>
+                        <div class="update-body">
+                            <div class="update-content">I wish I could be part of this program. I really do.
+
+The Anthropic Residency is an incredible opportunity. Link is here; <a href="https://x.com/AnthropicAI/status/2117343929960112486" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">https://x.com/AnthropicAI/status/2117343929960112486</a>
+
+With my background in software engineering and systems and network administration, the opportunity to contribute to AI research without necessarily having prior machine learning (ML) experience would be amazing.
+
+Maybe one day. Until then, let's keep learning, growing, and exploring.</div>
+                            
+                                <div class="update-tags">
+                                    <span class="update-tag">#Anthropic</span><span class="update-tag">#AIResearch</span><span class="update-tag">#ArtificialIntelligence</span><span class="update-tag">#MachineLearning</span><span class="update-tag">#SoftwareEngineering</span>
+                                </div>
+                            
+                            
+                                <a href="https://alignment.anthropic.com/2026/anthropic-residency/" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
+                                    <div class="preview-title">Anthropic Residency: applications open for established technical leaders</div>
+                                    <div class="preview-desc">Today we are opening applications for the Anthropic Residency, our paid, fixed-term research program with placements lasting between six weeks and six months.</div>
+                                </a>
+                            
+                        </div>
+                    </article><article class="update-entry card" data-reveal-bound="true">
                         <time class="update-date" datetime="2026-10-30">Oct 2026</time>
                         <div class="update-body">
                             <div class="update-content">A new report, and once again the same point is emphasized: The issue is no longer about accessing AI; it’s about how quickly and effectively you can adapt AI to your organization.
@@ -251,46 +301,6 @@ PS: Calif is a cybersecurity and AI security firm that provides security and pen
                                 <a href="https://blog.calif.io/p/iphone" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
                                     <div class="preview-title">iPhone — Calif</div>
                                     <div class="preview-desc">Today, we hacked what we'd set out to hack: the iPhone.</div>
-                                </a>
-                            
-                        </div>
-                    </article><article class="update-entry card" data-reveal-bound="true">
-                        <time class="update-date" datetime="2026-10-21">Oct 2026</time>
-                        <div class="update-body">
-                            <div class="update-content">DeepInfer is an inference framework that powers DeepSeek’s own large-scale production services.
-
-Previously, they had mostly released individual kernels and libraries as open source (FlashMLA, DeepGEMM, DeepEP). Now, the engine itself—which brings these components together—has also been released as open source.</div>
-                            
-                                <div class="update-tags">
-                                    <span class="update-tag">#AI</span><span class="update-tag">#DeepSeek</span><span class="update-tag">#LLM</span><span class="update-tag">#AIInfrastructure</span><span class="update-tag">#OpenSourceAI</span><span class="update-tag">#AIEngineering</span>
-                                </div>
-                            
-                            
-                                <a href="https://github.com/deepseek-ai/DeepInfer" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
-                                    <div class="preview-title">DeepInfer</div>
-                                    <div class="preview-desc">High-performance, large-scale inference framework for DeepSeek models.</div>
-                                </a>
-                            
-                        </div>
-                    </article><article class="update-entry card" data-reveal-bound="true">
-                        <time class="update-date" datetime="2026-10-19">Oct 2026</time>
-                        <div class="update-body">
-                            <div class="update-content">Hugging Face might not like this article. 🙂
-
-The risks of open models are real. Once model weights are published, it’s hard to regain control. However, I don’t think it’s entirely accurate to say that closed models are automatically safe and open models are automatically dangerous.
-
-Let me give an example from my own experience: While working on cybersecurity and security measures, I’m able to easily get a lot of technical support from open models that I run locally via Pi—support I couldn’t get from Fable or Opus. Open models are particularly helpful when it comes to analyzing security scenarios, assessing potential vulnerabilities, and developing defensive measures. Anthropic's models can be quite frustrating during the stages of generating and testing attack scenarios. It’s essential to always have a trusted open model at your disposal.
-
-If you’re interested, the article is here: <a href="https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/</a></div>
-                            
-                                <div class="update-tags">
-                                    <span class="update-tag">#OpenSourceAI</span><span class="update-tag">#AIEngineering</span><span class="update-tag">#CyberSecurity</span><span class="update-tag">#LLM</span><span class="update-tag">#OpenModels</span>
-                                </div>
-                            
-                            
-                                <a href="https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/" target="_blank" rel="noopener noreferrer" class="link-preview" onclick="event.stopPropagation()">
-                                    <div class="preview-title">Open models have real benefits. Do they outweigh the risks?</div>
-                                    <div class="preview-desc">Why the open-closed AI debate is more complicated than it seems.</div>
                                 </a>
                             
                         </div>
