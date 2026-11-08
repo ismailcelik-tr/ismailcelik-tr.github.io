@@ -1467,5 +1467,21 @@
       "Cryptography",
       "AISafety"
     ]
+  },
+  {
+    "id": 91,
+    "date": "2026-11-08",
+    "content": "A robot that can produce the sensors it needs right on its own body...",
+    "link": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.76999",
+    "linkPreview": {
+      "title": "Receptogenesis in a Vascularized Robotic Embodiment",
+      "description": "A vascularized robotic composite synthesizes sensors on demand during operation; the new sensor closes a real-time control loop to regulate wing flapping in a moth-inspired robot."
+    },
+    "tags": [
+      "Robotics",
+      "SoftRobotics",
+      "EmbodiedIntelligence",
+      "Engineering"
+    ]
   }
 ]
