@@ -1500,5 +1500,21 @@
       "AgenticAI",
       "SoftwareEngineering"
     ]
+  },
+  {
+    "id": 93,
+    "date": "2026-11-10",
+    "content": "That’s a really great article. It’s worth highlighting the following points as well:\n• Most of the approximately $5 trillion in AI spending consists of one-time data center capital expenditures—not recurring costs.\n• Revenue growth at leading AI labs is real, not hypothetical.\n• The valuations of major players bear no resemblance to those of the dot-com era.\n• Even if there were a bubble, AI applications that are genuinely loved by users will continue to gain value.",
+    "link": "https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html",
+    "linkPreview": {
+      "title": "I'm Not Convinced The AI Bubble Exists",
+      "description": "Argues that the AI bubble thesis is overstated, citing AI firms' revenue growth, unit economics, valuation multiples and capacity to repay debt, while acknowledging real risks."
+    },
+    "tags": [
+      "AI",
+      "ArtificialIntelligence",
+      "SoftwareEngineering",
+      "Investing"
+    ]
   }
 ]
