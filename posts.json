@@ -1516,5 +1516,43 @@
       "SoftwareEngineering",
       "Investing"
     ]
+  },
+  {
+    "id": 94,
+    "date": "2026-11-10",
+    "content": "To what extent has artificial intelligence begun to accelerate its own development process?\n\nIt’s an excellent article with headings, explanations, and charts. You should definitely check it out.",
+    "link": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/#executive-summary",
+    "linkPreview": {
+      "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+      "description": "METR estimates AI R&D at Anthropic is likely progressing about twice its historical pace (range 1.3x–3x), mostly due to AI, with no convincing bottlenecks found."
+    },
+    "tags": [
+      "ArtificialIntelligence",
+      "Anthropic",
+      "METR",
+      "AIResearch",
+      "AIEngineering",
+      "AutonomousAgents",
+      "AIAlignment",
+      "FutureOfAI"
+    ]
+  },
+  {
+    "id": 95,
+    "date": "2026-11-10",
+    "content": "\"A good agent memory system is not one that simply stores past conversations. It is a system that extracts information from past experiences that will be useful in the future, verifies that information, and updates it as needed.\"",
+    "link": "https://www.anthropic.com/research/components-of-agent-memory",
+    "linkPreview": {
+      "title": "The components of agent memory",
+      "description": "How Claude keeps memory notes across sessions, uses “dreaming” to correct and reorganize them, and how these design choices are evaluated with benchmarks."
+    },
+    "tags": [
+      "AgenticAI",
+      "AIAgents",
+      "AIEngineering",
+      "Anthropic",
+      "LLM",
+      "ContextEngineering"
+    ]
   }
 ]
