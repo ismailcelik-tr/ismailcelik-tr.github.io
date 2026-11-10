@@ -1483,5 +1483,22 @@
       "EmbodiedIntelligence",
       "Engineering"
     ]
+  },
+  {
+    "id": 92,
+    "date": "2026-11-10",
+    "content": "The future of AI engineering isn’t just about writing better code. It’s about developing systems that can perform complex tasks reliably, safely, and autonomously. There have been significant developments in this field last night and in the days leading up to it.\n\nHello, Fable 5.2 and Mythos 5.2. 😊",
+    "link": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "linkPreview": {
+      "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+      "description": "We’ve upgraded Claude Fable and Claude Mythos—models that are designed to tackle the most daunting technical challenges."
+    },
+    "tags": [
+      "Anthropic",
+      "ArtificialIntelligence",
+      "AIEngineering",
+      "AgenticAI",
+      "SoftwareEngineering"
+    ]
   }
 ]
