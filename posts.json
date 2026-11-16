@@ -1554,5 +1554,40 @@
       "LLM",
       "ContextEngineering"
     ]
+  },
+  {
+    "id": 96,
+    "date": "2026-11-16",
+    "content": "\"So how did they organize 1,000 agents?\"\n\nRequirements for a successful Multi-Agent System:\n- Proper task decomposition\n- Dynamic task distribution\n- A centralized and consistent shared state\n- Independent verification mechanisms\n- Authority and security boundaries per agent\n- Human-in-the-loop when necessary",
+    "link": "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/",
+    "linkPreview": {
+      "title": "Safely scaling multi-agent teams with Claude Fable 5.2",
+      "description": "How a 1,000-agent team with general tools, a shared database, and layered safety controls reproduced a formal proof of Fermat's Last Theorem."
+    },
+    "tags": [
+      "AI",
+      "AgenticAI",
+      "Anthropic",
+      "Claude",
+      "SoftwareEngineering",
+      "AIEngineering"
+    ]
+  },
+  {
+    "id": 97,
+    "date": "2026-11-16",
+    "content": "In summary: We should no longer design Claude Code as a code assistant that we guide at every step and whose commands we approve one by one; instead, we should design it as a software agent capable of operating independently, with defined authority limits, automatic validation, and security mechanisms.",
+    "link": "https://www.youtube.com/watch?v=vlfCjWuv4es",
+    "linkPreview": {
+      "title": "Rethinking Claude Code Best Practices — Lydia Hallie",
+      "description": "Lydia Hallie (Anthropic) on running Claude Code as an independent agent with authority limits, automatic validation, and security mechanisms."
+    },
+    "tags": [
+      "ClaudeCode",
+      "AIAgents",
+      "SoftwareEngineering",
+      "AIEngineering",
+      "AgenticAI"
+    ]
   }
 ]
